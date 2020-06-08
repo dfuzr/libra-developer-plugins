@@ -1,0 +1,118 @@
+/* stylelint-disable docusaurus/copyright-header */
+* {
+  list-style: none;
+}
+
+html, body {
+  overflow: hidden;
+}
+
+html {
+  background-color: var(--default-background-color);
+}
+
+body, input {
+  font-family: 'NB International Pro';
+}
+
+body .hash-link {
+  position: absolute;
+  padding-right: 9px ;
+}
+
+main > .container.padding-vert--lg  {
+  padding-top: 0 !important;
+}
+
+article header h1 {
+  margin-bottom: 11px;
+}
+
+article h1 {
+  font-size: var(--header-size);
+  font-weight: normal;
+  letter-spacing: -.2px;
+}
+
+.markdown > h2 {
+  margin-top: 37px;
+  margin-bottom: 25px;
+}
+
+.markdown > h2 {
+  font-size: 18px;
+}
+
+article h1,
+.markdown > h3,
+.markdown > h4,
+.markdown > h5,
+.markdown > h6 {
+  font-weight: normal;
+}
+
+.markdown > p {
+  color: var(--doc-secondary-color);
+  font-size: 18px;
+  font-weight: lighter;
+  margin: 11px 0;
+}
+
+/*
+ * These are selectors for the classes in DocPage
+ * The original class is written for reference
+ * This may break upon further updates.
+ */
+.main-wrapper > div { /* .docPage */
+  color: var(--doc-primary);
+  display: flex;
+}
+
+/*.docSidebarContainer {*/
+.main-wrapper > div > div:first-child:not(.row) { /* .docSidebarContainer */
+  box-sizing: border-box;
+  width: 302px;
+  position: relative;
+}
+
+main { /* docMainContainer */
+  flex: 1;
+  flex-grow: 1;
+}
+
+/* Fonts */
+@font-face {
+  font-family: 'NB International Pro Bold';
+  src: url('/fonts/nb_international_pro_bold.otf');
+}
+
+@font-face {
+  font-family: 'NB International Pro';
+  font-weight: 500;
+  src: local('NBInternationalPro-Bold'), local('NBInternationalBoldWebfont'),
+    url('/fonts/nb_international_pro_bold.otf');
+}
+
+@font-face {
+  font-family: 'NB International Pro';
+  font-weight: 400;
+  font-style: normal;
+  font-display: auto;
+  src: local('NBInternationalPro-Reg'), local('NBInternationalRegularWebfont'),
+    url('/fonts/nb_international_pro_regular-webfont-c77cab7d176ad6c0a735e9e54398f4b5.eot') format('embedded-opentype'),
+    url('/fonts/nb_international_pro_regular-webfont-23316df531b081018ab50f3fdebb911d.woff2') format('woff2'),
+    url('/fonts/nb_international_pro_regular-webfont-2055eda1f28e3f2766b54ff5d7fa9c3a.woff') format('woff'),
+    url('/fonts/nb_international_pro_regular-webfont-5a1862044e5200d96d6e081b00abaab2.tff') format('truetype');
+}
+
+@font-face {
+  font-family: 'NB International Pro';
+  font-weight: 300;
+  font-style: normal;
+  font-display: auto;
+  src: local('NBInternationalPro-Lig'), local('NBInternationalLightWebfont'),
+    url('/fonts/nb_international_pro_light-webfont-79e1edf03d8ddf7d46731839a1463613.eot') format('embedded-opentype'),
+    url('/fonts/nb_international_pro_light-webfont-51e77a94d273016b7b0fbf54dc201e99.woff2') format('woff2'),
+    url('/fonts/nb_international_pro_light-webfont-21efbc5b931089585cc7d67affc7490e.woff') format('woff'),
+    url('/fonts/nb_international_pro_light-webfont-07bd85ca228c4cd11e30a21b915f20c6.ttf') format('truetype');
+}

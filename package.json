@@ -1,0 +1,17 @@
+{
+  "name": "libra-docusaurus",
+  "version": "0.0.1",
+  "description": "To be used in between different docusaurus sites under the libra brand",
+  "main": "src",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "dfuzr",
+  "license": "ISC",
+  "dependencies": {
+    "prop-types": "^15.7.2",
+    "react": "^16.13.1",
+    "react-dom": "^16.8.4",
+    "react-socks": "^2.1.0",
+  }
+}

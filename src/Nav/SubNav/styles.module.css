@@ -1,0 +1,17 @@
+.root {
+  background-color: var(--subnav-background);
+  border-bottom: 1px solid var(--default-border-color);
+  border-top: 1px solid var(--default-border-color);
+}
+
+.root, .root a {
+  color: var(--subnav-text-color);
+}
+
+.root :global(.width-wrapper) {
+  padding: 0px var(--nav-horizontal-padding);
+}
+
+.root li {
+  margin-left: 0;
+}

@@ -1,0 +1,40 @@
+.root {
+  font-weight: 300;
+  margin-left: 18px;
+}
+
+.root a {
+  transition: all .2s;
+}
+
+li.active a, li:hover a {
+  color: var(--accent-highlight);
+}
+
+/* types */
+.default {
+  padding: 10px 0;
+}
+
+.default a {
+  padding: 0 14px;
+}
+
+.cta {
+  background-color: var(--brand-color);
+  border-radius: 2.25rem;
+  font-weight: 400;
+}
+
+.cta a {
+  color: white !important;
+  display: inline-flex;
+  padding: 11px 28.5px;
+  letter-spacing: .5px;
+  text-shadow: 0.5px 0 0;
+}
+
+.cta:hover a {
+  color: white;
+}
+
