@@ -9,6 +9,92 @@ module.exports = {
       alt: 'Libra Logo',
       to: 'https://libra.org/'
     },
+    footer: {
+      links: [
+        {
+          type: 'primary',
+          items: [
+            {
+              label: 'Vision',
+              to: '#',
+            },
+            {
+              label: 'Learn',
+              to: '#',
+            },
+            {
+              label: 'Association',
+              to: '#',
+            },
+            {
+              label: 'Media',
+              to: '#',
+            },
+          ]
+        },
+        {
+          type: 'primary',
+          items: [
+            {
+              label: 'Developers',
+              to: '#',
+            },
+            {
+              label: 'White Paper',
+              to: '#',
+            },
+            {
+              label: 'Careers',
+              to: '#',
+            },
+          ],
+        },
+        {
+          type: 'secondary',
+          items: [
+            {
+              label: 'Privacy',
+              to: '#',
+            },
+            {
+              label: 'Cookies',
+              to: '#',
+            },
+            {
+              label: 'Terms of Use',
+              to: '#',
+            },
+            {
+              label: 'Code of Conduct',
+              to: '#',
+            },
+          ],
+        },
+      ],
+      socialLinks: [
+        {
+          to: '#',
+          icon: '/img/shared/footer/facebook.svg'
+        },
+        {
+          to: '#',
+          icon: '/img/shared/footer/linked-in.svg'
+        },
+        {
+          to: '#',
+          icon: '/img/shared/footer/twitter.svg'
+        },
+        {
+          to: '#',
+          icon: '/img/shared/footer/instagram.svg'
+        },
+        {
+          to: '#',
+          icon: '/img/shared/footer/github.svg'
+        },
+      ],
+      copyright: `©${new Date().getFullYear()} Libra Association`,
+    },
     navbar: {
       title: 'Libra Developers',
       logo: {
