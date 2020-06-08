@@ -5,18 +5,14 @@ import Desktop from './Desktop';
 import Mobile from './Mobile';
 import styles from './styles.module.css';
 
-const Subnav = ({activePopupMenu, enableSearch, setPopupMenu}) => (
+const Subnav = ({activePopupMenu, setPopupMenu}) => (
   <div className={styles.root}>
     <div className="width-wrapper">
       <Breakpoint medium down>
-        <Mobile 
-          activePopupMenu={activePopupMenu} 
-          enableSearch={enableSearch}
-          setPopupMenu={setPopupMenu} 
-        />
+        <Mobile activePopupMenu={activePopupMenu} setPopupMenu={setPopupMenu} />
       </Breakpoint>
       <Breakpoint large up>
-        <Desktop enableSearch={enableSearch} />
+        <Desktop />
       </Breakpoint>
     </div>
   </div>
@@ -24,7 +20,6 @@ const Subnav = ({activePopupMenu, enableSearch, setPopupMenu}) => (
 
 Subnav.propTypes = {
   activePopupMenu: PropTypes.string,
-  enableSearch: PropTypes.bool,
   setPopupMenu: PropTypes.func.isRequired,
 };
 

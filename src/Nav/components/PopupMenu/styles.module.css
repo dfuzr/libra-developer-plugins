@@ -3,8 +3,8 @@
 }
 
 .menu {
-  background-color: white;
-  border-bottom: 1px solid #e5e5e5;
+  background-color: var(--nav-secondary-background);
+  border-bottom: 1px solid var(--popup-background);
   font-size: 16px;
   left: 0;
   padding: 16px;
@@ -15,6 +15,14 @@
 }
 
 .menu a {
-  color: var(--nav-black);
+  color: var(--nav-secondary-text-color);
   text-decoration: none;
 }
+
+html[data-theme='dark'] {
+  --popup-background: var(--nav-secondary-background);
+}
+
+:root {
+  --popup-background: #e5e5e5;
+};

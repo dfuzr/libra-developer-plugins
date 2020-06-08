@@ -1,6 +1,8 @@
 import React, {useEffect, createRef} from 'react';
 import PropTypes from 'prop-types';
+
 import NavLink from '../NavLink';
+
 import styles from './styles.module.css';
 
 const PopupMenu = ({children, links, onClick}) => {

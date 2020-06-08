@@ -7,7 +7,7 @@
   transition: all .2s;
 }
 
-li.active a, li:hover a {
+:global(li.active) a, li:hover a {
   color: var(--accent-highlight);
 }
 
@@ -18,6 +18,10 @@ li.active a, li:hover a {
 
 .default a {
   padding: 0 14px;
+}
+
+.default:last-child a {
+  padding-right: 7px;
 }
 
 .cta {

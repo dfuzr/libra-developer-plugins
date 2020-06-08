@@ -4,6 +4,7 @@
   justify-content: space-between;
   height: var(--primary-nav-height);
   letter-spacing: .5px;
+  padding-right: 10px;
 }
 
 .root, .root a {

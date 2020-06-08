@@ -1,39 +1,40 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import useBaseUrl from '@docusaurus/useBaseUrl';
-// import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
-import PopupMenu from '../../components/PopupMenu';
-import NavMenuIcon from '../../components/NavMenuIcon';
-import NavLink from '../../components/NavLink';
-import styles from './styles.module.css';
-import navStyles from '../../styles.module.css';
 
-import config from '../../../config';
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
+import CloseIcon from '../../../../img/close.svg';
+import universalConfig from '../../../universal-config';
+import CornerLink from '../../../../img/white-paper.svg';
+import Logo from '../../../../img/logo.svg';
+import OpenIcon from '../../../../img/vertical-ellipse.svg';
+import PopupMenu from '../../components/PopupMenu';
+import NavLink from '../../components/NavLink';
+import NavMenuIcon from '../../components/NavMenuIcon';
+
+import navStyles from '../../styles.module.css';
+import styles from './styles.module.css';
 
 const PrimaryMobile = ({ activePopupMenu, setPopupMenu } ) => {
-  const { themeConfig } = config;
-  const { navbar } = themeConfig;
-  const { cornerLink, primaryLinks, logo } = navbar;
+  const { themeConfig: {navbar: {
+    cornerLink, primaryLinks, logo,
+  }}} = universalConfig;
 
   return (
     <div className={styles.root}>
       <div className={styles.mainContainer}>
         <NavMenuIcon
           cb={() => {setPopupMenu('primary')}}
-          closeIcon={useBaseUrl('img/close.svg')}
+          CloseIcon={CloseIcon}
           isOpen={activePopupMenu === 'primary'}
-          openIcon={useBaseUrl('img/vertical-ellipse.svg')}
+          OpenIcon={OpenIcon}
         />
 
         <a href={logo.href}>
-          <img 
-            alt={logo.alt} 
-            className={navStyles.logo}
-            src={useBaseUrl(logo.src)} 
-          />
+          <Logo alt={logo.alt} className={navStyles.logo} />
         </a>
         <a href={cornerLink.to}>
-          <img src={useBaseUrl(cornerLink.image.src)} />
+          <CornerLink alt={cornerLink.alt} />
         </a>
       </div>
       {activePopupMenu === 'primary' && 

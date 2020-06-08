@@ -8,10 +8,11 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import ThemeProvider from '@theme/ThemeProvider';
 import TabGroupChoiceProvider from '@theme/TabGroupChoiceProvider';
 import AnnouncementBar from '@theme/AnnouncementBar';
-import Navbar from '@theme/Navbar';
-import Footer from '@theme/Footer';
+import Nav from '../Nav';
+import Footer from '../Footer';
 
 import './styles.css';
+import '../universal.css';
 
 // Provided via plugins/react-axe-ada-monitoring
 if (TEST_ADA) {
@@ -79,7 +80,7 @@ function Layout(props) {
         </Head>
         <AnnouncementBar />
         <div>
-          <Navbar />
+          <Nav />
           <div className="nav-spacer"></div>
         </div>
         <div className="nav-pusher">
