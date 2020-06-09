@@ -16,19 +16,19 @@ module.exports = {
           items: [
             {
               label: 'Vision',
-              to: '#',
+              to: 'https://libra.org/en-US/vision/',
             },
             {
               label: 'Learn',
-              to: '#',
+              to: 'https://libra.org/en-US/learn-faqs/',
             },
             {
               label: 'Association',
-              to: '#',
+              to: 'https://libra.org/en-US/association/',
             },
             {
               label: 'Media',
-              to: '#',
+              to: 'https://libra.org/en-US/media-press-news/',
             },
           ]
         },
@@ -37,15 +37,15 @@ module.exports = {
           items: [
             {
               label: 'Developers',
-              to: '#',
+              to: 'https://libra.org/en-US/developers/',
             },
             {
               label: 'White Paper',
-              to: '#',
+              to: 'https://libra.org/en-US/white-paper/',
             },
             {
               label: 'Careers',
-              to: '#',
+              to: 'https://libra.org/en-US/careers/',
             },
           ],
         },
@@ -54,42 +54,42 @@ module.exports = {
           items: [
             {
               label: 'Privacy',
-              to: '#',
+              to: 'https://libra.org/en-US/privacy/',
             },
             {
               label: 'Cookies',
-              to: '#',
+              to: 'https://libra.org/en-US/privacy/#cookies_policy',
             },
             {
               label: 'Terms of Use',
-              to: '#',
+              to: 'https://libra.org/en-US/privacy/#terms_of_use',
             },
             {
               label: 'Code of Conduct',
-              to: '#',
+              to: 'https://developers.libra.org/docs/policies/code-of-conduct',
             },
           ],
         },
       ],
       socialLinks: [
         {
-          to: '#',
+          to: 'https://www.facebook.com/LibraAssociation/',
           icon: '/img/shared/footer/facebook.svg'
         },
         {
-          to: '#',
+          to: 'https://www.linkedin.com/company/libra-association/',
           icon: '/img/shared/footer/linked-in.svg'
         },
         {
-          to: '#',
+          to: 'https://twitter.com/libradev',
           icon: '/img/shared/footer/twitter.svg'
         },
         {
-          to: '#',
+          to: 'https://www.instagram.com/libra/',
           icon: '/img/shared/footer/instagram.svg'
         },
         {
-          to: '#',
+          to: 'https://github.com/libra/libra',
           icon: '/img/shared/footer/github.svg'
         },
       ],
