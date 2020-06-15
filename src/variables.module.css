@@ -50,6 +50,7 @@ html {
   --gray-2: #A3ACB9;
   --gray-3: #A9A9A9;
   --gray-4: #7F8FA4;
+  --gray-5: #737387; /* passes AA for small text on white background  */
   --light-gray-1: #BFC7D2;
   --dark-mode-white-ghost: #FAFAFA;
   --default-background-color: white;

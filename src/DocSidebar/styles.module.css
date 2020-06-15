@@ -263,7 +263,7 @@ html[data-theme='dark'] {
 
 :root {
   --search-placeholder-color: var(--primary-gray);
-  --sidebar-gray: var(--gray-1);
+  --sidebar-gray: var(--gray-5);
   --sidebar-horizontal-padding: 30px;
   --sidebar-primary-title: #1c1e21;
   --sidenav-secondary-category-title: black;
