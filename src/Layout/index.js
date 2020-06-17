@@ -12,7 +12,7 @@ import Nav from '../Nav';
 import Footer from '../Footer';
 
 import classnames from 'classnames';
-import './styles.css';
+import styles from './styles.module.css';
 import '../universal.css';
 
 // Provided via plugins/react-axe-ada-monitoring

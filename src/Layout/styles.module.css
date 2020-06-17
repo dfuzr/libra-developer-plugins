@@ -1,4 +1,4 @@
-@value large-tablet-breakpoint-size from '~libra-components/src/variables.module.css';
+@value large-tablet-breakpoint-max-query from '~libra-components/src/variables.module.css';
 
 html,
 body {
@@ -11,28 +11,21 @@ body {
   min-height: 100vh;
 }
 
-#__docusaurus {
+:global(#__docusaurus) {
   min-height: 100%;
   display: flex;
   flex-direction: column;
 }
 
-.width-wrapper {
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 1440px;
-  width: 100%;
-}
-
-.main-wrapper {
+:global(.main-wrapper) {
   flex: 1 0 auto;
 }
 
-.nav-spacer {
+.navSpacer {
   height: var(--total-nav-height);
 }
 
-.nav-pusher {
+.navPusher {
   display: flex;
   flex-direction: column;
   margin-top: 1px;
@@ -40,9 +33,8 @@ body {
   height: calc(100vh - var(--total-nav-height) );
 }
 
-@media (max-width: 1024px) {
-  .main-wrapper > div {
+@media large-tablet-breakpoint-max-query {
+  :global(.main-wrapper) > div {
     display: inherit !important;
   }
 }
-
