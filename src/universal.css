@@ -24,6 +24,13 @@ main > .container.padding-vert--lg  {
   padding-top: 0 !important;
 }
 
+.width-wrapper {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1440px;
+  width: 100%;
+}
+
 article header h1 {
   margin-bottom: 11px;
 }
@@ -76,13 +83,13 @@ article h1,
  * The original class is written for reference
  * This may break upon further updates.
  */
-.main-wrapper.is-doc-page > div { /* .docPage */
+.main-wrapper > div { /* .docPage */
   color: var(--doc-primary);
   display: flex;
 }
 
 /*.docSidebarContainer {*/
-.main-wrapper.is-doc-page > div > div:first-child:not(.row) { /* .docSidebarContainer */
+.main-wrapper > div > div:first-child:not(.row) { /* .docSidebarContainer */
   box-sizing: border-box;
   width: 302px;
   margin-top: 0;
