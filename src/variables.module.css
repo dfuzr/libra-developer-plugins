@@ -46,11 +46,13 @@ html {
   --dark-mode-black-lighter: #3C4357;
   --dark-mode-black-darker: #131313;
   --dark-mode-black-darkest: #191F36;
+  --doc-secondary-color: var(--gray-6);
   --gray-1: #969CA5;
   --gray-2: #A3ACB9;
   --gray-3: #A9A9A9;
   --gray-4: #7F8FA4;
   --gray-5: #737387; /* passes AA for small text on white background  */
+  --gray-6: #354052;
   --light-gray-1: #BFC7D2;
   --dark-mode-white-ghost: #FAFAFA;
   --default-background-color: white;
@@ -64,6 +66,8 @@ html {
   --snippet-copy-color: #6B7689;
   --snippet-copy-url: url('/img/copy.svg');
   --scrollbar-width: 10px; /* TODO: Look into accounting varying browser widths of scrollbar */
+  /* z-index */
+  --z-just-above: 10;
   /* Misc */
   --font-bold: NB International Pro Bold, NB International Pro, Helvetica;
 }
@@ -74,6 +78,7 @@ html[data-theme='dark'] {
   --default-background-color: var(--dark-mode-black-darkest);
   --default-border-color: var(--dark-mode-black-lighter);
   --doc-component-background: var(--dark-mode-black-lighter);
+  --doc-secondary-color: var(--gray-2);
   --primary-gray: var(--gray-2);
   /* Component specific colors */
   --ifm-link-hover-color: white;
