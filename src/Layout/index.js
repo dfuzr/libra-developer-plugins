@@ -15,6 +15,8 @@ import classnames from 'classnames';
 import styles from './styles.module.css';
 import '../universal.css';
 
+export const OVERFLOW_CONTAINER_CLASS = styles.navPusher;
+
 // Provided via plugins/react-axe-ada-monitoring
 if (TEST_ADA) {
   var axe = require('react-axe');
@@ -40,7 +42,6 @@ function Layout(props) {
     permalink,
     version,
   } = props;
-  console.log('contain width?', containWidth);
   const metaTitle = title ? `${title} | ${siteTitle}` : siteTitle;
 
   const metaImage = image || defaultImage;
@@ -85,9 +86,9 @@ function Layout(props) {
         <AnnouncementBar />
         <div>
           <Nav />
-          <div className="nav-spacer"></div>
+          <div className={styles.navSpacer}></div>
         </div>
-        <div className="nav-pusher">
+        <div className={OVERFLOW_CONTAINER_CLASS}>
           <div className={classnames("main-wrapper", {
             "width-wrapper": containWidth,
           })}>
