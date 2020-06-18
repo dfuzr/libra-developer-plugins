@@ -3,10 +3,18 @@
   padding: 20px var(--right-sidebar-horizontal-padding);
 }
 
+.root > .category {
+  padding: 0;
+}
+
+.category > .category > .heading > a {
+  padding-bottom: 13px;
+}
+
 .title, .contentsLink {
   color: var(--toc-color);
   display: block;
-  padding-bottom: 13px;
+  padding-bottom: 7px;
 }
 
 .title {
@@ -22,7 +30,7 @@
 }
 
 .category {
-  padding: 0;
+  padding: 0 10px;
 }
 
 html[data-theme='dark'] {
