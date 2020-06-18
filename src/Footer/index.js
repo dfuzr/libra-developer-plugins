@@ -5,8 +5,9 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 import Logo from 'img/shared/logo.svg';
-import universalConfig from '../universal-config';
 import SocialLinks from './SocialLinks';
+import universalConfig from '../universal-config';
+import {WithBackgroundImage} from 'libra-components';
 
 import classnames from 'classnames';
 import styles from './styles.module.css';
@@ -37,6 +38,16 @@ const Footer = () => {
           ))}
           <div className={styles.connect}>
             <SocialLinks links={socialLinks} />
+            <WithBackgroundImage 
+              className={styles.newsletter}
+              href="https://developers.libra.org/newsletter_form"
+              imageLight="/img/shared/newsletter.svg"
+              tag="a" 
+              target="_blank"
+              type="button"
+            >
+              Join the Newsletter
+            </WithBackgroundImage>
           </div>
         </div>
         <div className={styles.copyright}>{copyright}</div>
