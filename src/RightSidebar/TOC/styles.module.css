@@ -26,7 +26,7 @@
 }
 
 html[data-theme='dark'] {
-  --toc-color: var(--dark-mode-gray-2);
+  --toc-color: var(--gray-2);
 }
 
 :root {

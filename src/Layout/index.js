@@ -11,6 +11,7 @@ import AnnouncementBar from '@theme/AnnouncementBar';
 import Nav from '../Nav';
 import Footer from '../Footer';
 
+import classnames from 'classnames';
 import './styles.css';
 import '../universal.css';
 
@@ -29,6 +30,7 @@ function Layout(props) {
     url: siteUrl,
   } = siteConfig;
   const {
+    containWidth = true,
     children,
     title,
     noFooter,
@@ -38,6 +40,7 @@ function Layout(props) {
     permalink,
     version,
   } = props;
+  console.log('contain width?', containWidth);
   const metaTitle = title ? `${title} | ${siteTitle}` : siteTitle;
 
   const metaImage = image || defaultImage;
@@ -77,6 +80,7 @@ function Layout(props) {
             <meta property="og:url" content={siteUrl + permalink} />
           )}
           <meta name="twitter:card" content="summary_large_image" />
+          <script type="text/javascript" src="/js/segment.js" />
         </Head>
         <AnnouncementBar />
         <div>
@@ -84,7 +88,11 @@ function Layout(props) {
           <div className="nav-spacer"></div>
         </div>
         <div className="nav-pusher">
-          <div className="main-wrapper width-wrapper">{children}</div>
+          <div className={classnames("main-wrapper", {
+            "width-wrapper": containWidth,
+          })}>
+            {children}
+          </div>
           {!noFooter && <Footer />}
         </div>
       </TabGroupChoiceProvider>

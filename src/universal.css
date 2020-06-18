@@ -51,6 +51,15 @@ article h1,
   font-weight: normal;
 }
 
+article h1,
+.markdown > h2,
+.markdown > h3,
+.markdown > h4,
+.markdown > h5,
+.markdown > h6 {
+  position: relative;
+}
+
 .markdown > p {
   color: var(--doc-secondary-color);
   font-size: 18px;
@@ -58,26 +67,35 @@ article h1,
   margin: 11px 0;
 }
 
+.markdown > ul > li {
+  list-style: initial;
+}
+
 /*
  * These are selectors for the classes in DocPage
  * The original class is written for reference
  * This may break upon further updates.
  */
-.main-wrapper > div { /* .docPage */
+.main-wrapper.is-doc-page > div { /* .docPage */
   color: var(--doc-primary);
   display: flex;
 }
 
 /*.docSidebarContainer {*/
-.main-wrapper > div > div:first-child:not(.row) { /* .docSidebarContainer */
+.main-wrapper.is-doc-page > div > div:first-child:not(.row) { /* .docSidebarContainer */
   box-sizing: border-box;
   width: 302px;
+  margin-top: 0;
   position: relative;
 }
 
 main { /* docMainContainer */
   flex: 1;
   flex-grow: 1;
+}
+
+main > div:first-child > div:first-child {
+  flex: 1;
 }
 
 /* Fonts */

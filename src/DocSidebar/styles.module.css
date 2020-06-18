@@ -235,15 +235,15 @@
 }
 
 html[data-theme='dark'] {
-  --search-placeholder-color: var(--dark-mode-gray-2);
-  --sidebar-gray: var(--dark-mode-gray-1);
-  --sidebar-primary-title: var(--dark-mode-gray-2);
+  --search-placeholder-color: var(--gray-2);
+  --sidebar-gray: var(--gray-1);
+  --sidebar-primary-title: var(--gray-2);
   --sidenav-secondary-category-title: var(--sidebar-gray);
 }
 
 :root {
   --search-placeholder-color: var(--primary-gray);
-  --sidebar-gray: var(--dark-mode-gray-1);
+  --sidebar-gray: var(--gray-1);
   --sidebar-horizontal-padding: 30px;
   --sidebar-primary-title: #1c1e21;
   --sidenav-secondary-category-title: black;

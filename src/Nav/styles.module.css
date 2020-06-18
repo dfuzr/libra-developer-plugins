@@ -25,10 +25,10 @@
 html[data-theme='dark'] {
   --nav-menu-icon-fill: white;
   --nav-page-indicator-primary: white;
-  --nav-page-indicator-secondary: var(--dark-mode-gray-1);
+  --nav-page-indicator-secondary: var(--gray-1);
   --nav-primary-text-color: white;
   --nav-secondary-background: #2A3045;
-  --nav-secondary-text-color: var(--dark-mode-gray-1);
+  --nav-secondary-text-color: var(--gray-1);
 }
 
 html {
