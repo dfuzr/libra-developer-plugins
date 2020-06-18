@@ -22,7 +22,7 @@ const SubnavMobile = ({activePopupMenu, setPopupMenu}) => {
       <div className={styles.mainContainer}>
         <PageIndicator />
         <NavMenuIcon
-          cb={() => {setPopupMenu('secondary')}}
+          onClick={() => {setPopupMenu('secondary')}}
           CloseIcon={CloseIcon}
           isOpen={activePopupMenu === 'secondary'}
           OpenIcon={OpenIcon}
