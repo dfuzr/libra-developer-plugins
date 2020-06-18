@@ -42,16 +42,16 @@ article h1 {
 }
 
 .markdown > h2 {
+  font-size: 22px;
   margin-top: 37px;
   margin-bottom: 25px;
 }
 
-.markdown > h2 {
+.markdown > h3 {
   font-size: 18px;
 }
 
 article h1,
-.markdown > h3,
 .markdown > h4,
 .markdown > h5,
 .markdown > h6 {
@@ -85,11 +85,10 @@ article h1,
  */
 .main-wrapper > div { /* .docPage */
   color: var(--doc-primary);
-  display: flex;
 }
 
 /*.docSidebarContainer {*/
-.main-wrapper > div > div:first-child:not(.row) { /* .docSidebarContainer */
+.main-wrapper > div > div:first-child:not(.row):not(#disable-ad-block) { /* .docSidebarContainer */
   box-sizing: border-box;
   width: 302px;
   margin-top: 0;

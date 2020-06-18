@@ -9,7 +9,7 @@ const LINK_CLASS_NAME = styles['contentsLink'];
 const ACTIVE_LINK_CLASS_NAME = 'contents__link--active';
 const TOP_OFFSET = 140;
 
-function Headings({headings, isChild}) {
+function Headings({ headings, isChild }) {
   if (!headings.length) {
     return null;
   }
@@ -29,7 +29,7 @@ function Headings({headings, isChild}) {
   );
 }
 
-const TOC = ({headings}) => {
+const TOC = ({ headings }) => {
   useTOCHighlight(LINK_CLASS_NAME, ACTIVE_LINK_CLASS_NAME, TOP_OFFSET);
   return (
     <div className={styles.root}>

@@ -1,5 +1,5 @@
 import React, {useState, useCallback} from 'react';
-import {WithBackgroundImage} from 'libra-components';
+import { WithBackgroundImage } from 'libra-components';
 
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import useLockBodyScroll from '@theme/hooks/useLockBodyScroll';
