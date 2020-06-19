@@ -4,8 +4,9 @@ import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-import universalConfig from '../universal-config';
 import Logo from 'img/shared/logo.svg';
+import universalConfig from '../universal-config';
+import SocialLinks from './SocialLinks';
 
 import classnames from 'classnames';
 import styles from './styles.module.css';
@@ -35,15 +36,7 @@ const Footer = () => {
             </ul>
           ))}
           <div className={styles.connect}>
-            <ul className={styles.social}>
-              {socialLinks.map(({ icon, to }) => (
-                <li>
-                  <a href={to}>
-                    <img src={icon} />
-                  </a>
-                </li>
-              ))}
-            </ul>
+            <SocialLinks links={socialLinks} />
           </div>
         </div>
         <div className={styles.copyright}>{copyright}</div>

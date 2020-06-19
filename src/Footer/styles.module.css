@@ -2,7 +2,6 @@
 @value large-desktop-breakpoint-query from '~libra-components/src/variables.module.css';
 
 footer {
-  background-color: white;
   padding: 0 var(--body-horizontal-padding) 85px var(--body-horizontal-padding);
 }
 
@@ -25,6 +24,7 @@ footer ul {
 }
 
 .logo svg {
+  fill: var(--accent-highlight);
   padding-bottom: 57px;
   width: 140px;
 }
@@ -38,17 +38,7 @@ footer ul {
 }
 
 li.primary a {
-  color: var(--brand-color);
-}
-
-.social {
-  display: flex;
-  padding-top: 50px;
-  padding-left: 0;
-}
-
-.social > li:not(:first-child) {
-  padding-left: 28px;
+  color: var(--accent-highlight);
 }
 
 li.secondary a, .copyright {
@@ -102,15 +92,6 @@ li.secondary a, .copyright {
   .container > .connect {
     flex-basis: 242px;
     padding-left: 20px;
-  }
-
-  .social {
-    justify-content: space-between;
-    padding-top: 0;
-  }
-
-  .social > li:not(:first-child) {
-    padding-left: 0;
   }
 
   .copyright {

@@ -71,28 +71,13 @@ module.exports = {
           ],
         },
       ],
-      socialLinks: [
-        {
-          to: 'https://www.facebook.com/LibraAssociation/',
-          icon: '/img/shared/footer/facebook.svg'
-        },
-        {
-          to: 'https://www.linkedin.com/company/libra-association/',
-          icon: '/img/shared/footer/linked-in.svg'
-        },
-        {
-          to: 'https://twitter.com/libradev',
-          icon: '/img/shared/footer/twitter.svg'
-        },
-        {
-          to: 'https://www.instagram.com/libra/',
-          icon: '/img/shared/footer/instagram.svg'
-        },
-        {
-          to: 'https://github.com/libra/libra',
-          icon: '/img/shared/footer/github.svg'
-        },
-      ],
+      socialLinks: {
+        facebook: 'https://www.facebook.com/LibraAssociation/',
+        linkedIn: 'https://www.linkedin.com/company/libra-association/',
+        twitter: 'https://twitter.com/libradev',
+        instagram: 'https://www.instagram.com/libra/',
+        github: 'https://github.com/libra/libra',
+      },
       copyright: `©${new Date().getFullYear()} Libra Association`,
     },
     navbar: {
