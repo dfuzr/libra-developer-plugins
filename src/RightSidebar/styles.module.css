@@ -11,43 +11,24 @@
 .root {}
 
 .root {
-  display: flex;
-  flex-direction: column-reverse;
-  justify-content: center;
-}
-
-.primary {
-  color: var(--nav-page-indicator-primary);
-  font-size: 18px;
-  font-weight: 700;
-}
-
-.root b {
-  font-family: var(--font-bold);
-}
-
-.divider {
-  color: var(--nav-page-indicator-secondary);
+  --right-sidebar-horizontal-padding: 29px;
+  border-left-color: var(--default-border-color);
+  border-left-style: solid;
+  border-left-width: 1px;
   display: none;
-  margin: 0 7px;
-}
-
-.secondary {
-  color: var(--nav-page-indicator-secondary);
-  font-size: 12px;
-  line-height: 12px;
+  flex-shrink: 0;
+  max-height: calc(100vh - (var(--ifm-navbar-height) + 2rem));
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 0;
+  position: sticky;
+  right: 0;
+  top: 0;
+  width: 252px;
 }
 
 @media large-tablet-breakpoint-query {
   .root {
     display: block;
-  }
-
-  .divider {
-    display: inline-block;
-  }
-
-  .secondary {
-    font-size: 14px;
   }
 }

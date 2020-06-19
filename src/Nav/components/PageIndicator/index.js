@@ -1,23 +1,21 @@
 import React from 'react';
 
-import Context from '../../context';
+import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 
 import styles from './styles.module.css';
 
-class PageIndicator extends React.Component {
-  render() {
-    const {siteTitle} = this.context;
+const PageIndicator = () => {
+  const {siteConfig: {themeConfig: {navbar: {
+    title,
+  }}}} = useDocusaurusContext();
 
-    return (
-      <div className={styles.root}>
-        <span className={styles.primary}><b>Developers</b></span>
-        <span className={styles.divider}> / </span>
-        <span className={styles.secondary}>{siteTitle}</span>
-      </div>
-    );
-  }
+  return (
+    <div className={styles.root}>
+      <span className={styles.primary}><b>Developers</b></span>
+      <span className={styles.divider}> / </span>
+      <span className={styles.secondary}>{title}</span>
+    </div>
+  );
 };
-
-PageIndicator.contextType = Context;
 
 export default PageIndicator;

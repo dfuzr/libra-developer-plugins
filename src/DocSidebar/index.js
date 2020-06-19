@@ -1,14 +1,12 @@
 import React, {useState, useCallback} from 'react';
+import {WithBackgroundImage} from 'libra-docusaurus';
 
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import useLockBodyScroll from '@theme/hooks/useLockBodyScroll';
 import useLogo from '@theme/hooks/useLogo';
 import Link from '@docusaurus/Link';
 import SearchBar from '@theme/SearchBar';
-import useBaseUrl from '@docusaurus/useBaseUrl';
 import isInternalUrl from '@docusaurus/isInternalUrl';
-
-import WithBackgroundImage from 'components/WithBackgroundImage';
 
 import classnames from 'classnames';
 import styles from './styles.module.css';

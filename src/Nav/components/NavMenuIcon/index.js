@@ -1,7 +1,7 @@
 import React, {useEffect, useRef} from 'react';
 import styles from './styles.module.css';
 
-const NavMenuIcon = ({ cb, closeIcon, isOpen, openIcon }) => {
+const NavMenuIcon = ({ cb, CloseIcon, isOpen, OpenIcon }) => {
   let iconRef;
   const isOpenRef = useRef(null);
   isOpenRef.current = isOpen;
@@ -15,12 +15,12 @@ const NavMenuIcon = ({ cb, closeIcon, isOpen, openIcon }) => {
     });
   }, []);
 
+  const Icon = isOpen ? CloseIcon : OpenIcon;
+
   return (
-    <img
-      className={styles.root}
-      ref={el => iconRef = el}
-      src={isOpen ? closeIcon : openIcon}
-    />
+    <div ref={el => iconRef = el}>
+      <Icon className={styles.root} />
+    </div>
   );
 };
 

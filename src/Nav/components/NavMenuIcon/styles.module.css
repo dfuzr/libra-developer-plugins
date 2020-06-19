@@ -1,3 +1,9 @@
+.root {}
+
 .root {
   cursor: pointer;
+}
+
+.root path {
+  fill: var(--nav-menu-icon-fill);
 }

@@ -1,3 +1,6 @@
+@value large-tablet-breakpoint-size from '~libra-docusaurus/src/variables.module.css';
+
+
 html,
 body {
   height: 100%;
@@ -31,7 +34,16 @@ body {
 }
 
 .nav-pusher {
+  display: flex;
+  flex-direction: column;
   margin-top: 1px;
   overflow-y: scroll;
   height: calc(100vh - var(--total-nav-height) );
 }
+
+@media (max-width: 1024px) {
+  .main-wrapper > div {
+    display: inherit !important;
+  }
+}
+

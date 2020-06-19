@@ -1,20 +1,21 @@
-import React, {useState} from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
+
 import useBaseUrl from '@docusaurus/useBaseUrl';
-import SearchBar from '@theme/SearchBar';
 
-import config from '../../../config';
-
+import universalConfig from '../../../universal-config';
+import CloseIcon from '../../../../img/chevron-pressed.svg';
 import NavMenuIcon from '../../components/NavMenuIcon';
+import OpenIcon from '../../../../img/chevron-down.svg';
 import PageIndicator from '../../components/PageIndicator';
 import PopupMenu from '../../components/PopupMenu';
+
 import styles from './styles.module.css';
 
-const SubnavMobile = ({activePopupMenu, enableSearch, setPopupMenu}) => {
-  const { themeConfig } = config;
-  const [isSearchBarExpanded, setIsSearchBarExpanded] = useState(false);
-  const {navbar} = themeConfig;
-  const {cornerLink, secondaryLinks, logo} = navbar;
+const SubnavMobile = ({activePopupMenu, setPopupMenu}) => {
+  const { themeConfig: { navbar: {
+    cornerLink, secondaryLinks, logo
+  }}} = universalConfig;
 
   return (
     <div>
@@ -22,24 +23,16 @@ const SubnavMobile = ({activePopupMenu, enableSearch, setPopupMenu}) => {
         <PageIndicator />
         <NavMenuIcon
           cb={() => {setPopupMenu('secondary')}}
-          closeIcon={useBaseUrl('img/chevron-pressed.svg')}
+          CloseIcon={CloseIcon}
           isOpen={activePopupMenu === 'secondary'}
-          openIcon={useBaseUrl('img/chevron-down.svg')}
+          OpenIcon={OpenIcon}
         />
       </div>
       {activePopupMenu === 'secondary' && 
         <PopupMenu 
           links={secondaryLinks} 
-          onClick={e => e.stopPropagation()}>
-          <div className={styles.search}>
-            {enableSearch &&
-              <SearchBar
-                handleSearchBarToggle={setIsSearchBarExpanded}
-                isSearchBarExpanded={isSearchBarExpanded}
-              />
-            }
-          </div>
-        </PopupMenu>
+          onClick={e => e.stopPropagation()}
+        />
       }
     </div>
   );
@@ -47,7 +40,6 @@ const SubnavMobile = ({activePopupMenu, enableSearch, setPopupMenu}) => {
 
 SubnavMobile.propTypes = {
   activePopupMenu: PropTypes.string,
-  enableSearch: PropTypes.bool,
   setPopupMenu: PropTypes.func.isRequired,
 };
 

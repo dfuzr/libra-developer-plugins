@@ -1,4 +1,14 @@
-@value large-tablet-breakpoint-query from '~CSS/variables.module.css';
+@value large-tablet-breakpoint-query from '~libra-docusaurus/src/variables.module.css';
+
+/*
+ * For some reason, importing the variable above causes
+ * the next style to be ignored. This seems like a webpack
+ * bug, so for the sake of time I'm putting in this 
+ * quick fix (having a blank style before the real one)
+ * and hoping that the bug resolves on its own with a future
+ * update of CSS variables/webpack
+ */
+.root {}
 
 /* Search */
 :global(.navbar__search) {
@@ -6,7 +16,9 @@
     var(--sidebar-width) - 
     (var(--sidebar-horizontal-padding) * 2 )
   );
-  border-bottom: 1px solid var(--default-border-color);
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  border-bottom-color: var(--default-border-color);
 }
 
 :global(.ds-dropdown-menu) {
@@ -30,10 +42,10 @@
   border: 0;
   color: var(--primary-gray);
   font-size: 18px;
-  height: 60px !important;
+  height: 58px !important;
   padding-left: calc( var(--icon-size) + 10px );
   -webkit-appearance: none;
-  background-image: url(/img/search.svg);
+  background-image: url(/img/shared/search.svg);
 }
 
 :global(#search_input_react:focus) {
@@ -47,7 +59,8 @@
 }
 
 .menu {
-  padding: 0 var(--sidebar-horizontal-padding);
+  font-weight: normal;
+  padding: 0 20px 0 var(--sidebar-horizontal-padding);
 }
 
 .sidebar .menu:not(:global(.menu--show)) .menuList, 
@@ -89,6 +102,10 @@
   align-self: center;
 }
 
+.menu > .menuList > .listItem {
+  margin-left: 3px;
+}
+
 .menuLink:focus {
   outline: none;
 }
@@ -120,16 +137,20 @@
 }
                                                                                                                   
 .menu .backToHome {
-  margin-top: 3em;
+  margin-top: 34px;
+}
+
+.menu .backToHome .withBackgroundImage {
+  padding-left: calc( var(--icon-size) + .5em );
 }
 
 .menu .backToHome span {
   color: var(--sidebar-gray);
   font-size: 18px;
-  margin-top: -3px;
+  margin-top: -2px;
 }
 
-.menu .label {
+.menu .spacer {
   margin-top: 2.9em;
   margin-bottom: 2.2em;
 }
@@ -169,7 +190,7 @@
 }
 
 .category ul.secondary > .categoryTitle > .menuLink {
-  color: black;
+  color: var(--sidenav-secondary-category-title);
   padding-top: .2em;
   padding-bottom: .5em;
 }
@@ -203,3 +224,27 @@
     width: calc(100% + 2 * var(--sidebar-horizontal-padding));
   }
 }
+
+/* This has to go down here, otherwise it breaks prevents all other styles */
+::placeholder {
+  color: var(--search-placeholder-color);
+};
+
+::-ms-input-placeholder  {
+  color: var(--search-placeholder-color);
+}
+
+html[data-theme='dark'] {
+  --search-placeholder-color: var(--dark-mode-gray-2);
+  --sidebar-gray: var(--dark-mode-gray-1);
+  --sidebar-primary-title: var(--dark-mode-gray-2);
+  --sidenav-secondary-category-title: var(--sidebar-gray);
+}
+
+:root {
+  --search-placeholder-color: var(--primary-gray);
+  --sidebar-gray: var(--dark-mode-gray-1);
+  --sidebar-horizontal-padding: 30px;
+  --sidebar-primary-title: #1c1e21;
+  --sidenav-secondary-category-title: black;
+};

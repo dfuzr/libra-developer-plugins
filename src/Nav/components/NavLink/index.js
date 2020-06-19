@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 
 import isInternalUrl from '@docusaurus/isInternalUrl';
 import useBaseUrl from '@docusaurus/useBaseUrl';
-
-import Context from '../../context';
+import useThemeContext from '@theme/hooks/useThemeContext';
+import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 
 import classNames from 'classnames';
 import styles from './styles.module.css';
@@ -14,31 +14,27 @@ export const BUTTON_TYPES = {
   CTA: 'cta',
 }
 
-class NavLink extends React.Component {
-  render() {
-    const { id, isExternal, label, to, type } = this.props;
-    const { siteID } = this.context;
+const NavLink = ({ id, isExternal, label, to, type }) => {
+  const {siteConfig: {themeConfig}} = useDocusaurusContext();
+  const {siteID} = themeConfig;
+  
+  const href = isInternalUrl(to) ? useBaseUrl(to) : to;
 
-    const href = isInternalUrl(to) ? useBaseUrl(to) : to;
-
-    return (
-      <li className={classNames(
-        styles.root,
-        styles[type],
-        {[styles.active]: isInternalUrl(href) || siteID === id},
-      )}>
-        <a 
-          href={href} 
-          target={isExternal ? "_blank" : "_self"}
-        >
-          {label}
-        </a>
-      </li>
-    );
-  }
+  return (
+    <li className={classNames(
+      styles.root,
+      styles[type],
+      {active: isInternalUrl(href) || siteID === id},
+    )}>
+      <a 
+        href={href} 
+        target={isExternal ? "_blank" : "_self"}
+      >
+        {label}
+      </a>
+    </li>
+  );
 }
-
-NavLink.contextType = Context;
 
 NavLink.propTypes = {
   isExternal: PropTypes.bool,

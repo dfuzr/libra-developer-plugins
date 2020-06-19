@@ -1,3 +1,15 @@
+@value large-tablet-breakpoint-query from '~libra-docusaurus/src/variables.module.css';
+
+/*
+ * For some reason, importing the variable above causes
+ * the next style to be ignored. This seems like a webpack
+ * bug, so for the sake of time I'm putting in this 
+ * quick fix (having a blank style before the real one)
+ * and hoping that the bug resolves on its own with a future
+ * update of CSS variables/webpack
+ */
+.root {}
+
 .root {
   font-size: 14px;
   position: fixed;
@@ -5,6 +17,36 @@
   z-index: 10;
 }
 
-.logo, .logo img {
+.logo, .logo svg {
   height: 21px;
+  fill: var(--accent-highlight);
+}
+
+html[data-theme='dark'] {
+  --nav-menu-icon-fill: white;
+  --nav-page-indicator-primary: white;
+  --nav-page-indicator-secondary: var(--dark-mode-gray-1);
+  --nav-primary-text-color: white;
+  --nav-secondary-background: #2A3045;
+  --nav-secondary-text-color: var(--dark-mode-gray-1);
+}
+
+html {
+  --nav-menu-icon-fill: rgb(53, 64, 82);
+  --nav-secondary-background: #F9F8F8;
+  --nav-secondary-text-color: black;
+  --nav-black: #414f64;
+  --nav-page-indicator-primary: #354052;
+  --nav-page-indicator-secondary: #5F7186;
+  --nav-primary-text-color: #42318c;
+  --primary-nav-height: 60px;
+  --subnav-height: 60px;
+  --nav-horizontal-padding: var(--body-horizontal-padding);
+  --total-nav-height: calc( var(--primary-nav-height) + var(--subnav-height) ); 
+}
+
+@media large-tablet-breakpoint-query {
+  :root {
+    --primary-nav-height: 80px;
+  };
 }
