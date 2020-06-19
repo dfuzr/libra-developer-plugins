@@ -9,6 +9,92 @@ module.exports = {
       alt: 'Libra Logo',
       to: 'https://libra.org/'
     },
+    footer: {
+      links: [
+        {
+          type: 'primary',
+          items: [
+            {
+              label: 'Vision',
+              to: 'https://libra.org/en-US/vision/',
+            },
+            {
+              label: 'Learn',
+              to: 'https://libra.org/en-US/learn-faqs/',
+            },
+            {
+              label: 'Association',
+              to: 'https://libra.org/en-US/association/',
+            },
+            {
+              label: 'Media',
+              to: 'https://libra.org/en-US/media-press-news/',
+            },
+          ]
+        },
+        {
+          type: 'primary',
+          items: [
+            {
+              label: 'Developers',
+              to: 'https://libra.org/en-US/developers/',
+            },
+            {
+              label: 'White Paper',
+              to: 'https://libra.org/en-US/white-paper/',
+            },
+            {
+              label: 'Careers',
+              to: 'https://libra.org/en-US/careers/',
+            },
+          ],
+        },
+        {
+          type: 'secondary',
+          items: [
+            {
+              label: 'Privacy',
+              to: 'https://libra.org/en-US/privacy/',
+            },
+            {
+              label: 'Cookies',
+              to: 'https://libra.org/en-US/privacy/#cookies_policy',
+            },
+            {
+              label: 'Terms of Use',
+              to: 'https://libra.org/en-US/privacy/#terms_of_use',
+            },
+            {
+              label: 'Code of Conduct',
+              to: 'https://developers.libra.org/docs/policies/code-of-conduct',
+            },
+          ],
+        },
+      ],
+      socialLinks: [
+        {
+          to: 'https://www.facebook.com/LibraAssociation/',
+          icon: '/img/shared/footer/facebook.svg'
+        },
+        {
+          to: 'https://www.linkedin.com/company/libra-association/',
+          icon: '/img/shared/footer/linked-in.svg'
+        },
+        {
+          to: 'https://twitter.com/libradev',
+          icon: '/img/shared/footer/twitter.svg'
+        },
+        {
+          to: 'https://www.instagram.com/libra/',
+          icon: '/img/shared/footer/instagram.svg'
+        },
+        {
+          to: 'https://github.com/libra/libra',
+          icon: '/img/shared/footer/github.svg'
+        },
+      ],
+      copyright: `©${new Date().getFullYear()} Libra Association`,
+    },
     navbar: {
       title: 'Libra Developers',
       logo: {
