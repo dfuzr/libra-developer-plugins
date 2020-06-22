@@ -99,7 +99,7 @@ html[data-theme='dark'] {
 @media desktop-breakpoint-query {
   html {
     --doc-padding-top: 30px;
-    --doc-padding-right: 28px;
+    --doc-padding-right: 38px;
     --doc-padding-bottom: 0;
     --doc-padding-left: 38px;
   }
@@ -108,7 +108,7 @@ html[data-theme='dark'] {
 @media large-desktop-breakpoint-query {
   html {
     --doc-padding-top: 52px;
-    --doc-padding-right: 40px;
+    --doc-padding-right: 65px;
     --doc-padding-bottom: 0;
     --doc-padding-left: 65px;
   }

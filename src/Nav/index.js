@@ -4,7 +4,7 @@ import { BreakpointProvider, setDefaultBreakpoints } from 'react-socks';
 import PrimaryNav from './PrimaryNav';
 import SubNav from './SubNav';
 
-import Variables from 'libra-components/src/variables.module.css'
+import Variables from 'libra-docusaurus/src/variables.module.css'
 import styles from './styles.module.css';
 
 setDefaultBreakpoints([
