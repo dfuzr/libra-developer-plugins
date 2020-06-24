@@ -1,4 +1,5 @@
 @value large-tablet-breakpoint-query from '~libra-docusaurus/src/variables.module.css';
+@value large-desktop-breakpoint-query from '~libra-docusaurus/src/variables.module.css';
 
 /*
  * For some reason, importing the variable above causes
@@ -22,6 +23,10 @@
   fill: var(--accent-highlight);
 }
 
+.logo {
+  padding-right: 18px;
+}
+
 html[data-theme='dark'] {
   --nav-menu-icon-fill: white;
   --nav-page-indicator-primary: white;
@@ -41,12 +46,19 @@ html {
   --nav-primary-text-color: #42318c;
   --primary-nav-height: 60px;
   --subnav-height: 60px;
-  --nav-horizontal-padding: var(--body-horizontal-padding);
+  --nav-right-padding: 35px;
+  --nav-left-padding: 20px;
   --total-nav-height: calc( var(--primary-nav-height) + var(--subnav-height) ); 
 }
 
 @media large-tablet-breakpoint-query {
-  :root {
+  html {
+    --nav-right-padding: 18px;
+    --nav-left-padding: 12px;
     --primary-nav-height: 80px;
   };
+
+  .logo {
+    padding-right: 0;
+  }
 }

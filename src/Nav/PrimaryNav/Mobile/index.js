@@ -33,7 +33,7 @@ const PrimaryMobile = ({ activePopupMenu, setPopupMenu } ) => {
         <a href={logo.href}>
           <Logo alt={logo.alt} className={navStyles.logo} />
         </a>
-        <a href={cornerLink.to}>
+        <a className={styles.cornerLink} href={cornerLink.to}>
           <CornerLink alt={cornerLink.alt} />
         </a>
       </div>

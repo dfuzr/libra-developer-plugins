@@ -31,6 +31,10 @@ main > .container.padding-vert--lg  {
   width: 100%;
 }
 
+.width-wrapper.libra-org-width {
+  max-width: 1400px;
+}
+
 article header h1 {
   margin-bottom: 11px;
 }

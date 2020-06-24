@@ -113,7 +113,6 @@ module.exports = {
         label: 'White Paper',
         to: 'https://libra.org/white-paper/',
         image: {
-          src: 'img/shared/white-paper.svg',
           alt: 'Libra Whitepaper',
         }
       },
