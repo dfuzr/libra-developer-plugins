@@ -18,7 +18,7 @@ const SubnavMobile = ({activePopupMenu, setPopupMenu}) => {
   }}} = universalConfig;
 
   return (
-    <div>
+    <div className="mobile-only">
       <div className={styles.mainContainer}>
         <PageIndicator />
         <NavMenuIcon

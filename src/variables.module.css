@@ -96,6 +96,19 @@ html[data-theme='dark'] {
   }
 }
 
+@media large-tablet-breakpoint-max-query {
+  :global(.desktop-only) {
+    display: none !important;
+  }
+}
+
+@media large-tablet-breakpoint-query {
+  :global(.mobile-only) {
+    display: none !important;
+  }
+}
+
+
 @media desktop-breakpoint-query {
   html {
     --doc-padding-top: 30px;
@@ -113,3 +126,4 @@ html[data-theme='dark'] {
     --doc-padding-left: 65px;
   }
 }
+

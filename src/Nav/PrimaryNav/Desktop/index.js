@@ -7,6 +7,7 @@ import NavLink, { BUTTON_TYPES } from '../../components/NavLink';
 import Logo from '../../../../img/logo.svg';
 import universalConfig from '../../../universal-config';
 
+import classnames from 'classnames';
 import styles from './styles.module.css';
 import navStyles from '../../styles.module.css';  
 
@@ -17,7 +18,7 @@ const PrimaryDesktop = () => {
   }}} = universalConfig;
 
   return (
-    <div className={styles.root}>
+    <div className={classnames(styles.root, "desktop-only")}>
       <a className={navStyles.logo} href={logo.href}>
         <Logo alt={logo.alt} />
       </a>

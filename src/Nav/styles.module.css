@@ -1,4 +1,5 @@
 @value large-tablet-breakpoint-query from '~libra-docusaurus/src/variables.module.css';
+@value large-tablet-breakpoint-max-query from '~libra-docusaurus/src/variables.module.css';
 @value large-desktop-breakpoint-query from '~libra-docusaurus/src/variables.module.css';
 
 /*
@@ -17,6 +18,10 @@
   width: 100%;
   z-index: 10;
 }
+
+.desktop {
+    display: none;
+  }
 
 .logo, .logo svg {
   height: 21px;
@@ -51,6 +56,10 @@ html {
   --total-nav-height: calc( var(--primary-nav-height) + var(--subnav-height) ); 
 }
 
+  
+@media larget-tablet-breakpoint-max-query {
+}
+
 @media large-tablet-breakpoint-query {
   html {
     --nav-right-padding: 18px;
@@ -60,5 +69,9 @@ html {
 
   .logo {
     padding-right: 0;
+  }
+
+  .mobile {
+    display: none;
   }
 }
