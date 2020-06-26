@@ -19,16 +19,16 @@ module.exports = {
               to: 'https://libra.org/vision/',
             },
             {
-              label: 'Learn',
-              to: 'https://libra.org/learn-faqs/',
-            },
-            {
               label: 'Association',
               to: 'https://libra.org/association/',
             },
             {
-              label: 'Media',
-              to: 'https://libra.org/media-press-news/',
+              label: 'Developers',
+              to: 'https://libra.org/developers/',
+            },
+            {
+              label: 'Learn',
+              to: 'https://libra.org/learn-faqs/',
             },
           ]
         },
@@ -36,8 +36,8 @@ module.exports = {
           type: 'primary',
           items: [
             {
-              label: 'Developers',
-              to: 'https://libra.org/developers/',
+              label: 'Media',
+              to: 'https://libra.org/media-press-news/',
             },
             {
               label: 'White Paper',

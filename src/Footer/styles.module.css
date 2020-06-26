@@ -63,13 +63,8 @@ li.secondary a, .copyright {
   max-width: 400px;
 }
 
-/*.newsletter:hover {
-  background-color: var(--accent-highlight);
-  color: white;
-}*/
-
 .copyright {
-  padding-top: 7px;
+  padding-top: 25px;
 }
 
 @media large-tablet-breakpoint-query {
@@ -90,7 +85,7 @@ li.secondary a, .copyright {
 
   .container {
     display: flex;
-    padding-top: 60px;
+    padding-top: 20px;
     padding-bottom: 40px;
   }
 

@@ -42,6 +42,7 @@ const Footer = () => {
               className={styles.newsletter}
               href="https://developers.libra.org/newsletter_form"
               imageLight="/img/shared/newsletter.svg"
+              imageDark="img/shared/newsletter-dark.svg"
               tag="a" 
               target="_blank"
               type="button"
