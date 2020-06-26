@@ -18,7 +18,7 @@ const PrimaryDesktop = () => {
   }}} = universalConfig;
 
   return (
-    <div className={classnames(styles.root, "desktop-only")}>
+    <div className={classnames(styles.root, 'desktop-only')}>
       <a className={navStyles.logo} href={logo.href}>
         <Logo alt={logo.alt} />
       </a>

@@ -13,7 +13,7 @@ const SubnavDesktop = () => {
   }}} = universalConfig;
 
   return (
-    <div className={classnames(styles.root, "desktop-only")}>
+    <div className={classnames(styles.root, 'desktop-only')}>
       <PageIndicator />
       <ul className={styles.right}>
         {secondaryLinks.map(props =>

@@ -22,7 +22,7 @@ const PrimaryMobile = ({ activePopupMenu, setPopupMenu } ) => {
   }}} = universalConfig;
 
   return (
-    <div className={classnames(styles.root, "mobile-only")}>
+    <div className={classnames(styles.root, 'mobile-only')}>
       <div className={styles.mainContainer}>
         <NavMenuIcon
           onClick={() => {setPopupMenu('primary')}}

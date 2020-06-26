@@ -12,10 +12,7 @@
 
 /* Search */
 :global(.navbar__search) {
-  --search-width: calc(
-    var(--sidebar-width) - 
-    (var(--sidebar-horizontal-padding) * 2 )
-  );
+  --search-width: calc( 100% - (var(--sidebar-horizontal-padding) * 2 ));
   border-bottom-width: 1px;
   border-bottom-style: solid;
   border-bottom-color: var(--default-border-color);
@@ -191,7 +188,7 @@
 }
 
 .secondary .listItem:not(:last-child) .menuLink {
-  padding-bottom: 8px;
+  padding-bottom: 6px;
 }
 
 .category ul.secondary {
