@@ -184,9 +184,14 @@
   margin: .35em 0;
 }
 
-.secondary .menuLink, .secondary > .menuLink {
+.secondary .menuLink {
   color: var(--sidebar-gray);
   font-size: 1.6em;
+  line-height: 1.1;
+}
+
+.secondary .listItem:not(:last-child) .menuLink {
+  padding-bottom: 8px;
 }
 
 .category ul.secondary {
