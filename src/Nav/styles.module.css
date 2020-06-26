@@ -56,14 +56,10 @@ html {
   --total-nav-height: calc( var(--primary-nav-height) + var(--subnav-height) ); 
 }
 
-  
-@media larget-tablet-breakpoint-max-query {
-}
-
 @media large-tablet-breakpoint-query {
   html {
-    --nav-right-padding: 18px;
-    --nav-left-padding: 12px;
+    --nav-right-padding: 20px;
+    --nav-left-padding: 20px;
     --primary-nav-height: 80px;
   };
 
@@ -74,4 +70,11 @@ html {
   .mobile {
     display: none;
   }
+}
+
+@media large-desktop-breakpoint-query {
+  html {
+    --nav-right-padding: 18px;
+    --nav-left-padding: 12px;
+  };
 }
