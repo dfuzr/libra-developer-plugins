@@ -1,4 +1,4 @@
-@value large-tablet-breakpoint-query from '~libra-docusaurus/src/variables.module.css';
+@value large-tablet-breakpoint-query from '~libra-components/src/variables.module.css';
 
 /*
  * For some reason, importing the variable above causes
@@ -35,21 +35,25 @@
 
 :global(#search_input_react) {
   --icon-size: 16px;
-  background-color: var(--default-background-color);
-  background-repeat: no-repeat;
-  background-size: var(--icon-size) var(--icon-size);
-  background-position: 0 50%;
+  background-color: var(--default-background-color) !important;
+  background-repeat: no-repeat !important;
+  background-size: var(--icon-size) var(--icon-size) !important;
+  background-position: 0 50% !important;
   border: 0;
   color: var(--primary-gray);
   font-size: 18px;
-  height: 58px !important;
-  padding-left: calc( var(--icon-size) + 10px );
+  height: 58px;
+  padding-left: calc( var(--icon-size) + 10px ) !important;
   -webkit-appearance: none;
-  background-image: url(/img/shared/search.svg);
+  background-image: url(/img/shared/search.svg) !important;
 }
 
 :global(#search_input_react:focus) {
   outline: none;
+}
+
+:global(.navbar__search) > :global(span.search-icon) {
+  display: none !important;
 }
 
 .sidebar {
@@ -195,6 +199,22 @@
   padding-bottom: .5em;
 }
 
+@media (max-width: 360px) { /* Corresponds with the breakpoint algolia has put in */
+  :global(#search_input_react) {
+    width: 100% !important;
+  }
+}
+
+@media (max-width: 600px) { /* Corresponds with the breakpoint algolia has put in */
+  .sidebar :global(.algolia-autocomplete) :global(.ds-dropdown-menu) {
+    top: 65px !important;
+  }
+
+  .sidebar :global(.algolia-autocomplete) :global(.ds-dropdown-menu:before) {
+    right: 1rem;
+  }
+}
+
 @media large-tablet-breakpoint-query {
   .sidebar {
     height: calc(100vh - var(--total-nav-height) );
@@ -235,15 +255,15 @@
 }
 
 html[data-theme='dark'] {
-  --search-placeholder-color: var(--dark-mode-gray-2);
-  --sidebar-gray: var(--dark-mode-gray-1);
-  --sidebar-primary-title: var(--dark-mode-gray-2);
+  --search-placeholder-color: var(--gray-2);
+  --sidebar-gray: var(--gray-1);
+  --sidebar-primary-title: var(--gray-2);
   --sidenav-secondary-category-title: var(--sidebar-gray);
 }
 
 :root {
   --search-placeholder-color: var(--primary-gray);
-  --sidebar-gray: var(--dark-mode-gray-1);
+  --sidebar-gray: var(--gray-5);
   --sidebar-horizontal-padding: 30px;
   --sidebar-primary-title: #1c1e21;
   --sidenav-secondary-category-title: black;

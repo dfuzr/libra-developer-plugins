@@ -16,19 +16,19 @@ module.exports = {
           items: [
             {
               label: 'Vision',
-              to: 'https://libra.org/en-US/vision/',
+              to: 'https://libra.org/vision/',
             },
             {
               label: 'Learn',
-              to: 'https://libra.org/en-US/learn-faqs/',
+              to: 'https://libra.org/learn-faqs/',
             },
             {
               label: 'Association',
-              to: 'https://libra.org/en-US/association/',
+              to: 'https://libra.org/association/',
             },
             {
               label: 'Media',
-              to: 'https://libra.org/en-US/media-press-news/',
+              to: 'https://libra.org/media-press-news/',
             },
           ]
         },
@@ -37,15 +37,15 @@ module.exports = {
           items: [
             {
               label: 'Developers',
-              to: 'https://libra.org/en-US/developers/',
+              to: 'https://libra.org/developers/',
             },
             {
               label: 'White Paper',
-              to: 'https://libra.org/en-US/white-paper/',
+              to: 'https://libra.org/white-paper/',
             },
             {
               label: 'Careers',
-              to: 'https://libra.org/en-US/careers/',
+              to: 'https://libra.org/careers/',
             },
           ],
         },
@@ -54,15 +54,15 @@ module.exports = {
           items: [
             {
               label: 'Privacy',
-              to: 'https://libra.org/en-US/privacy/',
+              to: 'https://libra.org/privacy/',
             },
             {
               label: 'Cookies',
-              to: 'https://libra.org/en-US/privacy/#cookies_policy',
+              to: 'https://libra.org/privacy/#cookies_policy',
             },
             {
               label: 'Terms of Use',
-              to: 'https://libra.org/en-US/privacy/#terms_of_use',
+              to: 'https://libra.org/privacy/#terms_of_use',
             },
             {
               label: 'Code of Conduct',
@@ -71,28 +71,13 @@ module.exports = {
           ],
         },
       ],
-      socialLinks: [
-        {
-          to: 'https://www.facebook.com/LibraAssociation/',
-          icon: '/img/shared/footer/facebook.svg'
-        },
-        {
-          to: 'https://www.linkedin.com/company/libra-association/',
-          icon: '/img/shared/footer/linked-in.svg'
-        },
-        {
-          to: 'https://twitter.com/libradev',
-          icon: '/img/shared/footer/twitter.svg'
-        },
-        {
-          to: 'https://www.instagram.com/libra/',
-          icon: '/img/shared/footer/instagram.svg'
-        },
-        {
-          to: 'https://github.com/libra/libra',
-          icon: '/img/shared/footer/github.svg'
-        },
-      ],
+      socialLinks: {
+        facebook: 'https://www.facebook.com/LibraAssociation/',
+        linkedIn: 'https://www.linkedin.com/company/libra-association/',
+        twitter: 'https://twitter.com/libradev',
+        instagram: 'https://www.instagram.com/libra/',
+        github: 'https://github.com/libra/libra',
+      },
       copyright: `©${new Date().getFullYear()} Libra Association`,
     },
     navbar: {
@@ -104,24 +89,24 @@ module.exports = {
       primaryLinks: [
         {
           label: 'Vision',
-          to: 'https://libra-release.dfuzr.dev/en-US/vision/',
+          to: 'https://libra.org/vision/',
         },
         {
           label: 'Association',
-          to: 'https://libra-release.dfuzr.dev/en-US/association/',
+          to: 'https://libra.org/association/',
         },
         {
           id: 'developers',
           label: 'Developers',
-          to: 'https://libra-release.dfuzr.dev/en-US/open-source-developers/',
+          to: 'https://libra.org/open-source-developers/',
         },
         {
           label: 'Learn',
-          to: 'https://libra-release.dfuzr.dev/en-US/learn-faqs/',
+          to: 'https://libra.org/learn-faqs/',
         },
         {
           label: 'Media',
-          to: 'https://libra-release.dfuzr.dev/en-US/media-press-news/',
+          to: 'https://libra.org/media-press-news/',
         },
       ],
       cornerLink: {
@@ -135,7 +120,7 @@ module.exports = {
       secondaryLinks: [
         {
           label: 'Overview',
-          to: 'https://libra.org/en-US/open-source-developers/',
+          to: 'https://libra.org/open-source-developers/',
         },
         {
           id: 'developers',

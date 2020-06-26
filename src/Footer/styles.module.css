@@ -1,9 +1,12 @@
-@value large-tablet-breakpoint-query from '~libra-docusaurus/src/variables.module.css';
-@value large-desktop-breakpoint-query from '~libra-docusaurus/src/variables.module.css';
+@value large-tablet-breakpoint-query from '~libra-components/src/variables.module.css';
+@value large-desktop-breakpoint-query from '~libra-components/src/variables.module.css';
 
 footer {
-  background-color: white;
   padding: 0 var(--body-horizontal-padding) 85px var(--body-horizontal-padding);
+}
+
+.spacer {
+  padding-top: 40px;
 }
 
 .container {
@@ -21,6 +24,7 @@ footer ul {
 }
 
 .logo svg {
+  fill: var(--accent-highlight);
   padding-bottom: 57px;
   width: 140px;
 }
@@ -33,24 +37,36 @@ footer ul {
   padding-bottom: 9px;
 }
 
-li.primary {
-  color: var(--brand-color);
-}
-
-.social {
-  display: flex;
-  padding-top: 50px;
-  padding-left: 0;
-}
-
-.social > li:not(:first-child) {
-  padding-left: 28px;
+li.primary a {
+  color: var(--accent-highlight);
 }
 
 li.secondary a, .copyright {
-  color: rgba(0, 0, 0, .6);
+  color: var(--footer-secondary-color);
   font-weight: 300;
 }
+
+.newsletter {
+  --size: 16px;
+  border: 1px solid #2C2C2C;
+  background-position: 28.5px 50%;
+  background-repeat: no-repeat;
+  background-size: var(--size);
+  color: black;
+  display: inline-block;
+  font-weight: 300;
+  font-size: 16px;
+  text-decoration: none !important;
+  padding: 12px 0 12px calc( var(--size) + 9px );
+  text-align: center;
+  width: 100%;
+  max-width: 400px;
+}
+
+/*.newsletter:hover {
+  background-color: var(--accent-highlight);
+  color: white;
+}*/
 
 .copyright {
   padding-top: 7px;
@@ -59,6 +75,13 @@ li.secondary a, .copyright {
 @media large-tablet-breakpoint-query {
   footer {
     padding: 0 50px;
+  }
+
+  .spacer {
+    margin-left: auto;
+    margin-right: auto;
+    padding: 40px 0px 65px 25px;
+    max-width: 1252px;
   }
 
   footer ul {
@@ -93,15 +116,6 @@ li.secondary a, .copyright {
     padding-left: 20px;
   }
 
-  .social {
-    justify-content: space-between;
-    padding-top: 0;
-  }
-
-  .social > li:not(:first-child) {
-    padding-left: 0;
-  }
-
   .copyright {
     font-size: 14px;
     padding-top: 85px;
@@ -110,9 +124,19 @@ li.secondary a, .copyright {
 
 @media large-desktop-breakpoint-query {
   .spacer {
-    margin-left: auto;
-    margin-right: auto;
-    padding: 90px 0px 65px 25px;
-    width: 1252px;
+    padding-top: 70px;
   }
+}
+
+.root {
+  --footer-secondary-color: rgba(0, 0, 0, .6);
+}
+
+html[data-theme='dark'] {
+  --footer-secondary-color: var(--gray-1);
+}
+
+html[data-theme='dark'] .newsletter {
+  border-color: white;
+  color: white;
 }

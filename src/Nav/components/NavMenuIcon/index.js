@@ -1,7 +1,7 @@
 import React, {useEffect, useRef} from 'react';
 import styles from './styles.module.css';
 
-const NavMenuIcon = ({ cb, CloseIcon, isOpen, OpenIcon }) => {
+const NavMenuIcon = ({ CloseIcon, isOpen, onClick, OpenIcon }) => {
   let iconRef;
   const isOpenRef = useRef(null);
   isOpenRef.current = isOpen;
@@ -10,7 +10,7 @@ const NavMenuIcon = ({ cb, CloseIcon, isOpen, OpenIcon }) => {
     iconRef.addEventListener('click', e => {
       if (!isOpenRef.current) {
         e.stopPropagation();
-        cb();
+        onClick();
       }
     });
   }, []);

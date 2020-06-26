@@ -1,41 +1,31 @@
 /* Breakpoints */
 @value small-mobile-breakpoint-size: 320;
 @value small-mobile-breakpoint-query: (min-width: calc(small-mobile-breakpoint-size * 1px));
+@value small-mobile-breakpoint-max-query: (max-width: calc( (small-mobile-breakpoint-size - 1) * 1px ));
 
 @value mobile-breakpoint-size: 420;
 @value mobile-breakpoint-query: (min-width: calc(mobile-breakpoint-size * 1px));
+@value mobile-breakpoint-max-query: (max-width: calc( (mobile-breakpoint-size - 1) * 1px ));
 
 @value small-tablet-breakpoint-size: 580;
 @value small-tablet-breakpoint-query: (min-width: calc(small-tablet-breakpoint-size * 1px));
+@value small-tablet-breakpoint-max-query: (max-width: calc( (small-tablet-breakpoint-size - 1) * 1px));
 
 @value medium-tablet-breakpoint-size: 768;
 @value medium-tablet-breakpoint-query: (min-width: calc(medium-tablet-breakpoint-size * 1px));
+@value medium-tablet-breakpoint-max-query: (max-width: calc( (medium-tablet-breakpoint-size - 1) * 1px ));
 
 @value large-tablet-breakpoint-size: 1024;
 @value large-tablet-breakpoint-query: (min-width: calc(large-tablet-breakpoint-size * 1px));
+@value large-tablet-breakpoint-max-query: (max-width: calc( (large-tablet-breakpoint-size - 1) * 1px ));
 
 @value desktop-breakpoint-size: 1280;
 @value desktop-breakpoint-query: (min-width: calc(desktop-breakpoint-size * 1px));
+@value desktop-breakpoint-max-query: (max-width: calc( (desktop-breakpoint-size - 1) * 1px ));
 
 @value large-desktop-breakpoint-size: 1400;
 @value large-desktop-breakpoint-query: (min-width: calc(large-desktop-breakpoint-size * 1px));
-
-html[data-theme='dark'] {
-  /* Global Colors */
-  --accent-highlight: white;
-  --default-background-color: var(--dark-mode-black-darkest);
-  --default-border-color: var(--dark-mode-black-lighter);
-  --doc-component-background: var(--dark-mode-black-lighter);
-  --primary-gray: var(--dark-mode-gray-2);
-  /* Component specific colors */
-  --ifm-link-hover-color: white;
-  --ifm-link-color: var(--dark-mode-gray-2);
-  --ifm-tabs-color-active: white;
-  --ifm-tabs-color: var(--primary-gray);
-  --snippet-copy-color: white;
-  --snippet-copy-url: url('/img/copy-dark.svg');
-  --snippet-header-background: #50576B;
-}
+@value large-desktop-breakpoint-max-query: (max-width: calc( (large-desktop-breakpoint-size - 1) * 1px ));
 
 html {
   /* Sizing */
@@ -49,16 +39,21 @@ html {
   --doc-padding-right: 28px;
   --doc-padding-bottom: 0;
   --doc-padding-left: 28px;
-  --header-size: 40px;
+  --header-size: 32px;
   /* Global Colors */
   --accent-highlight: var(--brand-color);
   --brand-color: #42318c;
   --dark-mode-black-lighter: #3C4357;
   --dark-mode-black-darker: #131313;
   --dark-mode-black-darkest: #191F36;
-  --dark-mode-gray-1: #969CA5;
-  --dark-mode-gray-2: #A3ACB9;
-  --dark-mode-gray-3: #A9A9A9;
+  --doc-secondary-color: var(--gray-6);
+  --gray-1: #969CA5;
+  --gray-2: #A3ACB9;
+  --gray-3: #A9A9A9;
+  --gray-4: #7F8FA4;
+  --gray-5: #737387; /* passes AA for small text on white background  */
+  --gray-6: #354052;
+  --light-gray-1: #BFC7D2;
   --dark-mode-white-ghost: #FAFAFA;
   --default-background-color: white;
   --default-border-color: #E5E5E5;
@@ -71,13 +66,38 @@ html {
   --snippet-copy-color: #6B7689;
   --snippet-copy-url: url('/img/copy.svg');
   --scrollbar-width: 10px; /* TODO: Look into accounting varying browser widths of scrollbar */
+  /* z-index */
+  --z-just-above: 10;
   /* Misc */
   --font-bold: NB International Pro Bold, NB International Pro, Helvetica;
-};
+}
+
+html[data-theme='dark'] {
+  /* Global Colors */
+  --accent-highlight: white;
+  --default-background-color: var(--dark-mode-black-darkest);
+  --default-border-color: var(--dark-mode-black-lighter);
+  --doc-component-background: var(--dark-mode-black-lighter);
+  --doc-secondary-color: var(--gray-2);
+  --primary-gray: var(--gray-2);
+  /* Component specific colors */
+  --ifm-link-hover-color: white;
+  --ifm-link-color: var(--gray-2);
+  --ifm-tabs-color-active: white;
+  --ifm-tabs-color: var(--primary-gray);
+  --snippet-copy-color: white;
+  --snippet-copy-url: url('/img/copy-dark.svg');
+  --snippet-header-background: #50576B;
+}
+
+@media small-tablet-breakpoint-query {
+  html {
+    --header-size: 40px;
+  }
+}
 
 @media desktop-breakpoint-query {
   html {
-    --body-horizontal-padding: 20px;
     --doc-padding-top: 30px;
     --doc-padding-right: 28px;
     --doc-padding-bottom: 0;
@@ -93,3 +113,4 @@ html {
     --doc-padding-left: 65px;
   }
 }
+

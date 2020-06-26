@@ -11,8 +11,11 @@ import AnnouncementBar from '@theme/AnnouncementBar';
 import Nav from '../Nav';
 import Footer from '../Footer';
 
-import './styles.css';
+import classnames from 'classnames';
+import styles from './styles.module.css';
 import '../universal.css';
+
+export const OVERFLOW_CONTAINER_CLASS = styles.navPusher;
 
 // Provided via plugins/react-axe-ada-monitoring
 if (TEST_ADA) {
@@ -29,6 +32,7 @@ function Layout(props) {
     url: siteUrl,
   } = siteConfig;
   const {
+    containWidth = true,
     children,
     title,
     noFooter,
@@ -77,14 +81,20 @@ function Layout(props) {
             <meta property="og:url" content={siteUrl + permalink} />
           )}
           <meta name="twitter:card" content="summary_large_image" />
+          <script type="text/javascript" src="/js/segment.analytics.min.js" />
+          <script type="text/javascript" src="/js/segment.js" />
         </Head>
         <AnnouncementBar />
         <div>
           <Nav />
-          <div className="nav-spacer"></div>
+          <div className={styles.navSpacer}></div>
         </div>
-        <div className="nav-pusher">
-          <div className="main-wrapper width-wrapper">{children}</div>
+        <div className={OVERFLOW_CONTAINER_CLASS}>
+          <div className={classnames("main-wrapper", {
+            "width-wrapper": containWidth,
+          })}>
+            {children}
+          </div>
           {!noFooter && <Footer />}
         </div>
       </TabGroupChoiceProvider>

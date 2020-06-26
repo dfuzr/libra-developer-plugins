@@ -50,7 +50,7 @@
   height: 10px;
   padding: 0;
   border-radius: 30px;
-  background-color: #7F8FA4;
+  background-color: var(--gray-4);
   -webkit-transition: all 0.2s ease;
   -moz-transition: all 0.2s ease;
   transition: all 0.2s ease;
@@ -128,7 +128,7 @@
 }
 
 html[data-theme='dark'] {
-  --toggle-background: var(--dark-mode-gray-1);
+  --toggle-background: var(--gray-1);
   --toggle-indicator-background: var(--default-background-color);
 }
 

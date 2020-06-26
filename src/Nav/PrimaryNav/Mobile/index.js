@@ -24,7 +24,7 @@ const PrimaryMobile = ({ activePopupMenu, setPopupMenu } ) => {
     <div className={styles.root}>
       <div className={styles.mainContainer}>
         <NavMenuIcon
-          cb={() => {setPopupMenu('primary')}}
+          onClick={() => {setPopupMenu('primary')}}
           CloseIcon={CloseIcon}
           isOpen={activePopupMenu === 'primary'}
           OpenIcon={OpenIcon}
