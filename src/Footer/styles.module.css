@@ -1,5 +1,5 @@
-@value large-tablet-breakpoint-query from '~libra-docusaurus/src/variables.module.css';
-@value large-desktop-breakpoint-query from '~libra-docusaurus/src/variables.module.css';
+@value large-tablet-breakpoint-query from '~libra-docusaurus-components/src/variables.module.css';
+@value large-desktop-breakpoint-query from '~libra-docusaurus-components/src/variables.module.css';
 
 footer {
   padding: 0 var(--body-horizontal-padding) 85px var(--body-horizontal-padding);

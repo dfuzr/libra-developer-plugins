@@ -3,7 +3,7 @@ import React, {Component, useState} from 'react';
 import PrimaryNav from './PrimaryNav';
 import SubNav from './SubNav';
 
-import Variables from 'libra-docusaurus/src/variables.module.css'
+import Variables from 'libra-docusaurus-components/src/variables.module.css'
 import styles from './styles.module.css';
 
 const Navbar = () => {
