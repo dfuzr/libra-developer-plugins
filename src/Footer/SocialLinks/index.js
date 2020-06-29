@@ -27,10 +27,10 @@ const SocialLinks = ({
 }) => {
   return (
     <ul className={styles.root}>
-      {facebook && <Link to={facebook} icon={<Facebook />} />}
-      {linkedIn && <Link to={linkedIn} icon={<LinkedIn />} />}
       {twitter && <Link to={twitter} icon={<Twitter />} />}
+      {facebook && <Link to={facebook} icon={<Facebook />} />}
       {instagram && <Link to={instagram} icon={<Instagram />} />}
+      {linkedIn && <Link to={linkedIn} icon={<LinkedIn />} />}
       {github && <Link to={github} icon={<Github />} />}
     </ul>
   );

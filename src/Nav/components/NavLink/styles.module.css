@@ -21,7 +21,7 @@
 }
 
 .default:last-child a {
-  padding-right: 7px;
+  padding-right: 22px;
 }
 
 .cta {
@@ -31,9 +31,11 @@
 }
 
 .cta a {
+  align-items: center;
   color: white !important;
   display: inline-flex;
-  padding: 11px 28.5px;
+  padding: 0 28.5px;
+  height: 48px;
   letter-spacing: .5px;
   text-shadow: 0.5px 0 0;
 }

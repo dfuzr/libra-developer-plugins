@@ -1,4 +1,6 @@
-@value large-tablet-breakpoint-query from '~libra-components/src/variables.module.css';
+@value large-tablet-breakpoint-query from '~libra-docusaurus-components/src/variables.module.css';
+@value large-tablet-breakpoint-max-query from '~libra-docusaurus-components/src/variables.module.css';
+@value large-desktop-breakpoint-query from '~libra-docusaurus-components/src/variables.module.css';
 
 /*
  * For some reason, importing the variable above causes
@@ -17,9 +19,17 @@
   z-index: 10;
 }
 
+.desktop {
+    display: none;
+  }
+
 .logo, .logo svg {
   height: 21px;
   fill: var(--accent-highlight);
+}
+
+.logo {
+  padding-right: 18px;
 }
 
 html[data-theme='dark'] {
@@ -41,12 +51,30 @@ html {
   --nav-primary-text-color: #42318c;
   --primary-nav-height: 60px;
   --subnav-height: 60px;
-  --nav-horizontal-padding: var(--body-horizontal-padding);
+  --nav-right-padding: 35px;
+  --nav-left-padding: 20px;
   --total-nav-height: calc( var(--primary-nav-height) + var(--subnav-height) ); 
 }
 
 @media large-tablet-breakpoint-query {
-  :root {
+  html {
+    --nav-right-padding: 20px;
+    --nav-left-padding: 20px;
     --primary-nav-height: 80px;
+  };
+
+  .logo {
+    padding-right: 0;
+  }
+
+  .mobile {
+    display: none;
+  }
+}
+
+@media large-desktop-breakpoint-query {
+  html {
+    --nav-right-padding: 18px;
+    --nav-left-padding: 12px;
   };
 }

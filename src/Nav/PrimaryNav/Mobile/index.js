@@ -12,6 +12,7 @@ import PopupMenu from '../../components/PopupMenu';
 import NavLink from '../../components/NavLink';
 import NavMenuIcon from '../../components/NavMenuIcon';
 
+import classnames from 'classnames';
 import navStyles from '../../styles.module.css';
 import styles from './styles.module.css';
 
@@ -21,7 +22,7 @@ const PrimaryMobile = ({ activePopupMenu, setPopupMenu } ) => {
   }}} = universalConfig;
 
   return (
-    <div className={styles.root}>
+    <div className={classnames(styles.root, 'mobile-only')}>
       <div className={styles.mainContainer}>
         <NavMenuIcon
           onClick={() => {setPopupMenu('primary')}}
@@ -33,7 +34,7 @@ const PrimaryMobile = ({ activePopupMenu, setPopupMenu } ) => {
         <a href={logo.href}>
           <Logo alt={logo.alt} className={navStyles.logo} />
         </a>
-        <a href={cornerLink.to}>
+        <a className={styles.cornerLink} href={cornerLink.to}>
           <CornerLink alt={cornerLink.alt} />
         </a>
       </div>

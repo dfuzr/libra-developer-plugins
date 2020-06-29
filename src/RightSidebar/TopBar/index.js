@@ -1,6 +1,6 @@
 import React, {useCallback} from 'react';
 import PropTypes from 'prop-types';
-import {WithBackgroundImage} from 'libra-components';
+import {WithBackgroundImage} from 'libra-docusaurus-components';
 
 import Toggle from '../../Toggle';
 import useThemeContext from '@theme/hooks/useThemeContext';

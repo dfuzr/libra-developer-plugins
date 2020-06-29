@@ -7,7 +7,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import Logo from 'img/shared/logo.svg';
 import SocialLinks from './SocialLinks';
 import universalConfig from '../universal-config';
-import {WithBackgroundImage} from 'libra-components';
+import {WithBackgroundImage} from 'libra-docusaurus-components';
 
 import classnames from 'classnames';
 import styles from './styles.module.css';
@@ -27,10 +27,10 @@ const Footer = () => {
               <Logo alt={logo.alt} />
             </a>
           </div>
-          {links.map(({ items, type }) => (
-            <ul className={classnames(styles.linkList, styles[type])}>
+          {links.map(({ items, type }, i) => (
+            <ul className={classnames(styles.linkList, styles[type])} key={i}>
               {items.map(({ label, to }) => (
-                <li className={styles[type]}>
+                <li className={styles[type]} key={`${label}${to}`}>
                   <a href={to}>{label}</a>
                 </li>
               ))}
@@ -42,6 +42,7 @@ const Footer = () => {
               className={styles.newsletter}
               href="https://developers.libra.org/newsletter_form"
               imageLight="/img/shared/newsletter.svg"
+              imageDark="img/shared/newsletter-dark.svg"
               tag="a" 
               target="_blank"
               type="button"

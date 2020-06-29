@@ -15,6 +15,10 @@ body, input {
   font-family: 'NB International Pro';
 }
 
+code {
+  word-break: break-word
+}
+
 body .hash-link {
   position: absolute;
   padding-right: 9px ;
@@ -29,6 +33,10 @@ main > .container.padding-vert--lg  {
   margin-right: auto;
   max-width: 1440px;
   width: 100%;
+}
+
+.width-wrapper.libra-org-width {
+  max-width: 1400px;
 }
 
 article header h1 {
@@ -68,10 +76,14 @@ article h1,
 }
 
 .markdown > p {
-  color: var(--doc-secondary-color);
   font-size: 18px;
   font-weight: lighter;
   margin: 11px 0;
+}
+
+.markdown > ul,
+.markdown > p {
+  color: var(--doc-secondary-color);
 }
 
 .markdown > ul > li {

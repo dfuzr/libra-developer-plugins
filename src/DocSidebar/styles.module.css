@@ -1,4 +1,5 @@
-@value large-tablet-breakpoint-query from '~libra-components/src/variables.module.css';
+@value large-tablet-breakpoint-query from '~libra-docusaurus-components/src/variables.module.css';
+@value large-tablet-breakpoint-max-query from '~libra-docusaurus-components/src/variables.module.css';
 
 /*
  * For some reason, importing the variable above causes
@@ -12,10 +13,7 @@
 
 /* Search */
 :global(.navbar__search) {
-  --search-width: calc(
-    var(--sidebar-width) - 
-    (var(--sidebar-horizontal-padding) * 2 )
-  );
+  --search-width: calc( 100% - (var(--sidebar-horizontal-padding) * 2 ));
   border-bottom-width: 1px;
   border-bottom-style: solid;
   border-bottom-color: var(--default-border-color);
@@ -184,9 +182,14 @@
   margin: .35em 0;
 }
 
-.secondary .menuLink, .secondary > .menuLink {
+.secondary .menuLink {
   color: var(--sidebar-gray);
   font-size: 1.6em;
+  line-height: 1.1;
+}
+
+.secondary .listItem:not(:last-child) .menuLink {
+  padding-bottom: 6px;
 }
 
 .category ul.secondary {
@@ -212,6 +215,18 @@
 
   .sidebar :global(.algolia-autocomplete) :global(.ds-dropdown-menu:before) {
     right: 1rem;
+  }
+}
+
+@media large-tablet-breakpoint-max-query {
+  .menu :global(.menu__button) {
+    align-items: center;
+    display: flex;
+    font-size: 20px;
+    justify-content: center;
+    height: 40px;
+    right: 2rem !important;
+    width: 64px;
   }
 }
 

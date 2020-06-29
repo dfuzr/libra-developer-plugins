@@ -1,8 +1,8 @@
-@value large-tablet-breakpoint-query from '~libra-components/src/variables.module.css';
+@value large-tablet-breakpoint-query from '~libra-docusaurus-components/src/variables.module.css';
 
 .root {
   display: flex;
-  margin-bottom: 30px;
+  margin-bottom: 22px;
   padding-top: 50px;
   padding-left: 0;
 }
@@ -14,6 +14,7 @@
 @media large-tablet-breakpoint-query {
   .root {
     justify-content: space-between;
+    margin-bottom: 30px;
     padding-top: 0;
   }
 

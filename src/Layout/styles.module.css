@@ -1,4 +1,4 @@
-@value large-tablet-breakpoint-max-query from '~libra-components/src/variables.module.css';
+@value large-tablet-breakpoint-max-query from '~libra-docusaurus-components/src/variables.module.css';
 
 html,
 body {
