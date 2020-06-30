@@ -51,15 +51,13 @@ html {
   --nav-primary-text-color: #42318c;
   --primary-nav-height: 60px;
   --subnav-height: 60px;
-  --nav-right-padding: 35px;
+  --nav-right-padding: 20px;
   --nav-left-padding: 20px;
   --total-nav-height: calc( var(--primary-nav-height) + var(--subnav-height) ); 
 }
 
 @media large-tablet-breakpoint-query {
   html {
-    --nav-right-padding: 20px;
-    --nav-left-padding: 20px;
     --primary-nav-height: 80px;
   };
 
@@ -70,11 +68,4 @@ html {
   .mobile {
     display: none;
   }
-}
-
-@media large-desktop-breakpoint-query {
-  html {
-    --nav-right-padding: 18px;
-    --nav-left-padding: 12px;
-  };
 }
