@@ -49,7 +49,6 @@ function Layout(props) {
   if (!isInternalUrl(metaImage)) {
     metaImageUrl = metaImage;
   }
-
   const faviconUrl = useBaseUrl(favicon);
 
   return (
@@ -81,8 +80,6 @@ function Layout(props) {
             <meta property="og:url" content={siteUrl + permalink} />
           )}
           <meta name="twitter:card" content="summary_large_image" />
-          <script type="text/javascript" src="/js/segment.analytics.min.js" />
-          <script type="text/javascript" src="/js/segment.js" />
         </Head>
         <AnnouncementBar />
         <div>
