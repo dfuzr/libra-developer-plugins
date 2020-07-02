@@ -98,7 +98,7 @@ module.exports = {
         {
           id: 'developers',
           label: 'Developers',
-          to: 'https://libra.org/open-source-developers/',
+          to: 'https://libra.org/developers/',
         },
         {
           label: 'Learn',
@@ -119,7 +119,7 @@ module.exports = {
       secondaryLinks: [
         {
           label: 'Overview',
-          to: 'https://libra.org/open-source-developers/',
+          to: 'https://libra.org/developers/',
         },
         {
           id: 'developers',
@@ -129,16 +129,16 @@ module.exports = {
         {
           id: 'lips',
           label: 'Governance',
-          to: 'https://lip.libra.org/overview',
+          to: 'https://lip.libra.org/',
         },
         {
           label: 'Community',
-          to: 'https://community.libra.org/c/member-portal',
+          to: 'https://community.libra.org/',
         },
         {
           isExternal: true,
           label: 'Github',
-          to: 'https://github.com/libra/libra',
+          to: 'https://github.com/libra/',
         }
       ],
     },
