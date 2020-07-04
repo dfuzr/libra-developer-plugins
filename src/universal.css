@@ -15,8 +15,8 @@ body, input {
   font-family: 'NB International Pro';
 }
 
-code {
-  word-break: break-word
+code, blockquote {
+  word-break: break-word;
 }
 
 body .hash-link {
