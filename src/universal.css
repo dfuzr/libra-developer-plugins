@@ -19,6 +19,10 @@ code, blockquote {
   word-break: break-word;
 }
 
+body a:hover {
+  color: var(--ifm-link-color);
+}
+
 body .hash-link {
   position: absolute;
   padding-right: 9px ;
