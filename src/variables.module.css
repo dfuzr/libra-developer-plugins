@@ -63,12 +63,14 @@ html {
   --nav-height-mobile: 60px;
   --primary-gray: #757575;
   /* Component specific colors */
-  --snippet-header-background: #E3E8EE;
+  --snippet-border-color: #EDEDED;
+  --snippet-border-radius: 8px;
   --snippet-copy-color: #6B7689;
   --snippet-copy-url: url('/img/copy.svg');
+  --snippet-header-background: #E3E8EE;
   --scrollbar-width: 10px; /* TODO: Look into accounting varying browser widths of scrollbar */
   /* z-index */
-  --z-just-above: 10;
+  --z-just-above: 1;
   /* Misc */
   --font-bold: NB International Pro Bold, NB International Pro, Helvetica;
 }
@@ -86,6 +88,7 @@ html[data-theme='dark'] {
   --ifm-link-color: var(--blue-1);
   --ifm-tabs-color-active: white;
   --ifm-tabs-color: var(--primary-gray);
+  --snippet-border-color: var(--dark-mode-black-lighter);
   --snippet-copy-color: white;
   --snippet-copy-url: url('/img/copy-dark.svg');
   --snippet-header-background: #50576B;

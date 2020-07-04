@@ -26,7 +26,7 @@ footer ul {
 .logo svg {
   fill: var(--accent-highlight);
   padding-bottom: 57px;
-  width: 140px;
+  width: 142px;
 }
 
 .linkList li:not(:last-child) {
@@ -123,11 +123,11 @@ li.secondary a, .copyright {
   }
 }
 
-.root {
+footer {
   --footer-secondary-color: rgba(0, 0, 0, .6);
 }
 
-html[data-theme='dark'] {
+html[data-theme='dark'] footer {
   --footer-secondary-color: var(--gray-1);
 }
 
