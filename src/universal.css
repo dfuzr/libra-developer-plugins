@@ -3,7 +3,8 @@
   list-style: none;
 }
 
-html, body {
+html,
+body {
   overflow: hidden;
 }
 
@@ -11,12 +12,14 @@ html {
   background-color: var(--default-background-color);
 }
 
-body, input {
+body,
+input {
   font-family: 'NB International Pro';
 }
 
-code {
-  word-break: break-word
+code,
+blockquote {
+  word-break: break-word;
 }
 
 body .hash-link {
@@ -91,9 +94,12 @@ article h1,
 }
 
 /*
- * These are selectors for the classes in DocPage
+ * These are selectors classes that we do not have
+ * direct access to, as they are scope by CSS modules.
+ * Most of them belong to the DocPage component.
  * The original class is written for reference
- * This may break upon further updates.
+ * Due to the fragile nature of selecting a class like this,
+ * it may break upon further updates.
  */
 .main-wrapper > div { /* .docPage */
   color: var(--doc-primary);
