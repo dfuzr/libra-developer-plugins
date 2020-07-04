@@ -22,9 +22,18 @@ const getClasses = (classNames = []) =>
 
 function DocSidebarItem({theme = 'primary', item, onItemClick, collapsible, ...props}) {
   const {extra = {}, items, href, label, type} = item;
-  const {classNames, icon, iconDark, theme: itemTheme = theme} = extra;
+  const {
+    classNames,
+    containerClassNames, 
+    icon, 
+    iconDark,
+    iconClasses,
+    noLink, 
+    theme: itemTheme = theme
+  } = extra;
   const [collapsed, setCollapsed] = useState(item.collapsed);
   const [prevCollapsedProp, setPreviousCollapsedProp] = useState(null);
+  let ItemTag;
 
   // If the collapsing state from props changed, probably a navigation event
   // occurred. Overwrite the component's collapsed state with the props'
@@ -42,13 +51,16 @@ function DocSidebarItem({theme = 'primary', item, onItemClick, collapsible, ...p
 
   switch (type) {
     case 'category':
+      ItemTag = noLink ? 'span' : 'a';
+
       return (
         items.length > 0 && (
           <WithBackgroundImage
             className={classnames(
-              'menu__list-item', 
+              'menu__list-item',
               styles.listItem, 
               styles.category,
+              ...getClasses(iconClasses),
               {
                 'menu__list-item--collapsed': collapsed,
                 [styles.withBackgroundImage]: icon,
@@ -59,9 +71,13 @@ function DocSidebarItem({theme = 'primary', item, onItemClick, collapsible, ...p
             imageDark={iconDark}
             imageLight={icon}
           >
-            <ul className={classnames("menu__list", styles[itemTheme])}>
+            <ul className={classnames(
+              "menu__list", 
+              styles[itemTheme],
+              ...getClasses(containerClassNames),
+            )}>
               <li className={styles.categoryTitle}>
-                <a
+                <ItemTag
                   className={classnames(
                     "menu__link", 
                     styles.menuLink, 
@@ -76,7 +92,7 @@ function DocSidebarItem({theme = 'primary', item, onItemClick, collapsible, ...p
                   {...props}
                 >
                   {label}
-                </a>
+                </ItemTag>
               </li>
               {items.map((childItem) => (
                 <DocSidebarItem
@@ -95,6 +111,8 @@ function DocSidebarItem({theme = 'primary', item, onItemClick, collapsible, ...p
 
     case 'link':
     default:
+      ItemTag = noLink ? 'span' : Link;
+
       return (
         <li 
           className={classnames(
@@ -106,12 +124,12 @@ function DocSidebarItem({theme = 'primary', item, onItemClick, collapsible, ...p
           key={label}
         >
           <WithBackgroundImage
-            className={classnames("menu__link", styles.menuLink, {
+            className={classnames("menu__link", styles.menuLink, ...getClasses(iconClasses), {
               [styles.withBackgroundImage]: icon,
             })}
             imageDark={iconDark}
             imageLight={icon}
-            tag={Link}
+            tag={ItemTag}
             to={href}
             {...(isInternalUrl(href)
               ? {
