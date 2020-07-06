@@ -19,10 +19,12 @@ const TopBar = ({editUrl}) => {
   return (
     <div className={styles.root}>
       <WithBackgroundImage
-        className={classnames(styles.edit, styles.backgroundIcon)} 
+        className={classnames(styles.edit, styles.backgroundIcon)}
         href={editUrl}
         imageLight="/img/shared/edit.svg"
-        tag="a" 
+        imageLightHover="/img/shared/edit-hover.svg"
+        imageDarkHover="/img/shared/edit-dark-hover.svg"
+        tag="a"
         target="_blank"
       >
         Edit

@@ -24,11 +24,13 @@ function DocSidebarItem({theme = 'primary', item, onItemClick, collapsible, ...p
   const {extra = {}, items, href, label, type} = item;
   const {
     classNames,
-    containerClassNames, 
-    icon, 
+    containerClassNames,
+    icon,
+    iconHover,
     iconDark,
+    iconDarkHover,
     iconClasses,
-    noLink, 
+    noLink,
     theme: itemTheme = theme
   } = extra;
   const [collapsed, setCollapsed] = useState(item.collapsed);
@@ -58,7 +60,7 @@ function DocSidebarItem({theme = 'primary', item, onItemClick, collapsible, ...p
           <WithBackgroundImage
             className={classnames(
               'menu__list-item',
-              styles.listItem, 
+              styles.listItem,
               styles.category,
               ...getClasses(iconClasses),
               {
@@ -69,18 +71,20 @@ function DocSidebarItem({theme = 'primary', item, onItemClick, collapsible, ...p
             key={label}
             tag="li"
             imageDark={iconDark}
+            imageDarkHover={iconDarkHover}
             imageLight={icon}
+            imageLightHover={iconHover}
           >
             <ul className={classnames(
-              "menu__list", 
+              "menu__list",
               styles[itemTheme],
               ...getClasses(containerClassNames),
             )}>
               <li className={styles.categoryTitle}>
                 <ItemTag
                   className={classnames(
-                    "menu__link", 
-                    styles.menuLink, 
+                    "menu__link",
+                    styles.menuLink,
                     styles[itemTheme],
                     ...getClasses(classNames),
                     {
@@ -114,13 +118,13 @@ function DocSidebarItem({theme = 'primary', item, onItemClick, collapsible, ...p
       ItemTag = noLink ? 'span' : Link;
 
       return (
-        <li 
+        <li
           className={classnames(
-            "menu__list-item", 
+            "menu__list-item",
             styles.listItem,
             styles[itemTheme],
             ...getClasses(classNames),
-          )} 
+          )}
           key={label}
         >
           <WithBackgroundImage
@@ -128,10 +132,12 @@ function DocSidebarItem({theme = 'primary', item, onItemClick, collapsible, ...p
               [styles.withBackgroundImage]: icon,
             })}
             imageDark={iconDark}
+            imageDarkHover={iconDarkHover}
             imageLight={icon}
+            imageLightHover={iconHover}
             tag={ItemTag}
             to={href}
-            {...(isInternalUrl(href)
+            {...(isInternalUrl(href) && ItemTag !== 'span'
               ? {
                   isNavLink: true,
                   activeClassName: styles.active,

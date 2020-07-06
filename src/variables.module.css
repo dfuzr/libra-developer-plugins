@@ -75,6 +75,7 @@ html {
   --ifm-font-weight-bold: 500 !important;
   /* Misc */
   --font-bold: NB International Pro Bold, NB International Pro, Helvetica;
+  --font-normal: NB International Pro, Helvetica;
 }
 
 html[data-theme='dark'] {
