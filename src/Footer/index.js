@@ -38,12 +38,13 @@ const Footer = () => {
           ))}
           <div className={styles.connect}>
             <SocialLinks links={socialLinks} />
-            <WithBackgroundImage 
+            <WithBackgroundImage
               className={styles.newsletter}
               href="https://developers.libra.org/newsletter_form"
               imageLight="/img/shared/newsletter.svg"
+              imageLightHover="/img/shared/newsletter-hover.svg"
               imageDark="img/shared/newsletter-dark.svg"
-              tag="a" 
+              tag="a"
               target="_blank"
               type="button"
             >

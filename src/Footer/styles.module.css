@@ -57,10 +57,17 @@ li.secondary a, .copyright {
   font-weight: 300;
   font-size: 16px;
   text-decoration: none !important;
+  transition: all .075s ease-in-out;
   padding: 12px 0 12px calc( var(--size) + 9px );
   text-align: center;
   width: 100%;
   max-width: 400px;
+}
+
+.newsletter:hover {
+  background-color: var(--brand-color);
+  border-color: white;
+  color: white;
 }
 
 .copyright {
@@ -134,4 +141,8 @@ html[data-theme='dark'] footer {
 html[data-theme='dark'] .newsletter {
   border-color: white;
   color: white;
+}
+
+html[data-theme='dark'] .newsletter:hover {
+  border-color: var(--brand-color);
 }

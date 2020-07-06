@@ -1,4 +1,5 @@
 .root {
+  --toc-color: black;
   font-size: 13px;
   padding: 20px var(--right-sidebar-horizontal-padding);
 }
@@ -33,11 +34,10 @@
   padding: 0 10px;
 }
 
-html[data-theme='dark'] {
-  --toc-color: var(--gray-2);
+.root a:hover {
+  color: var(--accent-highlight);
 }
 
-:root {
-  --toc-color: black;
-};
-
+html[data-theme='dark'] .root {
+  --toc-color: var(--gray-2);
+}

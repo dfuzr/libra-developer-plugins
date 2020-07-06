@@ -73,6 +73,7 @@ html {
   --z-just-above: 1;
   /* Misc */
   --font-bold: NB International Pro Bold, NB International Pro, Helvetica;
+  --font-normal: NB International Pro, Helvetica;
 }
 
 html[data-theme='dark'] {

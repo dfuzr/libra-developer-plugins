@@ -1,10 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
- 
- import styles from './styles.module.css';
- 
- import TOC from './TOC';
- import TopBar from './TopBar';
+
+import styles from './styles.module.css';
+
+import TOC from './TOC';
+import TopBar from './TopBar';
 
 const RightSidebar = ({editUrl, headings}) => {
   return (
