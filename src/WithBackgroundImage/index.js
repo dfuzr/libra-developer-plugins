@@ -1,26 +1,69 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import PropTypes from 'prop-types';
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
-import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import useThemeContext from '@theme/hooks/useThemeContext';
 
-const WithBackgroundImage = ({
-  children,
-  imageDark,
-  imageLight, 
-  tag: Tag, 
-  ...props
-}) => {
+let counter = 0;
+
+const getImage = (
+  [imageDark, imageDarkHover, imageLight, imageLightHover],
+  isHovered,
+) => {
+  if (!imageLight) {
+    return '';
+  }
+
   const {isDarkTheme} = useThemeContext();
 
   const backgroundImage = isDarkTheme && imageDark ? imageDark : imageLight;
-  const backgroundImageStyle = backgroundImage 
-    ? { backgroundImage: `url('${useBaseUrl(backgroundImage)}')` } 
-    : {};
+
+  let hoverBackgroundImage = isDarkTheme && imageDarkHover ? imageDarkHover : imageLightHover;
+  hoverBackgroundImage = hoverBackgroundImage ? hoverBackgroundImage : backgroundImage;
+
+  let image = isHovered ? hoverBackgroundImage : backgroundImage;
+
+  return useBaseUrl(image);
+};
+
+const WithBackgroundImage = ({
+  children,
+  className,
+  imageDark,
+  imageDarkHover,
+  imageLight,
+  imageLightHover,
+  tag: Tag,
+  ...props
+}) => {
+  const [isHovered, setIsHovered] = useState(false);
+  const images = [imageDark, imageDarkHover, imageLight, imageLightHover];
+
+  const image = getImage(images, isHovered);
+
+  const backgroundImageStyle = {
+    'backgroundImage': `url('${image}')`,
+  };
+  const imagesToPreload = images.filter(url => url).map(url => useBaseUrl(url));
+
+  useEffect(() => {
+    const preloadedImages = imagesToPreload.map(url => {
+      const image = new Image();
+      image.src = url;
+      return image;
+    });
+    window.preloadedImages = window.preloadedImages || [];
+    window.preloadedImages[counter++] = preloadedImages;
+  }, []);
 
   return (
-    <Tag style={backgroundImageStyle} {...props}>
+    <Tag
+      className={className}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+      style={backgroundImageStyle}
+      {...props}
+    >
       {children}
     </Tag>
   );
@@ -29,7 +72,9 @@ const WithBackgroundImage = ({
 WithBackgroundImage.propTypes = {
   children: PropTypes.oneOfType([PropTypes.element, PropTypes.string]),
   imageDark: PropTypes.string,
+  imageDarkHover: PropTypes.string,
   imageLight: PropTypes.string,
+  imageLightHover: PropTypes.string,
   tag: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
 };
 
