@@ -1,0 +1,7 @@
+.root {
+  background-image: var(--background-image);
+}
+
+.root:hover {
+  background-image: var(--hover-background-image) !important;
+}
