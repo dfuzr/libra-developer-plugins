@@ -204,7 +204,7 @@
 .primary .menuLink, .menuLink.primary {
   color: var(--sidebar-primary-title);
   font-size: 1.8em;
-  font-weight: bold;
+  font-weight: 500;
 }
 
 .category ul.primary {
