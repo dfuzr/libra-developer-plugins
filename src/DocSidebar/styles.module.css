@@ -73,10 +73,13 @@
 
 .menu .listItem {
   display: flex;
-  margin: 0;
 }
 
-.sidebar .menu .category ul {
+.category :global(.menu__list) .listItem {
+  margin: .55em 0;
+}
+
+.sidebar .menu .category :global(.menu__list) {
   display: flex;
   flex-direction: column;
   margin-left: 0;
@@ -86,21 +89,36 @@
   margin-top: 0;
 }
 
-.sidebar ul > .categoryTitle {
+.sidebar :global(.menu__list) > .categoryTitle {
   margin: 0;
 }
 
-.sidebar ul > .categoryTitle > .menuLink {
+.sidebar :global(.menu__list) > .categoryTitle > .menuLink {
   align-self: flex-start;
 }
 
-.sidebar ul > .categoryTitle > .menuLink:hover {
+.sidebar :global(.menu__list) > .categoryTitle > .menuLink:hover {
   background-color: inherit;
   cursor: default;
 }
 
+.category :global(.menu__list) {
+  margin-bottom: 3.1em;
+}
+
+:global(.menu__list) > .categoryTitle > .menuLink {
+  color: var(--sidebar-gray);
+  font-size: 1.5em;
+  letter-spacing: .6px;
+  margin-bottom: 0.8em;
+  text-transform: uppercase;
+}
+
 .menu .menuLink {
   align-self: center;
+  color: var(--sidebar-primary-title);
+  font-size: 1.8em;
+  font-weight: 500;
   padding: 0;
 }
 
@@ -128,41 +146,25 @@
   color: var(--accent-highlight);
 }
 
-.menu .withBackgroundImage, .menu .menuLink.withBackgroundImage {
+.menu .withBackgroundImage,
+.menu .menuLink.withBackgroundImage {
   --icon-size: 23px;
-  background-position: 8px 0;
+  background-position: 1px 0;
   background-repeat: no-repeat;
   background-size: var(--icon-size) var(--icon-size);
-  padding-left: calc(var(--icon-size) + 1.2em);
   min-height: var(--icon-size);
+  padding-left: calc( var(--icon-size) + 18px );
 }
 
 /* Passed in dynamically via sidebar config */
-.normalWeight,
-.normalWeight .menuLink {
-  font-weight: normal !important;
+.menu .home {
+  margin-top: 3em;
+  margin-bottom: 2.3em;
+}
+
+.menu .home span {
   font-family: var(--font-normal);
-}
-
-.menu .iconXS.withBackgroundImage,
-.menu .iconXS .withBackgroundImage {
-  --icon-size: 15px;
-}
-
-.menu .iconLG.withBackgroundImage,
-.menu .iconLG .withBackgroundImage {
-  --icon-size: 25px;
-}
-
-.menu .iconXL.withBackgroundImage,
-.menu .iconXL .withBackgroundImage {
-  --icon-size: 27px;
-}
-
-.menu .iconLeft.withBackgroundImage,
-.menu .iconLeft .withBackgroundImage {
-  background-position: 1px 0;
-  padding-left: calc( var(--icon-size) + 18px );
+  font-weight: normal;
 }
 
 .menu .backToHome {
@@ -170,6 +172,7 @@
 }
 
 .menu .backToHome .withBackgroundImage {
+  --icon-size: 15px;
   background-position: 0 1px;
   padding-left: calc( var(--icon-size) + .5em );
 }
@@ -185,18 +188,25 @@
   color: var(--accent-highlight);
 }
 
-.menu .spacerMD {
-  margin-top: 2.5em;
-  margin-bottom: 2.3em;
+.menu .iconIndented.withBackgroundImage,
+.menu .iconIndented .withBackgroundImage,
+.menu .home .withBackgroundImage {
+  background-position: 8px 0;
+  padding-left: calc(var(--icon-size) + 1.2em);
 }
 
-.menu .spacerLG {
-  margin-top: 3em;
+.menu .categoryLabel {
+  margin-top: 2.5em;
   margin-bottom: 2.3em;
 }
 
 .menu .categoryIndex {
   margin-bottom: 2.5em;
+}
+
+.menu .categoryIndex .menuLink {
+  font-weight: normal;
+  font-family: var(--font-normal);
 }
 
 :global(.menu__list).reference {
@@ -211,46 +221,38 @@
   margin-bottom: 1em !important;
 }
 
-/* Themes */
-.primary .menuLink, .menuLink.primary {
-  color: var(--sidebar-primary-title);
-  font-size: 1.8em;
-  font-weight: 500;
+.listTitle.withBackgroundImage,
+.menu .categoryLabel .withBackgroundImage {
+  padding-left: 45px;
 }
 
-.category ul.primary {
-  margin-bottom: 3.5em;
+.listTitle :global(.menu__list) {
+  margin-bottom: 1.3em;
 }
 
-.category ul.primary > .categoryTitle > .menuLink {
-  color: var(--sidebar-gray);
-  font-size: 1.5em;
-  letter-spacing: .6px;
-  margin-bottom: 0.8em;
-  text-transform: uppercase;
-}
-.category ul.primary .listItem {
-  margin: .55em 0;
-}
-
-.secondary .menuLink {
+.listTitle .menuLink {
   color: var(--sidebar-gray);
   font-size: 1.6em;
+  font-weight: 400;
   line-height: 1.1;
 }
 
-.secondary .listItem:not(:last-child) .menuLink {
+.menu .listTitle .listItem {
+  margin: 0;
+}
+
+.listTitle .listItem:not(:last-child) .menuLink {
   padding-bottom: 6px;
 }
 
-.category ul.secondary {
-  margin-bottom: 1.7em;
-}
-
-.category ul.secondary > .categoryTitle > .menuLink {
+.listTitle .categoryTitle > .menuLink {
   color: var(--sidenav-secondary-category-title);
+  font-size: 1.6em;
+  letter-spacing: 0;
+  margin-bottom: 0;
   padding-top: .2em;
   padding-bottom: .5em;
+  text-transform: inherit;
 }
 
 @media (max-width: 360px) { /* Corresponds with the breakpoint algolia has put in */

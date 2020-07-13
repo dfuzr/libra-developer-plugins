@@ -77,16 +77,13 @@ function DocSidebarItem({theme = 'primary', item, onItemClick, collapsible, ...p
           >
             <ul className={classnames(
               "menu__list",
-              styles[itemTheme],
-              ...getClasses(containerClassNames),
+              ...getClasses(classNames),
             )}>
               <li className={styles.categoryTitle}>
                 <ItemTag
                   className={classnames(
                     "menu__link",
                     styles.menuLink,
-                    styles[itemTheme],
-                    ...getClasses(classNames),
                     {
                       'menu__link--sublist': collapsible,
                       'menu__link--active': collapsible && !item.collapsed,
@@ -136,7 +133,6 @@ function DocSidebarItem({theme = 'primary', item, onItemClick, collapsible, ...p
           className={classnames(
             "menu__list-item",
             styles.listItem,
-            styles[itemTheme],
             ...getClasses(classNames),
           )}
           key={label}
