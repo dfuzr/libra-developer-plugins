@@ -8,7 +8,7 @@ import styles from './styles.module.css';
 
 const PrimaryNav = ({ activePopupMenu, setPopupMenu }) => (
   <div className={styles.root}>
-    <div className="width-wrapper libra-org-width"> 
+    <div className="width-wrapper libra-org-width">
       <Mobile activePopupMenu={activePopupMenu} setPopupMenu={setPopupMenu} />
       <Desktop />
     </div>

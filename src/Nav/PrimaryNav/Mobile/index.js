@@ -38,7 +38,7 @@ const PrimaryMobile = ({ activePopupMenu, setPopupMenu } ) => {
           <CornerLink alt={cornerLink.alt} />
         </a>
       </div>
-      {activePopupMenu === 'primary' && 
+      {activePopupMenu === 'primary' &&
         <PopupMenu links={primaryLinks} />
       }
     </div>
