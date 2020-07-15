@@ -9,7 +9,7 @@ import universalConfig from '../../../universal-config';
 
 import classnames from 'classnames';
 import styles from './styles.module.css';
-import navStyles from '../../styles.module.css';  
+import navStyles from '../../styles.module.css';
 
 const PrimaryDesktop = () => {
   const { isDarkTheme } = useThemeContext();

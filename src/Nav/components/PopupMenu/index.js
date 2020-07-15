@@ -18,7 +18,7 @@ const PopupMenu = ({children, links, onClick}) => {
   return (
     <div className={styles.root} ref={el => containerRef = el}>
       <div className={styles.menu}>
-        {links.map(props => 
+        {links.map(props =>
           <NavLink key={props.label} {...props} />
         )}
         {children}

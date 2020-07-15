@@ -17,7 +17,7 @@ export const BUTTON_TYPES = {
 const NavLink = ({ id, isExternal, label, to, type }) => {
   const {siteConfig: {themeConfig}} = useDocusaurusContext();
   const {siteID} = themeConfig;
-  
+
   const href = isInternalUrl(to) ? useBaseUrl(to) : to;
 
   return (
@@ -26,8 +26,8 @@ const NavLink = ({ id, isExternal, label, to, type }) => {
       styles[type],
       {active: isInternalUrl(href) || siteID === id},
     )}>
-      <a 
-        href={href} 
+      <a
+        href={href}
         target={isExternal ? "_blank" : "_self"}
       >
         {label}

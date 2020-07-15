@@ -7,7 +7,7 @@
   transition: all .2s;
 }
 
-.root:global(.active) a, 
+.root:global(.active) a,
 .root a:hover {
   color: var(--accent-highlight);
 }

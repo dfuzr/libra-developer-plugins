@@ -28,9 +28,9 @@ const SubnavMobile = ({activePopupMenu, setPopupMenu}) => {
           OpenIcon={OpenIcon}
         />
       </div>
-      {activePopupMenu === 'secondary' && 
-        <PopupMenu 
-          links={secondaryLinks} 
+      {activePopupMenu === 'secondary' &&
+        <PopupMenu
+          links={secondaryLinks}
           onClick={e => e.stopPropagation()}
         />
       }
