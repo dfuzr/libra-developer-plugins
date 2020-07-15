@@ -116,6 +116,20 @@ function DocSidebarItem({theme = 'primary', item, onItemClick, collapsible, ...p
     case 'link':
     default:
       ItemTag = noLink ? 'span' : Link;
+      let linkProps = {};
+      if (isInternalUrl(href) && !noLink) {
+        linkProps = {
+          isNavLink: true,
+          activeClassName: styles.active,
+          exact: true,
+          onClick: onItemClick,
+        };
+      } else {
+        linkProps = {
+          target: '_blank',
+          rel: 'noreferrer noopener',
+        };
+      }
 
       return (
         <li
@@ -137,17 +151,7 @@ function DocSidebarItem({theme = 'primary', item, onItemClick, collapsible, ...p
             imageLightHover={iconHover}
             tag={ItemTag}
             to={href}
-            {...(isInternalUrl(href) && ItemTag !== 'span'
-              ? {
-                  isNavLink: true,
-                  activeClassName: styles.active,
-                  exact: true,
-                  onClick: onItemClick,
-                }
-              : {
-                  target: '_blank',
-                  rel: 'noreferrer noopener',
-                })}
+            {...linkProps}
             {...props}
           >
             <span>{label}</span>
