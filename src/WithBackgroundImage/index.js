@@ -21,12 +21,12 @@ const getImage = (
   let hoverBackgroundImage = isDarkTheme && imageDarkHover ? imageDarkHover : imageLightHover;
   hoverBackgroundImage = hoverBackgroundImage ? hoverBackgroundImage : backgroundImage;
 
-  let image = isHovered ? hoverBackgroundImage : backgroundImage;
+  const image = isHovered ? hoverBackgroundImage : backgroundImage;
 
   return useBaseUrl(image);
 };
 
-// TODO: Simplify the passing in of images
+// TODO (oliver): Simplify the passing in of images
 const WithBackgroundImage = ({
   children,
   className,
