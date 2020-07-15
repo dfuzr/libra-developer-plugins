@@ -27,8 +27,8 @@ body a:hover {
 }
 
 body .hash-link {
+  padding-right: 9px;
   position: absolute;
-  padding-right: 9px ;
 }
 
 main > .container.padding-vert--lg  {

@@ -4,7 +4,7 @@
 /*
  * For some reason, importing the variable above causes
  * the next style to be ignored. This seems like a webpack
- * bug, so for the sake of time I'm putting in this 
+ * bug, so for the sake of time I'm putting in this
  * quick fix (having a blank style before the real one)
  * and hoping that the bug resolves on its own with a future
  * update of CSS variables/webpack
@@ -65,7 +65,7 @@
   padding: 0 20px 0 var(--sidebar-horizontal-padding);
 }
 
-.sidebar .menu:not(:global(.menu--show)) .menuList, 
+.sidebar .menu:not(:global(.menu--show)) .menuList,
 .sidebar .menu:not(:global(.menu--show)) :global(#search_input_react) {
   display: none;
   opacity: 0;
@@ -138,13 +138,20 @@
 }
 
 /* Passed in dynamically via sidebar config */
+.normalWeight,
 .normalWeight .menuLink {
   font-weight: normal !important;
+  font-family: var(--font-normal);
 }
 
-.menu .iconSm.withBackgroundImage,
-.menu .iconSm .withBackgroundImage {
+.menu .iconXS.withBackgroundImage,
+.menu .iconXS .withBackgroundImage {
   --icon-size: 15px;
+}
+
+.menu .iconLG.withBackgroundImage,
+.menu .iconLG .withBackgroundImage {
+  --icon-size: 25px;
 }
 
 .menu .iconXL.withBackgroundImage,
@@ -157,13 +164,13 @@
   background-position: 1px 0;
   padding-left: calc( var(--icon-size) + 18px );
 }
-                                                                                                                  
+
 .menu .backToHome {
   margin-top: 33px;
 }
 
 .menu .backToHome .withBackgroundImage {
-  background-position: 0 0;
+  background-position: 0 1px;
   padding-left: calc( var(--icon-size) + .5em );
 }
 
@@ -174,13 +181,17 @@
   margin-top: -2px;
 }
 
-.menu .spacer-lg {
-  margin-top: 3em;
+.menu .backToHome span:hover {
+  color: var(--accent-highlight);
+}
+
+.menu .spacerMD {
+  margin-top: 2.5em;
   margin-bottom: 2.3em;
 }
 
-.menu .spacer-md {
-  margin-top: 2.5em;
+.menu .spacerLG {
+  margin-top: 3em;
   margin-bottom: 2.3em;
 }
 
@@ -204,7 +215,7 @@
 .primary .menuLink, .menuLink.primary {
   color: var(--sidebar-primary-title);
   font-size: 1.8em;
-  font-weight: bold;
+  font-weight: 500;
 }
 
 .category ul.primary {
@@ -279,7 +290,7 @@
     margin-bottom: .5px !important;
   }
 
-  .sidebar .menu:not(:global(.menu--show)) .menuList, 
+  .sidebar .menu:not(:global(.menu--show)) .menuList,
   .sidebar .menu:not(:global(.menu--show)) :global(#search_input_react) {
     display: block;
     opacity: 1;
@@ -290,8 +301,8 @@
   }
 
   :global(.navbar__search) {
-    /* 
-     * Allow for a border that traverses the width of the 
+    /*
+     * Allow for a border that traverses the width of the
      * whole sidebar without the need for absolute positioning
      */
     margin-left: calc(-1 * var(--sidebar-horizontal-padding));

@@ -71,8 +71,11 @@ html {
   --scrollbar-width: 10px; /* TODO: Look into accounting varying browser widths of scrollbar */
   /* z-index */
   --z-just-above: 1;
+  /* ifm presets */
+  --ifm-font-weight-bold: 500 !important;
   /* Misc */
   --font-bold: NB International Pro Bold, NB International Pro, Helvetica;
+  --font-normal: NB International Pro, Helvetica;
 }
 
 html[data-theme='dark'] {
