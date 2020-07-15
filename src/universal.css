@@ -18,7 +18,8 @@ input {
 }
 
 code,
-blockquote {
+blockquote,
+li {
   word-break: break-word;
 }
 
