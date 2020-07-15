@@ -3,7 +3,7 @@
 /*
  * For some reason, importing the variable above causes
  * the next style to be ignored. This seems like a webpack
- * bug, so for the sake of time I'm putting in this
+ * bug, so for the sake of time I'm putting in this 
  * quick fix (having a blank style before the real one)
  * and hoping that the bug resolves on its own with a future
  * update of CSS variables/webpack
@@ -19,10 +19,7 @@
 .primary {
   color: var(--nav-page-indicator-primary);
   font-size: 18px;
-}
-
-.primary b {
-  font-weight: 500;
+  font-weight: 700;
 }
 
 .root b {
