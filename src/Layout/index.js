@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import ReactDOM from 'react-dom';
 import Head from '@docusaurus/Head';
 import isInternalUrl from '@docusaurus/isInternalUrl';
@@ -22,6 +22,25 @@ if (TEST_ADA) {
   var axe = require('react-axe');
   axe(React, ReactDOM, 1000);
 }
+
+const scrollToTop = () =>
+  document.querySelector(`.${OVERFLOW_CONTAINER_CLASS}`).scrollTo(0, 0);
+
+const onLoad = () => {
+  const hash = window.location.hash;
+
+  if (!hash) {
+    scrollToTop();
+  } else {
+    setTimeout(() => {
+      const id = hash.substring(1);
+      const element = document.getElementById(id);
+      if (element) {
+        element.scrollIntoView();
+      }
+    }, 250);
+  }
+};
 
 function Layout(props) {
   const {siteConfig = {}} = useDocusaurusContext();
@@ -50,6 +69,8 @@ function Layout(props) {
     metaImageUrl = metaImage;
   }
   const faviconUrl = useBaseUrl(favicon);
+
+  useEffect(onLoad, []);
 
   return (
     <ThemeProvider>
