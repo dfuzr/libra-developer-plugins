@@ -23,6 +23,10 @@ li {
   word-break: break-word;
 }
 
+ol li {
+  list-style: decimal;
+}
+
 body a:hover {
   color: var(--ifm-link-color);
 }

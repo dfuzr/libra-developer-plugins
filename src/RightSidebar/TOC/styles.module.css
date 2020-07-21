@@ -1,7 +1,7 @@
 .root {
   --toc-color: black;
   font-size: 13px;
-  padding: 20px var(--right-sidebar-horizontal-padding);
+  padding: 20px var(--right-sidebar-horizontal-padding) 50px;
 }
 
 .root > .category {
