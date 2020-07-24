@@ -1,3 +1,8 @@
+/* Exported first as it is used by the below modules */
+const utils = require('./utils');
+exports.utils = utils.default;
+
+const CodeBlock = require('./CodeBlock');
 const DocSidebar = require('./DocSidebar');
 const Layout = require('./Layout');
 const Footer = require('./Footer');
@@ -6,6 +11,7 @@ const RightSidebar = require('./RightSidebar');
 const WithBackgroundImage = require('./WithBackgroundImage');
 
 /* Components */
+exports.CodeBlock = CodeBlock.default;
 exports.DocSidebar = DocSidebar.default;
 exports.Footer = Footer.default;
 exports.Nav = Nav.default;

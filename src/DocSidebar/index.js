@@ -1,5 +1,5 @@
 import React, {useState, useCallback} from 'react';
-import { WithBackgroundImage } from 'libra-docusaurus-components';
+import { utils, WithBackgroundImage } from 'libra-docusaurus-components';
 
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import useLockBodyScroll from '@theme/hooks/useLockBodyScroll';
@@ -10,6 +10,8 @@ import isInternalUrl from '@docusaurus/isInternalUrl';
 
 import classnames from 'classnames';
 import styles from './styles.module.css';
+
+const { scrollToTop } = utils;
 
 const MOBILE_TOGGLE_SIZE = 24;
 
@@ -282,6 +284,7 @@ function DocSidebar(props) {
               item={item}
               onItemClick={(e) => {
                 e.target.blur();
+                scrollToTop();
                 setShowResponsiveSidebar(false);
               }}
               collapsible={sidebarCollapsible}
