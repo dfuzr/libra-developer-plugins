@@ -1,3 +1,7 @@
+/* Exported first as it is used by the below modules */
+const utils = require('./utils');
+exports.utils = utils.default;
+
 const CodeBlock = require('./CodeBlock');
 const DocSidebar = require('./DocSidebar');
 const Layout = require('./Layout');

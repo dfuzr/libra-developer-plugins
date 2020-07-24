@@ -1,6 +1,5 @@
 import React, {useState, useCallback} from 'react';
-import { WithBackgroundImage } from 'libra-docusaurus-components';
-import {OVERFLOW_CONTAINER_CLASS} from '@theme/Layout';
+import { utils, WithBackgroundImage } from 'libra-docusaurus-components';
 
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import useLockBodyScroll from '@theme/hooks/useLockBodyScroll';
@@ -12,10 +11,9 @@ import isInternalUrl from '@docusaurus/isInternalUrl';
 import classnames from 'classnames';
 import styles from './styles.module.css';
 
-const MOBILE_TOGGLE_SIZE = 24;
+const { scrollToTop } = utils;
 
-const scrollToTop = () =>
-  document.querySelector(`.${OVERFLOW_CONTAINER_CLASS}`).scrollTo(0, 0);
+const MOBILE_TOGGLE_SIZE = 24;
 
 const getClasses = (classNames = []) =>
   classNames.map(c =>
