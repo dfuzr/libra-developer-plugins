@@ -149,8 +149,10 @@ main > div:first-child > div:first-child {
 /* Code Snippet */
 .snippet-container {
   --copy-snippet-url: url('/img/shared/copy.svg');
-  --copy-snippet-color: #6B7689;
+  --copy-snippet-hover-url: url('/img/shared/copy-hover.svg');
   --snippet-background: rgb(246, 248, 250);
+  --snippet-button-color: #6B7689;
+  --snippet-button-hover-color: #15112C;
   background-color: var(--snippet-background);
   border-radius: var(--snippet-border-radius);
   position: relative;
@@ -215,13 +217,22 @@ main > div:first-child > div:first-child {
   visibility: visible;
 }
 
+.snippet-container button:hover {
+  --copy-snippet-url: var(--copy-snippet-hover-url);
+}
+
 .snippet-container button,
 .snippet-container .learn-more {
-  color: var(--copy-snippet-color);
+  color: var(--snippet-button-color);
   font-size: 10px;
   line-height: var(--snippet-header-height);
   padding-top: 0;
   padding-bottom: 0;
+}
+
+.snippet-container button:hover,
+.snippet-container .learn-more:hover {
+  color: var(--snippet-button-hover-color);
 }
 
 .snippet-container .learn-more {
@@ -238,7 +249,9 @@ main > div:first-child > div:first-child {
 
 html[data-theme='dark'] .snippet-container {
   --copy-snippet-url: url('/img/shared/copy-dark.svg');
-  --copy-snippet-color: white;
+  --copy-snippet-hover-url: url('/img/shared/copy-dark-hover.svg');
+  --snippet-button-color: white;
+  --snippet-button-hover-color: rgba(255, 255, 255, .7);
   --snippet-background: rgb(41, 45, 62);
 }
 

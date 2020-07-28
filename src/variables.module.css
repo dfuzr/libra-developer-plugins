@@ -65,7 +65,6 @@ html {
   /* Component specific colors */
   --snippet-border-color: #EDEDED;
   --snippet-border-radius: 8px;
-  --snippet-copy-color: #6B7689;
   --snippet-copy-url: url('/img/copy.svg');
   --snippet-header-background: #E3E8EE;
   --scrollbar-width: 10px; /* TODO: Look into accounting varying browser widths of scrollbar */
