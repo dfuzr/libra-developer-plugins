@@ -33,6 +33,64 @@ body {
   height: calc(100vh - var(--total-nav-height) );
 }
 
+:global(.CookieConsent) {
+  background-color: var(--default-background-color) !important;
+  border-top: 1px solid white !important;
+  color: var(--ifm-heading-color) !important;
+  flex-direction: column;
+  padding: 30px 0;
+}
+
+:global(.CookieConsent) > * {
+  padding: 0 40px;
+}
+
+:global(.CookieConsent) > div:last-child { /* Buttons container */
+  display: flex;
+}
+
+.cookieContent {
+  flex: 1 !important;
+  margin: 0 !important;
+}
+
+:global(.CookieConsent) .title {
+  font-weight: 300;
+  line-height: 40px;
+  margin-bottom: 10px;
+}
+
+.cookieContent p {
+  font-size: 12px;
+  font-weight: 300;
+  line-height: 16px;
+  margin-bottom: 20px;
+}
+
+.cookieButton {
+  border-radius: 22.5px !important;
+  border: 2px solid var(--accent-highlight) !important;
+  margin: 0 !important;
+  padding: 0 28.5px !important;
+  height: 30px;
+}
+
+.cookieAccept,
+.cookieDecline:hover {
+  background-color: var(--accent-highlight) !important;
+  color: var(--color-contrast) !important;
+}
+
+.cookieDecline,
+.cookieAccept:hover {
+  background-color: transparent !important;
+  color: var(--accent-highlight) !important;
+}
+
+.cookieDecline {
+  margin-left: 20px !important;
+}
+
 @media large-tablet-breakpoint-max-query {
   :global(.main-wrapper) > div {
     display: inherit !important;

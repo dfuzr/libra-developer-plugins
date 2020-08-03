@@ -44,6 +44,7 @@ html {
   --accent-highlight: var(--brand-color);
   --blue-1: #6889E5;
   --brand-color: #42318c;
+  --color-contrast: white;
   --dark-mode-black-lighter: #3C4357;
   --dark-mode-black-darker: #131313;
   --dark-mode-black-darkest: #191F36;
@@ -80,6 +81,7 @@ html {
 html[data-theme='dark'] {
   /* Global Colors */
   --accent-highlight: white;
+  --color-contrast: black;
   --default-background-color: var(--dark-mode-black-darkest);
   --default-border-color: var(--dark-mode-black-lighter);
   --doc-component-background: var(--dark-mode-black-lighter);

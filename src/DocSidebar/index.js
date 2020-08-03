@@ -1,5 +1,4 @@
 import React, {useState, useCallback} from 'react';
-import { utils, WithBackgroundImage } from 'libra-docusaurus-components';
 
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import useLockBodyScroll from '@theme/hooks/useLockBodyScroll';
@@ -8,10 +7,11 @@ import Link from '@docusaurus/Link';
 import SearchBar from '@theme/SearchBar';
 import isInternalUrl from '@docusaurus/isInternalUrl';
 
+import scrollToTop from '../utils/scrollToTop';
+import WithBackgroundImage from '../WithBackgroundImage';
+
 import classnames from 'classnames';
 import styles from './styles.module.css';
-
-const { scrollToTop } = utils;
 
 const MOBILE_TOGGLE_SIZE = 24;
 

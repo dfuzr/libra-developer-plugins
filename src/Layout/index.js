@@ -1,13 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import CookieConsent from 'react-cookie-consent';
+
 import Head from '@docusaurus/Head';
 import isInternalUrl from '@docusaurus/isInternalUrl';
-import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import useBaseUrl from '@docusaurus/useBaseUrl';
-
-import ThemeProvider from '@theme/ThemeProvider';
-import TabGroupChoiceProvider from '@theme/TabGroupChoiceProvider';
+import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import AnnouncementBar from '@theme/AnnouncementBar';
+import TabGroupChoiceProvider from '@theme/TabGroupChoiceProvider';
+import ThemeProvider from '@theme/ThemeProvider';
+
 import Nav from '../Nav';
 import Footer from '../Footer';
 
@@ -26,6 +28,7 @@ if (TEST_ADA) {
 function Layout(props) {
   const {siteConfig = {}} = useDocusaurusContext();
   const {
+    customFields: {segmentPermissionCookie},
     favicon,
     title: siteTitle,
     themeConfig: {image: defaultImage},
@@ -93,6 +96,25 @@ function Layout(props) {
             {children}
           </div>
           {!noFooter && <Footer />}
+          <CookieConsent
+            buttonClasses={classnames(styles.cookieButton, styles.cookieAccept)}
+            buttonText="I accept"
+            cookieName={segmentPermissionCookie}
+            contentClasses={classnames(styles.cookieContent, "width-wrapper")}
+            declineButtonClasses={classnames(styles.cookieButton, styles.cookieDecline)}
+            declineButtonText="I do not accept"
+            enableDeclineButton
+            expires={365}
+            flipButtons
+            location="bottom"
+            onAccept={() => window.loadSegment()}
+          >
+            <h2 className={styles.title}>Our use of cookies</h2>
+            <p>
+              We use necessary cookies to enable our site to work for users. To help us provide relevant content, analyze our traffic, and provide a variety of personalized features to users, we also use certain optional cookies.
+By clicking “I accept,” you consent to the use of optional cookies on our website. You can also view our Cookie Policy for more information about the cookies we use on our website. <a href="https://libra.org/privacy/#cookies_policy">Read our Cookie Policy</a>.
+            </p>
+          </CookieConsent>
         </div>
       </TabGroupChoiceProvider>
     </ThemeProvider>

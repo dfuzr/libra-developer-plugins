@@ -42,8 +42,8 @@ main > .container.padding-vert--lg  {
 }
 
 .width-wrapper {
-  margin-left: auto;
-  margin-right: auto;
+  margin-left: auto !important;
+  margin-right: auto !important;
   max-width: 1440px;
   width: 100%;
 }
