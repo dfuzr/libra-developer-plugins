@@ -1,4 +1,5 @@
 .root {
+  background-color: var(--default-background-color);
   text-shadow: 0.5px 0 0;
 }
 
