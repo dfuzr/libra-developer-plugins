@@ -1,6 +1,6 @@
 {
   "name": "libra-docusaurus-components",
-  "version": "0.2.8",
+  "version": "0.2.9",
   "description": "To be used in between different docusaurus sites under the libra brand",
   "main": "src",
   "scripts": {
