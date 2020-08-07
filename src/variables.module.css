@@ -40,6 +40,7 @@ html {
   --doc-padding-bottom: 40px;
   --doc-padding-left: 28px;
   --header-size: 32px;
+  --right-sidebar-width: 0px;
   /* Global Colors */
   --accent-highlight: var(--brand-color);
   --blue-1: #6889E5;
@@ -111,6 +112,10 @@ html[data-theme='dark'] {
 }
 
 @media large-tablet-breakpoint-query {
+  html {
+    --right-sidebar-width: 252px;
+  }
+
   :global(.mobile-only) {
     display: none !important;
   }

@@ -135,6 +135,7 @@ main { /* docMainContainer */
 
 main > div:first-child > div:first-child {
   flex: 1;
+  max-width: calc( 100% - var(--right-sidebar-width) );
 }
 
 .prism-code > div { /* codeBlockLines */

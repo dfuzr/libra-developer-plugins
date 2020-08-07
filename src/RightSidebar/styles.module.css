@@ -24,7 +24,7 @@
   position: sticky;
   right: 0;
   top: 0;
-  width: 252px;
+  width: var(--right-sidebar-width);
 }
 
 @media large-tablet-breakpoint-query {
