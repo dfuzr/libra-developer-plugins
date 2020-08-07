@@ -1,3 +1,4 @@
+@value small-tablet-breakpoint-max-query from '~libra-docusaurus-components/src/variables.module.css';
 @value large-tablet-breakpoint-max-query from '~libra-docusaurus-components/src/variables.module.css';
 
 html,
@@ -64,6 +65,10 @@ body {
   font-size: 12px;
   font-weight: 300;
   line-height: 16px;
+  margin-bottom: 15px;
+}
+
+.cookieContent p:last-child {
   margin-bottom: 20px;
 }
 
@@ -89,6 +94,28 @@ body {
 
 .cookieDecline {
   margin-left: 20px !important;
+}
+
+@media small-tablet-breakpoint-max-query {
+  :global(.CookieConsent) {
+    height: 100vh;
+    justify-content: flex-start !important;
+  }
+
+  .cookieContent {
+    flex: 0 !important;
+  }
+
+  .cookieContent h2 {
+    font-size: 30px;
+    line-height: 34px;
+  }
+
+  .cookieContent p {
+    font-size: 14px;
+    line-height: 18px;
+    margin-bottom: 20px;
+  }
 }
 
 @media large-tablet-breakpoint-max-query {

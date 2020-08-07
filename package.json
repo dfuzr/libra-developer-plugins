@@ -1,6 +1,6 @@
 {
   "name": "libra-docusaurus-components",
-  "version": "0.2.13",
+  "version": "0.2.14",
   "description": "To be used in between different docusaurus sites under the libra brand",
   "main": "src",
   "scripts": {
@@ -13,6 +13,7 @@
     "prism-react-renderer": "^1.1.1",
     "prop-types": "^15.7.2",
     "react": "^16.13.1",
+    "react-cookie-consent": "^5.1.3",
     "react-dom": "^16.8.4",
     "react-socks": "^2.1.0",
     "webpack": "^4.43.0"
