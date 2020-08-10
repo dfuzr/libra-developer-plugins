@@ -3,7 +3,7 @@ const path = require('path');
 module.exports = function (context) {
   const {siteConfig} = context;
   const {customFields} = siteConfig;
-  const {segmentPermissionCookie, segment} = customFields || {};
+  const {trackingCookieConsent, segment} = customFields || {};
 
   if (!segment) {
     throw new Error(
@@ -47,7 +47,7 @@ module.exports = function (context) {
                  * Necessary to allow the cookie name to be accessible as a variable
                  * from function components that don't use hooks (such as analytics.js)
                  */
-                window.segmentPermissionCookie = '${segmentPermissionCookie}';
+                window.trackingCookieConsent = '${trackingCookieConsent}';
 
                 window.loadSegmentFormScript = () => {
                   const segmentScript = document.createElement('script');
@@ -65,14 +65,10 @@ module.exports = function (context) {
                  * We make the loading function accessible so that when the user accepts
                  * the cookie policy, segment is loaded without the need to refresh
                  */
-                window.loadSegment = () => {
-                  if (window.analytics) {
-                    return;
-                  }
-
+                window.loadAnalytics = () => {
                   const cookieRow = document.cookie
                     .split('; ')
-                    .find(row => row.startsWith('${segmentPermissionCookie}='));
+                    .find(row => row.startsWith('${trackingCookieConsent}='));
                   const cookiesEnabled = cookieRow ? cookieRow.split('=')[1] : 'false';
 
                   if (cookiesEnabled === 'true') {
@@ -80,12 +76,13 @@ module.exports = function (context) {
                     analytics.load("${apiKey}");
                     analytics.page();
                   }
+
+                  if (window.isFormPage) {
+                    window.loadSegmentFormScript();
+                  }
                 };
 
-                window.loadSegment();
-                if (window.isFormPage) {
-                  window.loadSegmentFormScript();
-                }
+                window.loadAnalytics();
               }();
             `,
           },

@@ -9,9 +9,7 @@ export default (function () {
 
   return {
     onRouteUpdate() {
-      const cookiesEnabled = getCookie(window.segmentPermissionCookie);
-
-      if (cookiesEnabled === 'true') {
+      if ( getCookie(window.trackingCookieConsent) ) {
         window.analytics.page();
       }
     },
