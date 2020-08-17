@@ -17,8 +17,8 @@ const CookieBanner = props => {
       buttonClasses={classnames(styles.cookieButton, styles.cookieAccept)}
       buttonText="I accept"
       buttonWrapperClasses="width-wrapper"
-      cookieName={trackingCookieConsent}
       contentClasses={classnames(styles.cookieContent, "width-wrapper")}
+      cookieName={trackingCookieConsent}
       declineButtonClasses={classnames(styles.cookieButton, styles.cookieDecline)}
       declineButtonText="I do not accept"
       enableDeclineButton
@@ -26,6 +26,7 @@ const CookieBanner = props => {
       flipButtons
       location="bottom"
       onAccept={() => window.loadAnalytics()}
+      sameSite="strict"
       {...cookieBannerProps}
     >
       <h2 className={styles.title}>Our use of cookies</h2>
