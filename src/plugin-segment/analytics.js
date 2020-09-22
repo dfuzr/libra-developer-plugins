@@ -9,7 +9,7 @@ export default (function () {
 
   return {
     onRouteUpdate() {
-      if ( getCookie(window.trackingCookieConsent) ) {
+      if ( getCookie(window.trackingCookieConsent) === 'true' ) {
         window.analytics.page();
       }
     },

@@ -3,13 +3,13 @@
 :global(.CookieConsent) {
   background-color: var(--default-background-color) !important;
   border-top: 1px solid white !important;
+  box-shadow: 0 -13px 14px 0px rgba(0, 0, 0, 0.2);
   color: var(--ifm-heading-color) !important;
   flex-flow: column nowrap !important;
   justify-content: flex-start !important;
-  height: 100vh;
+  max-height: 100vh;
   overflow: scroll;
-  padding-top: 20px;
-  top: 0;
+  padding: 20px 0;
 }
 
 :global(.CookieConsent) > * {
@@ -73,7 +73,6 @@
     height: initial;
     justify-content: inherit !important;
     padding: 30px 0;
-    top: inherit !important;
   }
 
   :global(.CookieConsent) > * {

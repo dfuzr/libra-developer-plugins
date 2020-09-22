@@ -121,7 +121,7 @@ article h1,
 }
 
 /*.docSidebarContainer {*/
-.main-wrapper > div > div:first-child:not(.row):not(#disable-ad-block) { /* .docSidebarContainer */
+.main-wrapper > div > div:first-child:not(.row):not(.modal) { /* .docSidebarContainer */
   box-sizing: border-box;
   width: 302px;
   margin-top: 0;

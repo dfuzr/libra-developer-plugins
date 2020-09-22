@@ -24,7 +24,7 @@ module.exports = function (context) {
   }
 
   const isProd = process.env.NODE_ENV === 'production';
-  const apiKey = isProd ? productionKey : stagingKey;
+  const apiKey = isProd && process.env.SEGMENT !== 'staging' ? productionKey : stagingKey;
 
   return {
     name: 'libra-docusaurus-plugin-segment',
