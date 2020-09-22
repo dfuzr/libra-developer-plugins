@@ -10,6 +10,7 @@ import TabGroupChoiceProvider from '@theme/TabGroupChoiceProvider';
 import ThemeProvider from '@theme/ThemeProvider';
 
 import CookieBanner from '../CookieBanner';
+import CookieChoiceProvider from '../Contexts/CookieChoice/provider';
 import Footer from '../Footer';
 import Nav from '../Nav';
 
@@ -56,47 +57,49 @@ function Layout(props) {
   return (
     <ThemeProvider>
       <TabGroupChoiceProvider>
-        <Head>
-          {/* TODO: Do not assume that it is in english language */}
-          <html lang="en" />
+        <CookieChoiceProvider>
+          <Head>
+            {/* TODO: Do not assume that it is in english language */}
+            <html lang="en" />
 
-          {metaTitle && <title>{metaTitle}</title>}
-          {metaTitle && <meta property="og:title" content={metaTitle} />}
-          {favicon && <link rel="shortcut icon" href={faviconUrl} />}
-          {description && <meta name="description" content={description} />}
-          {description && (
-            <meta property="og:description" content={description} />
-          )}
-          {version && <meta name="docsearch:version" content={version} />}
-          {keywords && keywords.length && (
-            <meta name="keywords" content={keywords.join(',')} />
-          )}
-          {metaImage && <meta property="og:image" content={metaImageUrl} />}
-          {metaImage && (
-            <meta property="twitter:image" content={metaImageUrl} />
-          )}
-          {metaImage && (
-            <meta name="twitter:image:alt" content={`Image for ${metaTitle}`} />
-          )}
-          {permalink && (
-            <meta property="og:url" content={siteUrl + permalink} />
-          )}
-          <meta name="twitter:card" content="summary_large_image" />
-        </Head>
-        <AnnouncementBar />
-        <div>
-          <Nav />
-          <div className={styles.navSpacer}></div>
-        </div>
-        <div className={OVERFLOW_CONTAINER_CLASS}>
-          <div className={classnames("main-wrapper", {
-            "width-wrapper": containWidth,
-          })}>
-            {children}
+            {metaTitle && <title>{metaTitle}</title>}
+            {metaTitle && <meta property="og:title" content={metaTitle} />}
+            {favicon && <link rel="shortcut icon" href={faviconUrl} />}
+            {description && <meta name="description" content={description} />}
+            {description && (
+              <meta property="og:description" content={description} />
+            )}
+            {version && <meta name="docsearch:version" content={version} />}
+            {keywords && keywords.length && (
+              <meta name="keywords" content={keywords.join(',')} />
+            )}
+            {metaImage && <meta property="og:image" content={metaImageUrl} />}
+            {metaImage && (
+              <meta property="twitter:image" content={metaImageUrl} />
+            )}
+            {metaImage && (
+              <meta name="twitter:image:alt" content={`Image for ${metaTitle}`} />
+            )}
+            {permalink && (
+              <meta property="og:url" content={siteUrl + permalink} />
+            )}
+            <meta name="twitter:card" content="summary_large_image" />
+          </Head>
+          <AnnouncementBar />
+          <div>
+            <Nav />
+            <div className={styles.navSpacer}></div>
           </div>
-          {!noFooter && <Footer />}
-          <CookieBanner />
-        </div>
+          <div className={OVERFLOW_CONTAINER_CLASS}>
+            <div className={classnames("main-wrapper", {
+              "width-wrapper": containWidth,
+            })}>
+              {children}
+            </div>
+            {!noFooter && <Footer />}
+            <CookieBanner />
+          </div>
+        </CookieChoiceProvider>
       </TabGroupChoiceProvider>
     </ThemeProvider>
   );

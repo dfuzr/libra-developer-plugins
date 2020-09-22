@@ -3,6 +3,7 @@ const utils = require('./utils');
 exports.utils = utils.default;
 
 const CodeBlock = require('./CodeBlock');
+const CookieContext = require('./Contexts/CookieChoice');
 const DocSidebar = require('./DocSidebar');
 const Layout = require('./Layout');
 const Footer = require('./Footer');
@@ -12,6 +13,7 @@ const WithBackgroundImage = require('./WithBackgroundImage');
 
 /* Components */
 exports.CodeBlock = CodeBlock.default;
+exports.CookieContext = CookieContext.default;
 exports.DocSidebar = DocSidebar.default;
 exports.Footer = Footer.default;
 exports.Nav = Nav.default;

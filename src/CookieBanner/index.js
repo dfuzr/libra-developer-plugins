@@ -1,7 +1,8 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import CookieConsent from 'react-cookie-consent';
 
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
+import CookieChoiceContext from '../Contexts/CookieChoice/context';
 
 import classnames from 'classnames';
 import styles from './styles.module.css';
@@ -10,7 +11,17 @@ const CookieBanner = props => {
   const {siteConfig: {customFields: {
     cookieBannerProps,
     trackingCookieConsent,
+    trackingCookieLength,
   }}} = useDocusaurusContext();
+  const {setCookiesEnabled} = useContext(CookieChoiceContext);
+
+  const onClick = enableCookies => {
+    if (enableCookies) {
+      window.loadAnalytics();
+    }
+
+    setCookiesEnabled(enableCookies);
+  }
 
   return (
     <CookieConsent
@@ -22,10 +33,11 @@ const CookieBanner = props => {
       declineButtonClasses={classnames(styles.cookieButton, styles.cookieDecline)}
       declineButtonText="I do not accept"
       enableDeclineButton
-      expires={365}
+      expires={trackingCookieLength || 90}
       flipButtons
       location="bottom"
-      onAccept={() => window.loadAnalytics()}
+      onAccept={() => onClick(true)}
+      onDecline={() => onClick(false)}
       sameSite="strict"
       {...cookieBannerProps}
     >
