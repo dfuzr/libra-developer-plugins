@@ -123,7 +123,7 @@ function DocSidebarItem({theme = 'primary', item, onItemClick, collapsible, ...p
           exact: true,
           onClick: onItemClick,
         };
-      } else {
+      } else if (!noLink) {
         linkProps = {
           target: '_blank',
           rel: 'noreferrer noopener',

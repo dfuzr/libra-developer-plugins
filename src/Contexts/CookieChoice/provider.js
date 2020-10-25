@@ -6,7 +6,7 @@ import utils from '../../utils';
 
 const {areTrackingCookiesEnabled} = utils;
 
-const TestProvider = ({children}) => {
+const Provider = ({children}) => {
   const [cookiesEnabled, setCookiesEnabled] = useState(areTrackingCookiesEnabled);
 
   return (
@@ -18,4 +18,4 @@ const TestProvider = ({children}) => {
   );
 }
 
-export default TestProvider;
+export default Provider;

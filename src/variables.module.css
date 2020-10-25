@@ -40,6 +40,7 @@ html {
   --doc-padding-bottom: 40px;
   --doc-padding-left: 28px;
   --header-size: 32px;
+  --ifm-code-font-size: 85% !important;
   --right-sidebar-width: 0px;
   /* Global Colors */
   --accent-highlight: var(--brand-color);
@@ -134,8 +135,8 @@ html[data-theme='dark'] {
 @media large-desktop-breakpoint-query {
   html {
     --doc-padding-top: 52px;
-    --doc-padding-right: 65px;
-    --doc-padding-left: 65px;
+    --doc-padding-right: 62px;
+    --doc-padding-left: 62px;
   }
 }
 

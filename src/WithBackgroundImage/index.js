@@ -42,9 +42,9 @@ const WithBackgroundImage = ({
 
   const image = getImage(images, isHovered);
 
-  const backgroundImageStyle = {
-    'backgroundImage': `url('${image}')`,
-  };
+  const backgroundImageStyle = image
+    ? {'backgroundImage': `url('${image}')`}
+    : {};
   const imagesToPreload = images.filter(url => url).map(url => useBaseUrl(url));
 
   useEffect(() => {
