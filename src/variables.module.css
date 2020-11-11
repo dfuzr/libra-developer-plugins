@@ -35,6 +35,8 @@ html {
     var(--total-nav-height) +
     var(--body-padding-top)
   );
+  --doc-card-3-per-row: 243px;
+  --doc-card-4-per-row: 177px;
   --doc-padding-top: 30px;
   --doc-padding-right: 28px;
   --doc-padding-bottom: 40px;

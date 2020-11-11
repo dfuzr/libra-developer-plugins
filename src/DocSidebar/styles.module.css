@@ -227,16 +227,8 @@
   font-family: var(--font-normal);
 }
 
-:global(.menu__list).reference {
-  margin-top: -2px;
-}
-
-.reference * {
-  font-weight: normal !important;
-}
-
-.reference .categoryTitle .menuLink {
-  margin-bottom: 1em !important;
+.standaloneReferenceLink {
+  margin: 12px 0 !important;
 }
 
 .listTitle.withBackgroundImage,
