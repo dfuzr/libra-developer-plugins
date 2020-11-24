@@ -48,7 +48,7 @@ main > .container.padding-vert--lg  {
   width: 100%;
 }
 
-.width-wrapper.libra-org-width {
+.width-wrapper.diem-org-width {
   max-width: 1400px;
 }
 
@@ -60,6 +60,10 @@ article h1 {
   font-size: var(--header-size);
   font-weight: normal;
   letter-spacing: -.2px;
+}
+
+.markdown li {
+  list-style: initial;
 }
 
 .markdown > h2 {
@@ -90,16 +94,20 @@ article h1,
 }
 
 .markdown > p,
+.markdown > .p,
 .markdown li {
   font-weight: lighter;
 }
 
-.markdown > p {
+.markdown > p,
+.markdown > .p {
   font-size: 18px;
+  line-height: inherit;
   margin: 11px 0;
 }
 
 .markdown > p,
+.markdown > .p,
 .markdown > * > li {
   color: var(--doc-secondary-color);
 }
@@ -123,6 +131,7 @@ article h1,
 /*.docSidebarContainer {*/
 .main-wrapper > div > div:first-child:not(.row):not(.modal) { /* .docSidebarContainer */
   box-sizing: border-box;
+  flex-shrink: 0;
   width: 302px;
   margin-top: 0;
   position: relative;
@@ -169,6 +178,7 @@ main > div:first-child > div:first-child {
 
 .snippet-container:not(.is-within-multi-step) .prism-code {
   border: 1px solid var(--snippet-border-color);
+  max-height: 350px;
 }
 
 .single-wrapper {

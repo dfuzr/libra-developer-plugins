@@ -40,7 +40,7 @@ const Footer = () => {
             <SocialLinks links={socialLinks} />
             <WithBackgroundImage
               className={styles.newsletter}
-              href="https://developers.libra.org/newsletter_form"
+              href="https://developers.diem.com/newsletter_form"
               imageLight="/img/shared/newsletter.svg"
               imageLightHover="/img/shared/newsletter-hover.svg"
               imageDark="img/shared/newsletter-dark.svg"

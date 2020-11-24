@@ -231,6 +231,10 @@
   margin: 12px 0 !important;
 }
 
+.referenceVerticalSpacing {
+  margin-top: 2.5em !important;
+}
+
 .listTitle.withBackgroundImage,
 .menu .categoryLabel .withBackgroundImage {
   padding-left: 45px;

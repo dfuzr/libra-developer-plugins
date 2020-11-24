@@ -20,7 +20,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav aria-label="Libra cross-domain nav" className={styles.root}>
+    <nav aria-label="Diem cross-domain nav" className={styles.root}>
       <PrimaryNav activePopupMenu={activePopupMenu} setPopupMenu={setPopupMenu} />
       <SubNav activePopupMenu={activePopupMenu} setPopupMenu={setPopupMenu} />
     </nav>

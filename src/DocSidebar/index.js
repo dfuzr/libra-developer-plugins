@@ -23,10 +23,11 @@ const getClasses = (classNames = []) =>
   );
 
 function DocSidebarItem({theme = 'primary', item, onItemClick, collapsible, ...props}) {
-  const {extra = {}, items, href, label, type} = item;
+  const {extra = {}, items, label, type} = item;
   const {
     classNames,
     containerClassNames,
+    fragmentIdentifier,
     icon,
     iconHover,
     iconDark,
@@ -37,6 +38,8 @@ function DocSidebarItem({theme = 'primary', item, onItemClick, collapsible, ...p
   } = extra;
   const [collapsed, setCollapsed] = useState(item.collapsed);
   const [prevCollapsedProp, setPreviousCollapsedProp] = useState(null);
+  const sidebarLabel = extra.sidebarLabel ? extra.sidebarLabel : label;
+  const href = fragmentIdentifier ? `${item.href}#${fragmentIdentifier}` : item.href;
   let ItemTag;
 
   // If the collapsing state from props changed, probably a navigation event
@@ -70,7 +73,7 @@ function DocSidebarItem({theme = 'primary', item, onItemClick, collapsible, ...p
                 [styles.withBackgroundImage]: icon,
               },
             )}
-            key={label}
+            key={sidebarLabel}
             tag="li"
             imageDark={iconDark}
             imageDarkHover={iconDarkHover}
@@ -94,7 +97,7 @@ function DocSidebarItem({theme = 'primary', item, onItemClick, collapsible, ...p
                   onClick={collapsible ? handleItemClick : undefined}
                   {...props}
                 >
-                  {label}
+                  {sidebarLabel}
                 </ItemTag>
               </li>
               {items.map((childItem) => (
@@ -137,7 +140,7 @@ function DocSidebarItem({theme = 'primary', item, onItemClick, collapsible, ...p
             styles.listItem,
             ...getClasses(classNames),
           )}
-          key={label}
+          key={sidebarLabel}
         >
           <WithBackgroundImage
             className={classnames("menu__link", styles.menuLink, ...getClasses(iconClasses), {
@@ -152,7 +155,7 @@ function DocSidebarItem({theme = 'primary', item, onItemClick, collapsible, ...p
             {...linkProps}
             {...props}
           >
-            <span>{label}</span>
+            <span>{sidebarLabel}</span>
           </WithBackgroundImage>
         </li>
       );

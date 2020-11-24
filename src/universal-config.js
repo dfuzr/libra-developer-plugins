@@ -1,13 +1,13 @@
 module.exports = {
-  title: 'Libra',
+  title: 'Diem',
   tagline: 'A New Global Payment System',
   baseUrl: '/',
-  organizationName: 'libra',
-  projectName: 'libra',
+  organizationName: 'diem',
+  projectName: 'diem',
   themeConfig: {
     logo: {
-      alt: 'Libra Logo',
-      to: 'https://libra.org/'
+      alt: 'Diem Logo',
+      to: 'https://diem.org/'
     },
     footer: {
       links: [
@@ -16,19 +16,19 @@ module.exports = {
           items: [
             {
               label: 'Vision',
-              to: 'https://libra.org/vision/',
+              to: 'https://diem.org/vision/',
             },
             {
               label: 'Association',
-              to: 'https://libra.org/association/',
+              to: 'https://diem.org/association/',
             },
             {
               label: 'Developers',
-              to: 'https://libra.org/developers/',
+              to: 'https://diem.org/developers/',
             },
             {
               label: 'Learn',
-              to: 'https://libra.org/learn-faqs/',
+              to: 'https://diem.org/learn-faqs/',
             },
           ]
         },
@@ -37,15 +37,15 @@ module.exports = {
           items: [
             {
               label: 'Media',
-              to: 'https://libra.org/media-press-news/',
+              to: 'https://diem.org/media-press-news/',
             },
             {
               label: 'White Paper',
-              to: 'https://libra.org/white-paper/',
+              to: 'https://diem.org/white-paper/',
             },
             {
               label: 'Careers',
-              to: 'https://libra.org/careers/',
+              to: 'https://diem.org/careers/',
             },
           ],
         },
@@ -54,91 +54,87 @@ module.exports = {
           items: [
             {
               label: 'Privacy',
-              to: 'https://libra.org/privacy/',
+              to: 'https://diem.org/privacy/',
             },
             {
               label: 'Cookies',
-              to: 'https://libra.org/privacy/#cookies_policy',
+              to: 'https://diem.org/privacy/#cookies_policy',
             },
             {
               label: 'Terms of Use',
-              to: 'https://libra.org/privacy/#terms_of_use',
+              to: 'https://diem.org/privacy/#terms_of_use',
             },
             {
               label: 'Code of Conduct',
-              to: 'https://developers.libra.org/docs/policies/code-of-conduct',
+              to: 'https://developers.diem.org/docs/policies/code-of-conduct',
             },
           ],
         },
       ],
       socialLinks: {
-        facebook: 'https://www.facebook.com/LibraAssociation/',
-        linkedIn: 'https://www.linkedin.com/company/libra-association/',
+        facebook: 'https://www.facebook.com/DiemAssociation/',
+        linkedIn: 'https://www.linkedin.com/company/diem-association/',
         twitter: 'https://twitter.com/libradev',
-        instagram: 'https://www.instagram.com/libra/',
-        github: 'https://github.com/libra/libra',
+        instagram: 'https://www.instagram.com/diem/',
+        github: 'https://github.com/diem/diem',
       },
-      copyright: `©${new Date().getFullYear()} Libra Association`,
+      copyright: `©${new Date().getFullYear()} Diem Association`,
     },
     navbar: {
-      title: 'Libra Developers',
+      title: 'Diem Developers',
       logo: {
-        alt: 'Libra Logo',
-        href: 'https://libra.org',
+        alt: 'Diem Logo',
+        href: 'https://diem.org',
       },
       primaryLinks: [
         {
           label: 'Vision',
-          to: 'https://libra.org/vision/',
+          to: 'https://diem.org/vision/',
         },
         {
           label: 'Association',
-          to: 'https://libra.org/association/',
+          to: 'https://diem.org/association/',
         },
         {
           id: 'developers',
           label: 'Developers',
-          to: 'https://libra.org/developers/',
+          to: 'https://diem.org/developers/',
         },
         {
           label: 'Learn',
-          to: 'https://libra.org/learn-faqs/',
+          to: 'https://diem.org/learn-faqs/',
         },
         {
           label: 'Media',
-          to: 'https://libra.org/media-press-news/',
+          to: 'https://diem.org/media-press-news/',
         },
       ],
       cornerLink: {
         label: 'White Paper',
-        to: 'https://libra.org/white-paper/',
+        to: 'https://diem.org/white-paper/',
         image: {
-          alt: 'Libra Whitepaper',
+          alt: 'Diem Whitepaper',
         }
       },
       secondaryLinks: [
         {
-          label: 'Overview',
-          to: 'https://libra.org/developers/',
-        },
-        {
           id: 'developers',
-          label: 'Libra Docs',
-          to: 'https://developers.libra.org/docs/welcome-to-libra',
+          label: 'Diem Documentation',
+          to: 'https://developers.diem.org/docs/welcome-to-diem',
         },
         {
           id: 'lips',
           label: 'Governance',
-          to: 'https://lip.libra.org/',
+          to: 'https://lip.diem.org/',
         },
         {
           label: 'Community',
-          to: 'https://community.libra.org/',
+          to: 'https://community.diem.org/',
         },
         {
           isExternal: true,
           label: 'Github',
-          to: 'https://github.com/libra/',
+          to: 'https://github.com/diem/',
         }
       ],
     },
