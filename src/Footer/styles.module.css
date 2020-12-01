@@ -24,9 +24,12 @@ footer ul {
 }
 
 .logo svg {
-  fill: var(--accent-highlight);
   padding-bottom: 57px;
   width: 142px;
+}
+
+.logo path {
+  fill: var(--accent-highlight);
 }
 
 .linkList li:not(:last-child) {

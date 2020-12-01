@@ -5,7 +5,7 @@
 /*
  * For some reason, importing the variable above causes
  * the next style to be ignored. This seems like a webpack
- * bug, so for the sake of time I'm putting in this 
+ * bug, so for the sake of time I'm putting in this
  * quick fix (having a blank style before the real one)
  * and hoping that the bug resolves on its own with a future
  * update of CSS variables/webpack
@@ -20,11 +20,15 @@
 }
 
 .desktop {
-    display: none;
-  }
+  display: none;
+}
 
-.logo, .logo svg {
+.logo,
+.logo svg {
   height: 21px;
+}
+
+.logo path {
   fill: var(--accent-highlight);
 }
 
@@ -53,7 +57,7 @@ html {
   --subnav-height: 60px;
   --nav-right-padding: 20px;
   --nav-left-padding: 20px;
-  --total-nav-height: calc( var(--primary-nav-height) + var(--subnav-height) ); 
+  --total-nav-height: calc( var(--primary-nav-height) + var(--subnav-height) );
 }
 
 @media large-tablet-breakpoint-query {

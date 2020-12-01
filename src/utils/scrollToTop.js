@@ -1,6 +1,6 @@
-import { OVERFLOW_CONTAINER_CLASS } from '@theme/Layout';
-
-const scrollToTop = () =>
-  document.querySelector(`.${OVERFLOW_CONTAINER_CLASS}`).scrollTo(0, 0);
+const scrollToTop = () => {
+  document.querySelector(`.nav-pusher`).scrollTo(0, 0);
+  document.querySelector(`#intra-site-navigation`).scrollTo(0, 0);
+}
 
 export default scrollToTop;

@@ -26,7 +26,7 @@ body {
   height: var(--total-nav-height);
 }
 
-.navPusher {
+:global(.nav-pusher) {
   display: flex;
   flex-direction: column;
   margin-top: 1px;

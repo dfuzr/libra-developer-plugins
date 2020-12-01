@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 
 import CookieChoiceContext from './context';
 
-import utils from '../../utils';
+import utils from '../../utils/index.js';
 
 const {areTrackingCookiesEnabled} = utils;
 

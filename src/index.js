@@ -1,6 +1,5 @@
 /* Exported first as it is used by the below modules */
 const utils = require('./utils');
-exports.utils = utils.default;
 
 const CodeBlock = require('./CodeBlock');
 const CookieContext = require('./Contexts/CookieChoice');
@@ -12,6 +11,7 @@ const RightSidebar = require('./RightSidebar');
 const WithBackgroundImage = require('./WithBackgroundImage');
 
 /* Components */
+
 exports.CodeBlock = CodeBlock.default;
 exports.CookieContext = CookieContext.default;
 exports.DocSidebar = DocSidebar.default;
@@ -20,6 +20,7 @@ exports.Nav = Nav.default;
 exports.Layout = Layout.default;
 exports.RightSidebar = RightSidebar.default;
 exports.WithBackgroundImage = WithBackgroundImage.default;
+exports.utils = utils.default;
 
 /* Misc */
 exports.OVERFLOW_CONTAINER_CLASS = Layout.OVERFLOW_CONTAINER_CLASS;

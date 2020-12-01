@@ -7,7 +7,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import Logo from 'img/shared/logo.svg';
 import SocialLinks from './SocialLinks';
 import universalConfig from '../universal-config';
-import {WithBackgroundImage} from 'libra-docusaurus-components';
+import WithBackgroundImage from '../WithBackgroundImage';
 
 import classnames from 'classnames';
 import styles from './styles.module.css';

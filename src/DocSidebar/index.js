@@ -222,7 +222,7 @@ function DocSidebar(props) {
   }
 
   return (
-    <nav aria-label="intra-site navigation" className={styles.sidebar}>
+    <nav aria-label="intra-site navigation" className={styles.sidebar} id="intra-site-navigation">
       {hideOnScroll && (
         <Link
           tabIndex="-1"

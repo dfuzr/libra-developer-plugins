@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import ReactDOM from 'react-dom';
 
 import Head from '@docusaurus/Head';
@@ -17,8 +17,6 @@ import Nav from '../Nav';
 import classnames from 'classnames';
 import styles from './styles.module.css';
 import '../universal.css';
-
-export const OVERFLOW_CONTAINER_CLASS = styles.navPusher;
 
 // Provided via plugins/react-axe-ada-monitoring
 if (TEST_ADA) {
@@ -53,6 +51,13 @@ function Layout(props) {
     metaImageUrl = metaImage;
   }
   const faviconUrl = useBaseUrl(favicon);
+
+  useEffect(() => {
+    if (window.location.hash) {
+      const hashWithoutHash = window.location.hash.substring(1);
+      document.getElementById(hashWithoutHash)?.scrollIntoView();
+    }
+  }, []);
 
   return (
     <ThemeProvider>
@@ -90,7 +95,7 @@ function Layout(props) {
             <Nav />
             <div className={styles.navSpacer}></div>
           </div>
-          <div className={OVERFLOW_CONTAINER_CLASS}>
+          <div className="nav-pusher">
             <div className={classnames("main-wrapper", {
               "width-wrapper": containWidth,
             })}>
