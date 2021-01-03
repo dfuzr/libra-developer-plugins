@@ -1,21 +1,31 @@
 import React from 'react';
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import useThemeContext from '@theme/hooks/useThemeContext';
 
 import NavLink, { BUTTON_TYPES } from '../../components/NavLink';
 import Logo from '../../../../img/logo.svg';
-import universalConfig from '../../../universal-config';
 
 import classnames from 'classnames';
 import styles from './styles.module.css';
 import navStyles from '../../styles.module.css';
 
-const PrimaryDesktop = () => {
+const PrimaryNavDesktop = () => {
   const { isDarkTheme } = useThemeContext();
-  const { themeConfig: {navbar: {
-    cornerLink, primaryLinks, logo,
-  }}} = universalConfig;
+  const {
+    siteConfig: {
+      themeConfig: {
+        logo,
+      },
+      customFields: {
+        navbar: {
+          cornerLink,
+          primaryLinks,
+        },
+      },
+    }
+  } = useDocusaurusContext();
 
   return (
     <div className={classnames(styles.root, 'desktop-only')}>
@@ -36,4 +46,4 @@ const PrimaryDesktop = () => {
   );
 }
 
-export default PrimaryDesktop
+export default PrimaryNavDesktop

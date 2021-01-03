@@ -15,13 +15,17 @@ html {
 
 body,
 input {
-  font-family: 'NB International Pro';
+  font-family: "NB International Pro";
 }
 
 code,
 blockquote,
 li {
   word-break: break-word;
+}
+
+table code {
+  word-break: initial;
 }
 
 ol li {
@@ -37,7 +41,7 @@ body .hash-link {
   position: absolute;
 }
 
-main > .container.padding-vert--lg  {
+main > .container.padding-vert--lg {
   padding-top: 0 !important;
 }
 
@@ -59,7 +63,7 @@ article header h1 {
 article h1 {
   font-size: var(--header-size);
   font-weight: normal;
-  letter-spacing: -.2px;
+  letter-spacing: -0.2px;
 }
 
 .markdown li {
@@ -116,6 +120,10 @@ article h1,
   list-style: initial;
 }
 
+.container {
+  padding: 0;
+}
+
 /*
  * These are selectors classes that we do not have
  * direct access to, as they are scope by CSS modules.
@@ -124,12 +132,13 @@ article h1,
  * Due to the fragile nature of selecting a class like this,
  * it may break upon further updates.
  */
-.main-wrapper > div { /* .docPage */
+.main-wrapper > div {
+  /* .docPage */
   color: var(--doc-primary);
 }
 
 /*.docSidebarContainer {*/
-.main-wrapper > div > div:first-child:not(.row):not(.modal) { /* .docSidebarContainer */
+.main-wrapper > div > div:first-child:not(.row):not(.modal) {
   box-sizing: border-box;
   flex-shrink: 0;
   width: 302px;
@@ -137,17 +146,14 @@ article h1,
   position: relative;
 }
 
-main { /* docMainContainer */
+/* docMainContainer */
+main {
   flex: 1;
   flex-grow: 1;
 }
 
-main > div:first-child > div:first-child {
-  flex: 1;
-  max-width: calc( 100% - var(--right-sidebar-width) );
-}
-
-.prism-code > div { /* codeBlockLines */
+/* codeBlockLines */
+.prism-code > div {
   width: 0;
 }
 
@@ -158,17 +164,18 @@ main > div:first-child > div:first-child {
 
 /* Code Snippet */
 .snippet-container {
-  --copy-snippet-url: url('/img/shared/copy.svg');
-  --copy-snippet-hover-url: url('/img/shared/copy-hover.svg');
+  --copy-snippet-url: url("/img/shared/copy.svg");
+  --copy-snippet-hover-url: url("/img/shared/copy-hover.svg");
   --snippet-background: rgb(246, 248, 250);
-  --snippet-button-color: #6B7689;
-  --snippet-button-hover-color: #15112C;
+  --snippet-button-color: #6b7689;
+  --snippet-button-hover-color: #15112c;
   background-color: var(--snippet-background);
   border-radius: var(--snippet-border-radius);
   position: relative;
 }
 
-.snippet-container .tabs, .snippet-header {
+.snippet-container .tabs,
+.snippet-header {
   background-color: var(--snippet-header-background);
   border-top-left-radius: var(--ifm-global-radius);
   border-top-right-radius: var(--ifm-global-radius);
@@ -186,7 +193,7 @@ main > div:first-child > div:first-child {
 }
 
 .snippet-container .prism-code {
-  margin-top: calc( var(--snippet-header-height) * -1 );
+  margin-top: calc(var(--snippet-header-height) * -1);
   padding-top: var(--snippet-header-height);
 }
 
@@ -258,47 +265,55 @@ main > div:first-child > div:first-child {
   border-top-right-radius: 0;
 }
 
-html[data-theme='dark'] .snippet-container {
-  --copy-snippet-url: url('/img/shared/copy-dark.svg');
-  --copy-snippet-hover-url: url('/img/shared/copy-dark-hover.svg');
+html[data-theme="dark"] .snippet-container {
+  --copy-snippet-url: url("/img/shared/copy-dark.svg");
+  --copy-snippet-hover-url: url("/img/shared/copy-dark-hover.svg");
   --snippet-button-color: white;
-  --snippet-button-hover-color: rgba(255, 255, 255, .7);
+  --snippet-button-hover-color: rgba(255, 255, 255, 0.7);
   --snippet-background: rgb(41, 45, 62);
 }
 
 /* Fonts */
 @font-face {
-  font-family: 'NB International Pro Bold';
-  src: url('/fonts/nb_international_pro_bold.otf');
+  font-family: "NB International Pro Bold";
+  src: url("/fonts/nb_international_pro_bold.otf");
 }
 
 @font-face {
-  font-family: 'NB International Pro';
+  font-family: "NB International Pro";
   font-weight: 500;
-  src: local('NBInternationalPro-Bold'), local('NBInternationalBoldWebfont'),
-    url('/fonts/nb_international_pro_bold.otf');
+  src: local("NBInternationalPro-Bold"), local("NBInternationalBoldWebfont"),
+    url("/fonts/nb_international_pro_bold.otf");
 }
 
 @font-face {
-  font-family: 'NB International Pro';
+  font-family: "NB International Pro";
   font-weight: 400;
   font-style: normal;
   font-display: auto;
-  src: local('NBInternationalPro-Reg'), local('NBInternationalRegularWebfont'),
-    url('/fonts/nb_international_pro_regular-webfont-c77cab7d176ad6c0a735e9e54398f4b5.eot') format('embedded-opentype'),
-    url('/fonts/nb_international_pro_regular-webfont-23316df531b081018ab50f3fdebb911d.woff2') format('woff2'),
-    url('/fonts/nb_international_pro_regular-webfont-2055eda1f28e3f2766b54ff5d7fa9c3a.woff') format('woff'),
-    url('/fonts/nb_international_pro_regular-webfont-5a1862044e5200d96d6e081b00abaab2.tff') format('truetype');
+  src: local("NBInternationalPro-Reg"), local("NBInternationalRegularWebfont"),
+    url("/fonts/nb_international_pro_regular-webfont-c77cab7d176ad6c0a735e9e54398f4b5.eot")
+      format("embedded-opentype"),
+    url("/fonts/nb_international_pro_regular-webfont-23316df531b081018ab50f3fdebb911d.woff2")
+      format("woff2"),
+    url("/fonts/nb_international_pro_regular-webfont-2055eda1f28e3f2766b54ff5d7fa9c3a.woff")
+      format("woff"),
+    url("/fonts/nb_international_pro_regular-webfont-5a1862044e5200d96d6e081b00abaab2.tff")
+      format("truetype");
 }
 
 @font-face {
-  font-family: 'NB International Pro';
+  font-family: "NB International Pro";
   font-weight: 300;
   font-style: normal;
   font-display: auto;
-  src: local('NBInternationalPro-Lig'), local('NBInternationalLightWebfont'),
-    url('/fonts/nb_international_pro_light-webfont-79e1edf03d8ddf7d46731839a1463613.eot') format('embedded-opentype'),
-    url('/fonts/nb_international_pro_light-webfont-51e77a94d273016b7b0fbf54dc201e99.woff2') format('woff2'),
-    url('/fonts/nb_international_pro_light-webfont-21efbc5b931089585cc7d67affc7490e.woff') format('woff'),
-    url('/fonts/nb_international_pro_light-webfont-07bd85ca228c4cd11e30a21b915f20c6.ttf') format('truetype');
+  src: local("NBInternationalPro-Lig"), local("NBInternationalLightWebfont"),
+    url("/fonts/nb_international_pro_light-webfont-79e1edf03d8ddf7d46731839a1463613.eot")
+      format("embedded-opentype"),
+    url("/fonts/nb_international_pro_light-webfont-51e77a94d273016b7b0fbf54dc201e99.woff2")
+      format("woff2"),
+    url("/fonts/nb_international_pro_light-webfont-21efbc5b931089585cc7d67affc7490e.woff")
+      format("woff"),
+    url("/fonts/nb_international_pro_light-webfont-07bd85ca228c4cd11e30a21b915f20c6.ttf")
+      format("truetype");
 }

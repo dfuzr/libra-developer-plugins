@@ -1,7 +1,7 @@
 {
   "name": "libra-docusaurus-components",
-  "version": "0.2.32",
-  "description": "To be used in between different docusaurus sites under the libra brand",
+  "version": "0.2.50",
+  "description": "To be used in between different docusaurus sites under the Diem brand",
   "main": "src",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -10,6 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "@svgr/webpack": "^5.4.0",
+    "docsearch.js": "^2.6.3",
     "prism-react-renderer": "^1.1.1",
     "prop-types": "^15.7.2",
     "react": "^16.13.1",

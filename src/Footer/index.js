@@ -1,22 +1,26 @@
-import React from 'react';
+import React from "react";
 
-import Link from '@docusaurus/Link';
-import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
-import useBaseUrl from '@docusaurus/useBaseUrl';
+import Link from "@docusaurus/Link";
+import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
+import useBaseUrl from "@docusaurus/useBaseUrl";
 
-import Logo from 'img/shared/logo.svg';
-import SocialLinks from './SocialLinks';
-import universalConfig from '../universal-config';
-import WithBackgroundImage from '../WithBackgroundImage';
+import Logo from "img/shared/logo.svg";
+import SocialLinks from "./SocialLinks";
 
-import classnames from 'classnames';
-import styles from './styles.module.css';
+import WithBackgroundImage from "../WithBackgroundImage";
+
+import classnames from "classnames";
+import styles from "./styles.module.css";
 
 const Footer = () => {
-  const {themeConfig = {}} = universalConfig;
-  const {footer, logo} = themeConfig;
+  const {
+    siteConfig: {
+      themeConfig: { footer, logo },
+      customFields: { socialLinks },
+    },
+  } = useDocusaurusContext();
 
-  const {copyright, links = [], socialLinks} = footer || {};
+  const { copyright, links = [] } = footer;
 
   return (
     <footer>
@@ -27,9 +31,9 @@ const Footer = () => {
               <Logo alt={logo.alt} />
             </a>
           </div>
-          {links.map(({ items, type }, i) => (
-            <ul className={classnames(styles.linkList, styles[type])} key={i}>
-              {items.map(({ label, to }) => (
+          {links.map(({ items }, i) => (
+            <ul className={classnames(styles.linkList)} key={i}>
+              {items.map(({ label, to, type }) => (
                 <li className={styles[type]} key={`${label}${to}`}>
                   <a href={to}>{label}</a>
                 </li>

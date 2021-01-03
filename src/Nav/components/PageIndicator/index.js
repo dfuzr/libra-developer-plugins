@@ -5,9 +5,15 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import styles from './styles.module.css';
 
 const PageIndicator = () => {
-  const {siteConfig: {themeConfig: {navbar: {
-    title,
-  }}}} = useDocusaurusContext();
+  const {
+    siteConfig: {
+      customFields: {
+        navbar: {
+          title
+        },
+      },
+    }
+  } = useDocusaurusContext();
 
   return (
     <div className={styles.root}>

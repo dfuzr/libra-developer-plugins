@@ -1,141 +1,140 @@
 module.exports = {
-  title: 'Diem',
-  tagline: 'A New Global Payment System',
-  baseUrl: '/',
-  organizationName: 'diem',
-  projectName: 'diem',
+  title: "Diem",
+  tagline: "A New Global Payment System",
+  baseUrl: "/",
+  organizationName: "diem",
+  projectName: "diem",
   themeConfig: {
     logo: {
-      alt: 'Diem Logo',
-      to: 'https://diem.com/'
+      alt: "Diem Logo",
+      src: "/img/shared/logo.svg",
+      to: "https://www.diem.com/",
     },
     footer: {
       links: [
         {
-          type: 'primary',
           items: [
             {
-              label: 'Vision',
-              to: 'https://diem.com/vision/',
+              label: "Vision",
+              to: "https://www.diem.com/vision/",
             },
             {
-              label: 'Association',
-              to: 'https://diem.com/association/',
+              label: "Association",
+              to: "https://www.diem.com/association/",
             },
             {
-              label: 'Developers',
-              to: 'https://diem.com/developers/',
+              label: "Developers",
+              to: "https://developers.diem.com/docs/welcome-to-diem/",
             },
             {
-              label: 'Learn',
-              to: 'https://diem.com/learn-faqs/',
-            },
-          ]
-        },
-        {
-          type: 'primary',
-          items: [
-            {
-              label: 'Media',
-              to: 'https://diem.com/media-press-news/',
-            },
-            {
-              label: 'White Paper',
-              to: 'https://diem.com/white-paper/',
-            },
-            {
-              label: 'Careers',
-              to: 'https://diem.com/careers/',
+              label: "Learn",
+              to: "https://www.diem.com/learn-faqs/",
             },
           ],
         },
         {
-          type: 'secondary',
           items: [
             {
-              label: 'Privacy',
-              to: 'https://diem.com/privacy/',
+              label: "Media",
+              to: "https://www.diem.com/media-press-news/",
             },
             {
-              label: 'Cookies',
-              to: 'https://diem.com/privacy/#cookies_policy',
+              label: "White Paper",
+              to: "https://www.diem.com/white-paper/",
             },
             {
-              label: 'Terms of Use',
-              to: 'https://diem.com/privacy/#terms_of_use',
+              label: "Careers",
+              to: "https://www.diem.com/careers/",
+            },
+          ],
+        },
+        {
+          items: [
+            {
+              type: "secondary",
+              label: "Privacy",
+              to: "https://www.diem.com/privacy/",
             },
             {
-              label: 'Code of Conduct',
-              to: 'https://developers.diem.com/docs/policies/code-of-conduct',
+              type: "secondary",
+              label: "Cookies",
+              to: "https://www.diem.com/privacy/#cookies_policy",
+            },
+            {
+              type: "secondary",
+              label: "Terms of Use",
+              to: "https://www.diem.com/privacy/#terms_of_use",
+            },
+            {
+              type: "secondary",
+              label: "Code of Conduct",
+              to: "https://developers.diem.com/docs/policies/code-of-conduct",
             },
           ],
         },
       ],
-      socialLinks: {
-        facebook: 'https://www.facebook.com/DiemAssociation/',
-        linkedIn: 'https://www.linkedin.com/company/diem-association/',
-        twitter: 'https://twitter.com/libradev',
-        instagram: 'https://www.instagram.com/diem/',
-        github: 'https://github.com/diem/diem',
-      },
       copyright: `©${new Date().getFullYear()} Diem Association`,
     },
+  },
+  customFields: {
+    socialLinks: {
+      facebook: "https://www.facebook.com/diemdevelopers/",
+      linkedIn: "https://www.linkedin.com/company/diemassociation/",
+      twitter: "https://twitter.com/diemdevelopers/",
+      instagram: "https://www.instagram.com/diemassociation/",
+      github: "https://github.com/diemassociation",
+    },
     navbar: {
-      title: 'Diem Developers',
-      logo: {
-        alt: 'Diem Logo',
-        href: 'https://diem.com',
-      },
       primaryLinks: [
         {
-          label: 'Vision',
-          to: 'https://diem.com/vision/',
+          label: "Vision",
+          to: "https://www.diem.com/vision/",
         },
         {
-          label: 'Association',
-          to: 'https://diem.com/association/',
+          label: "Association",
+          to: "https://www.diem.com/association/",
         },
         {
-          id: 'developers',
-          label: 'Developers',
-          to: 'https://diem.com/developers/',
+          id: "developers",
+          label: "Developers",
+          to: "https://developers.diem.com/docs/welcome-to-diem/",
         },
         {
-          label: 'Learn',
-          to: 'https://diem.com/learn-faqs/',
+          label: "Learn",
+          to: "https://www.diem.com/learn-faqs/",
         },
         {
-          label: 'Media',
-          to: 'https://diem.com/media-press-news/',
+          label: "Media",
+          to: "https://www.diem.com/media-press-news/",
         },
       ],
       cornerLink: {
-        label: 'White Paper',
-        to: 'https://diem.com/white-paper/',
+        label: "White Paper",
+        to: "https://www.diem.com/white-paper/",
         image: {
-          alt: 'Diem Whitepaper',
-        }
+          alt: "Diem Whitepaper",
+        },
       },
       secondaryLinks: [
         {
-          id: 'developers',
-          label: 'Diem Documentation',
-          to: 'https://developers.diem.com/docs/welcome-to-diem',
+          id: "developers",
+          label: "Diem Documentation",
+          to: "https://developers.diem.com/docs/welcome-to-diem/",
         },
         {
-          id: 'dips',
-          label: 'Governance',
-          to: 'https://dip.diem.com/',
+          id: "dips",
+          label: "Governance",
+          to: "https://dip.diem.com/",
         },
         {
-          label: 'Community',
-          to: 'https://community.diem.com/',
+          label: "Community",
+          to: "https://community.diem.com/",
         },
         {
           isExternal: true,
-          label: 'GitHub',
-          to: 'https://github.com/diem/',
-        }
+          label: "GitHub",
+          to: "https://github.com/diemassociation/",
+        },
       ],
     },
   },

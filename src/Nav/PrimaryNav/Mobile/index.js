@@ -2,9 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 
 import CloseIcon from '../../../../img/close.svg';
-import universalConfig from '../../../universal-config';
 import CornerLink from '../../../../img/white-paper.svg';
 import Logo from '../../../../img/logo.svg';
 import OpenIcon from '../../../../img/vertical-ellipse.svg';
@@ -16,10 +16,20 @@ import classnames from 'classnames';
 import navStyles from '../../styles.module.css';
 import styles from './styles.module.css';
 
-const PrimaryMobile = ({ activePopupMenu, setPopupMenu } ) => {
-  const { themeConfig: {navbar: {
-    cornerLink, primaryLinks, logo,
-  }}} = universalConfig;
+const PrimaryNavMobile = ({ activePopupMenu, setPopupMenu } ) => {
+  const {
+    siteConfig: {
+      themeConfig: {
+        logo,
+      },
+      customFields: {
+        navbar: {
+          cornerLink,
+          primaryLinks,
+        },
+      },
+    }
+  } = useDocusaurusContext();
 
   return (
     <div className={classnames(styles.root, 'mobile-only')}>
@@ -45,9 +55,9 @@ const PrimaryMobile = ({ activePopupMenu, setPopupMenu } ) => {
   );
 };
 
-PrimaryMobile.propTypes = {
+PrimaryNavMobile.propTypes = {
   activePopupMenu: PropTypes.string,
   setPopupMenu: PropTypes.func.isRequired,
 };
 
-export default PrimaryMobile;
+export default PrimaryNavMobile;

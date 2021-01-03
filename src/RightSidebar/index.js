@@ -1,12 +1,13 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React from "react";
+import PropTypes from "prop-types";
 
-import styles from './styles.module.css';
+import styles from "./styles.module.css";
 
-import TOC from './TOC';
-import TopBar from './TopBar';
+import TOC from "./TOC";
+import TopBar from "./TopBar";
 
-const RightSidebar = ({editUrl, headings}) => {
+const RightSidebar = (props) => {
+  const { editUrl, headings } = props;
   return (
     <div className={styles.root}>
       <TopBar editUrl={editUrl} />
@@ -22,6 +23,6 @@ RightSidebar.propTypes = {
 
 RightSidebar.defaultProps = {
   headings: [],
-}
+};
 
 export default RightSidebar;

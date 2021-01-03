@@ -1,29 +1,32 @@
-import React, {useState, useCallback} from 'react';
+import React, { useState, useCallback } from "react";
 
-import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
-import useLockBodyScroll from '@theme/hooks/useLockBodyScroll';
-import useLogo from '@theme/hooks/useLogo';
-import Link from '@docusaurus/Link';
-import SearchBar from '@theme/SearchBar';
-import isInternalUrl from '@docusaurus/isInternalUrl';
+import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
+import useLockBodyScroll from "@theme/hooks/useLockBodyScroll";
+import Link from "@docusaurus/Link";
+import SearchBar from "./SearchBar";
+import isInternalUrl from "@docusaurus/isInternalUrl";
 
-import scrollToTop from '../utils/scrollToTop';
-import WithBackgroundImage from '../WithBackgroundImage';
+import scrollToTop from "../utils/scrollToTop";
+import WithBackgroundImage from "../WithBackgroundImage";
 
-import classnames from 'classnames';
-import styles from './styles.module.css';
+import classnames from "classnames";
+import styles from "./styles.module.css";
 
 const MOBILE_TOGGLE_SIZE = 24;
 
 const getClasses = (classNames = []) =>
-  classNames.map(c =>
-    typeof c === 'object' && c.global
-      ? c.name
-      : styles[c]
+  classNames.map((c) =>
+    typeof c === "object" && c.global ? c.name : styles[c]
   );
 
-function DocSidebarItem({theme = 'primary', item, onItemClick, collapsible, ...props}) {
-  const {extra = {}, items, label, type} = item;
+function DocSidebarItem({
+  theme = "primary",
+  item,
+  onItemClick,
+  collapsible,
+  ...props
+}) {
+  const { customProps = {}, items, label, type } = item;
   const {
     classNames,
     containerClassNames,
@@ -34,12 +37,16 @@ function DocSidebarItem({theme = 'primary', item, onItemClick, collapsible, ...p
     iconDarkHover,
     iconClasses,
     noLink,
-    theme: itemTheme = theme
-  } = extra;
+    theme: itemTheme = theme,
+  } = customProps;
   const [collapsed, setCollapsed] = useState(item.collapsed);
   const [prevCollapsedProp, setPreviousCollapsedProp] = useState(null);
-  const sidebarLabel = extra.sidebarLabel ? extra.sidebarLabel : label;
-  const href = fragmentIdentifier ? `${item.href}#${fragmentIdentifier}` : item.href;
+  const sidebarLabel = customProps.sidebarLabel
+    ? customProps.sidebarLabel
+    : label;
+  const href = fragmentIdentifier
+    ? `${item.href}#${fragmentIdentifier}`
+    : item.href;
   let ItemTag;
 
   // If the collapsing state from props changed, probably a navigation event
@@ -57,21 +64,21 @@ function DocSidebarItem({theme = 'primary', item, onItemClick, collapsible, ...p
   });
 
   switch (type) {
-    case 'category':
-      ItemTag = noLink ? 'span' : 'a';
+    case "category":
+      ItemTag = noLink ? "span" : "a";
 
       return (
         items.length > 0 && (
           <WithBackgroundImage
             className={classnames(
-              'menu__list-item',
+              styles.menuListItem,
               styles.listItem,
               styles.category,
               ...getClasses(iconClasses),
               {
-                'menu__list-item--collapsed': collapsed,
+                "menu__list-item--collapsed": collapsed,
                 [styles.withBackgroundImage]: icon,
-              },
+              }
             )}
             key={sidebarLabel}
             tag="li"
@@ -80,20 +87,15 @@ function DocSidebarItem({theme = 'primary', item, onItemClick, collapsible, ...p
             imageLight={icon}
             imageLightHover={iconHover}
           >
-            <ul className={classnames(
-              "menu__list",
-              ...getClasses(classNames),
-            )}>
+            <ul
+              className={classnames(styles.menuList, ...getClasses(classNames))}
+            >
               <li className={styles.categoryTitle}>
                 <ItemTag
-                  className={classnames(
-                    "menu__link",
-                    styles.menuLink,
-                    {
-                      'menu__link--sublist': collapsible,
-                      'menu__link--active': collapsible && !item.collapsed,
-                    },
-                  )}
+                  className={classnames(styles.menuLink, {
+                    "menu__link--sublist": collapsible,
+                    "menu__link--active": collapsible && !item.collapsed,
+                  })}
                   onClick={collapsible ? handleItemClick : undefined}
                   {...props}
                 >
@@ -102,7 +104,7 @@ function DocSidebarItem({theme = 'primary', item, onItemClick, collapsible, ...p
               </li>
               {items.map((childItem) => (
                 <DocSidebarItem
-                  tabIndex={collapsed ? '-1' : '0'}
+                  tabIndex={collapsed ? "-1" : "0"}
                   key={childItem.label}
                   item={childItem}
                   onItemClick={onItemClick}
@@ -115,9 +117,9 @@ function DocSidebarItem({theme = 'primary', item, onItemClick, collapsible, ...p
         )
       );
 
-    case 'link':
+    case "link":
     default:
-      ItemTag = noLink ? 'span' : Link;
+      ItemTag = noLink ? "span" : Link;
       let linkProps = {};
       if (isInternalUrl(href) && !noLink) {
         linkProps = {
@@ -128,8 +130,8 @@ function DocSidebarItem({theme = 'primary', item, onItemClick, collapsible, ...p
         };
       } else if (!noLink) {
         linkProps = {
-          target: '_blank',
-          rel: 'noreferrer noopener',
+          target: "_blank",
+          rel: "noreferrer noopener",
         };
       }
 
@@ -138,12 +140,12 @@ function DocSidebarItem({theme = 'primary', item, onItemClick, collapsible, ...p
           className={classnames(
             "menu__list-item",
             styles.listItem,
-            ...getClasses(classNames),
+            ...getClasses(classNames)
           )}
           key={sidebarLabel}
         >
           <WithBackgroundImage
-            className={classnames("menu__link", styles.menuLink, ...getClasses(iconClasses), {
+            className={classnames(styles.menuLink, ...getClasses(iconClasses), {
               [styles.withBackgroundImage]: icon,
             })}
             imageDark={iconDark}
@@ -165,9 +167,9 @@ function DocSidebarItem({theme = 'primary', item, onItemClick, collapsible, ...p
 // Calculate the category collapsing state when a page navigation occurs.
 // We want to automatically expand the categories which contains the current page.
 function mutateSidebarCollapsingState(item, path) {
-  const {items, href, type} = item;
+  const { items, href, type } = item;
   switch (type) {
-    case 'category': {
+    case "category": {
       const anyChildItemsActive =
         items
           .map((childItem) => mutateSidebarCollapsingState(childItem, path))
@@ -177,7 +179,7 @@ function mutateSidebarCollapsingState(item, path) {
       return anyChildItemsActive;
     }
 
-    case 'link':
+    case "link":
     default:
       return href === path;
   }
@@ -188,18 +190,12 @@ function DocSidebar(props) {
   const [isSearchBarExpanded, setIsSearchBarExpanded] = useState(false);
   const {
     siteConfig: {
-      themeConfig: {navbar: {title, hideOnScroll = false} = {}},
+      themeConfig: { navbar: { title, hideOnScroll = false } = {} },
     } = {},
     isClient,
   } = useDocusaurusContext();
-  const {logoLink, logoLinkProps, logoImageUrl, logoAlt} = useLogo();
 
-  const {
-    docsSidebars,
-    path,
-    sidebar: currentSidebar,
-    sidebarCollapsible,
-  } = props;
+  const { sidebar, path, sidebar: currentSidebar, sidebarCollapsible } = props;
 
   useLockBodyScroll(showResponsiveSidebar);
 
@@ -207,52 +203,47 @@ function DocSidebar(props) {
     return null;
   }
 
-  const sidebarData = docsSidebars[currentSidebar];
+  const sidebarData = sidebar;
 
   if (!sidebarData) {
     throw new Error(
-      `Cannot find the sidebar "${currentSidebar}" in the sidebar config!`,
+      `Cannot find the sidebar "${currentSidebar}" in the sidebar config!`
     );
   }
 
   if (sidebarCollapsible) {
     sidebarData.forEach((sidebarItem) =>
-      mutateSidebarCollapsingState(sidebarItem, path),
+      mutateSidebarCollapsingState(sidebarItem, path)
     );
   }
 
   return (
-    <nav aria-label="intra-site navigation" className={styles.sidebar} id="intra-site-navigation">
-      {hideOnScroll && (
-        <Link
-          tabIndex="-1"
-          className={classnames(styles.sidebarLogo, styles.backgroundImage)}
-          to={logoLink}
-          {...logoLinkProps}>
-          {logoImageUrl != null && (
-            <img aria-hidden key={isClient} src={logoImageUrl} alt={logoAlt} />
-          )}
-          {title != null && <strong>{title}</strong>}
-        </Link>
-      )}
+    <nav
+      aria-label="intra-site navigation"
+      className={styles.sidebar}
+      id="intra-site-navigation"
+    >
       <div
-        className={classnames('menu', 'menu--responsive', styles.menu, {
-          'menu--show': showResponsiveSidebar,
-        })}>
+        className={classnames("menu", "menu--responsive", styles.menu, {
+          "menu--show": showResponsiveSidebar,
+        })}
+      >
         <button
-          aria-label={showResponsiveSidebar ? 'Close Menu' : 'Open Menu'}
+          aria-label={showResponsiveSidebar ? "Close Menu" : "Open Menu"}
           aria-haspopup="true"
           className="button button--secondary button--sm menu__button"
           type="button"
           onClick={() => {
             setShowResponsiveSidebar(!showResponsiveSidebar);
-          }}>
+          }}
+        >
           {showResponsiveSidebar ? (
             <span
               className={classnames(
                 styles.sidebarMenuIcon,
-                styles.sidebarMenuCloseIcon,
-              )}>
+                styles.sidebarMenuCloseIcon
+              )}
+            >
               &times;
             </span>
           ) : (
@@ -264,7 +255,8 @@ function DocSidebar(props) {
               width={MOBILE_TOGGLE_SIZE}
               viewBox="0 0 32 32"
               role="img"
-              focusable="false">
+              focusable="false"
+            >
               <title>Menu</title>
               <path
                 stroke="currentColor"
@@ -276,7 +268,7 @@ function DocSidebar(props) {
             </svg>
           )}
         </button>
-        <ul className={classnames("menu__list", styles.menuList)}>
+        <ul className={classnames(styles.menuList, styles.topLevel)}>
           <SearchBar
             handleSearchBarToggle={setIsSearchBarExpanded}
             isSearchBarExpanded={isSearchBarExpanded}

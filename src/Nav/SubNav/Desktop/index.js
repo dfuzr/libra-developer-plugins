@@ -1,6 +1,7 @@
 import React from 'react';
 
-import universalConfig from '../../../universal-config';
+import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
+
 import NavLink from '../../components/NavLink';
 import PageIndicator from '../../components/PageIndicator';
 
@@ -8,9 +9,15 @@ import classnames from 'classnames';
 import styles from './styles.module.css';
 
 const SubnavDesktop = () => {
-  const { themeConfig: {navbar: {
-    secondaryLinks,
-  }}} = universalConfig;
+  const {
+    siteConfig: {
+      customFields: {
+        navbar: {
+          secondaryLinks,
+        },
+      },
+    }
+  } = useDocusaurusContext();
 
   return (
     <div className={classnames(styles.root, 'desktop-only')}>

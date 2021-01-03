@@ -64,6 +64,7 @@ html {
   --default-background-color: white;
   --default-border-color: #E5E5E5;
   --doc-component-background: white;
+  --ifm-background-surface-color: var(--default-background-color);
   --ifm-color-primary: var(--brand-color) !important;
   --nav-height-mobile: 60px;
   --primary-gray: #757575;

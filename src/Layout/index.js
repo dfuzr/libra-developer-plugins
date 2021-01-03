@@ -3,11 +3,11 @@ import ReactDOM from 'react-dom';
 
 import Head from '@docusaurus/Head';
 import isInternalUrl from '@docusaurus/isInternalUrl';
-import useBaseUrl from '@docusaurus/useBaseUrl';
-import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import AnnouncementBar from '@theme/AnnouncementBar';
-import TabGroupChoiceProvider from '@theme/TabGroupChoiceProvider';
-import ThemeProvider from '@theme/ThemeProvider';
+import LayoutHead from '@theme/LayoutHead';
+import LayoutProviders from '@theme/LayoutProviders';
+import useBaseUrl from '@docusaurus/useBaseUrl';
+import useKeyboardNavigation from '@theme/hooks/useKeyboardNavigation';
 
 import CookieBanner from '../CookieBanner';
 import CookieChoiceProvider from '../Contexts/CookieChoice/provider';
@@ -25,32 +25,12 @@ if (TEST_ADA) {
 }
 
 function Layout(props) {
-  const {siteConfig = {}} = useDocusaurusContext();
-  const {
-    favicon,
-    title: siteTitle,
-    themeConfig: {image: defaultImage},
-    url: siteUrl,
-  } = siteConfig;
   const {
     containWidth = true,
     children,
     title,
     noFooter,
-    description,
-    image,
-    keywords,
-    permalink,
-    version,
   } = props;
-  const metaTitle = title ? `${title} | ${siteTitle}` : siteTitle;
-
-  const metaImage = image || defaultImage;
-  let metaImageUrl = siteUrl + useBaseUrl(metaImage);
-  if (!isInternalUrl(metaImage)) {
-    metaImageUrl = metaImage;
-  }
-  const faviconUrl = useBaseUrl(favicon);
 
   useEffect(() => {
     if (window.location.hash) {
@@ -58,55 +38,28 @@ function Layout(props) {
       document.getElementById(hashWithoutHash)?.scrollIntoView();
     }
   }, []);
+  useKeyboardNavigation();
 
   return (
-    <ThemeProvider>
-      <TabGroupChoiceProvider>
-        <CookieChoiceProvider>
-          <Head>
-            {/* TODO: Do not assume that it is in english language */}
-            <html lang="en" />
-
-            {metaTitle && <title>{metaTitle}</title>}
-            {metaTitle && <meta property="og:title" content={metaTitle} />}
-            {favicon && <link rel="shortcut icon" href={faviconUrl} />}
-            {description && <meta name="description" content={description} />}
-            {description && (
-              <meta property="og:description" content={description} />
-            )}
-            {version && <meta name="docsearch:version" content={version} />}
-            {keywords && keywords.length && (
-              <meta name="keywords" content={keywords.join(',')} />
-            )}
-            {metaImage && <meta property="og:image" content={metaImageUrl} />}
-            {metaImage && (
-              <meta property="twitter:image" content={metaImageUrl} />
-            )}
-            {metaImage && (
-              <meta name="twitter:image:alt" content={`Image for ${metaTitle}`} />
-            )}
-            {permalink && (
-              <meta property="og:url" content={siteUrl + permalink} />
-            )}
-            <meta name="twitter:card" content="summary_large_image" />
-          </Head>
-          <AnnouncementBar />
-          <div>
-            <Nav />
-            <div className={styles.navSpacer}></div>
+    <LayoutProviders>
+      <CookieChoiceProvider>
+        <LayoutHead {...props} />
+        <AnnouncementBar />
+        <div>
+          <Nav />
+          <div className={styles.navSpacer}></div>
+        </div>
+        <div className="nav-pusher">
+          <div className={classnames("main-wrapper", {
+            "width-wrapper": containWidth,
+          })}>
+            {children}
           </div>
-          <div className="nav-pusher">
-            <div className={classnames("main-wrapper", {
-              "width-wrapper": containWidth,
-            })}>
-              {children}
-            </div>
-            {!noFooter && <Footer />}
-            <CookieBanner />
-          </div>
-        </CookieChoiceProvider>
-      </TabGroupChoiceProvider>
-    </ThemeProvider>
+          {!noFooter && <Footer />}
+          <CookieBanner />
+        </div>
+      </CookieChoiceProvider>
+    </LayoutProviders>
   );
 }
 

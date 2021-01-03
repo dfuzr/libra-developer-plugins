@@ -11,7 +11,6 @@ const RightSidebar = require('./RightSidebar');
 const WithBackgroundImage = require('./WithBackgroundImage');
 
 /* Components */
-
 exports.CodeBlock = CodeBlock.default;
 exports.CookieContext = CookieContext.default;
 exports.DocSidebar = DocSidebar.default;

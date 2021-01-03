@@ -2,8 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 
-import universalConfig from '../../../universal-config';
 import CloseIcon from '../../../../img/chevron-pressed.svg';
 import NavMenuIcon from '../../components/NavMenuIcon';
 import OpenIcon from '../../../../img/chevron-down.svg';
@@ -13,9 +13,19 @@ import PopupMenu from '../../components/PopupMenu';
 import styles from './styles.module.css';
 
 const SubnavMobile = ({activePopupMenu, setPopupMenu}) => {
-  const { themeConfig: { navbar: {
-    cornerLink, secondaryLinks, logo
-  }}} = universalConfig;
+  const {
+    siteConfig: {
+      themeConfig: {
+        logo,
+      },
+      customFields: {
+        navbar: {
+          cornerLink,
+          primaryLinks,
+        },
+      },
+    }
+  } = useDocusaurusContext();
 
   return (
     <div className="mobile-only">
